@@ -1,0 +1,41 @@
+/* WordLikeInput.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styling for the Word-like input */
+.word-like-input {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.toolbar button {
+  padding: 0.25rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.toolbar button:hover {
+  color: #000;
+}
+
+.content {
+  min-height: 100px;
+}
+
+.content textarea {
+  resize: none;
+  font-size: 1rem;
+}

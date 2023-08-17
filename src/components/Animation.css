@@ -1,113 +1,109 @@
 .container1 ul li:nth-child(odd){
-float: left;
-clear: right;
-transform: translateX(-50px);
-}
-.container1 ul li:nth-child(even){
-    float: right;
-    clear: left;
-    transform: translateX(70px);
-    }
-    .container1 ul li:nth-child(4){
-        margin-bottom: 0;
-        }
-.container1::after{
-    position: absolute;
-    content: " ";
-    width: 2px;
-    height: 180vh;
-    background-image: linear-gradient(to bottom, rgb(106,6,236),rgb(220,0,240));
-    /* left: 50%;
-    top: 0;
-    transform: translate(-50%);
-    z-index: 0; */
-}
-.circle{
-  width: 30px;
-  height: 30px;
-  background-color: rgb(220,0,240);
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.circle::after{
-    content: " ";
-    width: 15px;
-    height: 15px;
-    background-color: rgb(106,6,236);
-    border-radius: 50%;
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    transform: translate(-50% -50%);
-}
-
-/* .container1 ul li:nth-child(odd) .circle{
-    right: 300%;
-    transform: translate(50% -50%);
-} */
-
-.container1 ul li:nth-child(odd) .circle{
-    left: 497px;
-    transform: translate(50% -50%);
-}
-
-
-.container1 ul li:nth-child(even) .circle{
-    left: -68px;
-    transform: translate(50% -50%);
-}
-
-
-@media screen and (max-width:1224px){
-    .container1{
-        width: 85%;
-    }
-}
-@media screen and (max-width:933px){
-    .container1{
-        width: 80%;
-        transform: translateX(20px);
-    }
-    .container1 ul::after{
-       left: -3300px; 
-    }
-    .container1 ul li{
-        width: 100%;
-        float: none;
-        clear: none;
-        margin-bottom: 80px;
-    }
-
-    .container1 ul li:nth-child(odd) .circle{
-        left: 373px;
-        transform: translate(50% -50%);
-    }
-    .container1 ul li:nth-child(even) .circle{
-        left: 373px;
-        transform: translate(50% -50%);
-    }
-    
-    
-    .container1 ul li:nth-child(odd){
-        transform: translateX(0);
-        text-align: left;
+    float: left;
+    clear: right;
+    transform: translateX(-50px);
     }
     .container1 ul li:nth-child(even){
-        transform: translateX(0);
-    }
+        float: right;
+        clear: left;
+        transform: translateX(70px);
+        }
+        .container1 ul li:nth-child(4){
+            margin-bottom: 0;
+            }
     .container1::after{
         position: absolute;
         content: " ";
         width: 2px;
-        height: 265vh;
-        background-image: linear-gradient(to left, rgb(106,6,236),rgb(220,0,240));
+        height: 180vh;
+        background-image: linear-gradient(to bottom, rgb(106,6,236),rgb(220,0,240));
+        /* left: 50%;
+        top: 0;
+        transform: translate(-50%);
+        z-index: 0; */
     }
-
-}
-
-
-
-
+    .circle{
+      width: 30px;
+      height: 30px;
+      background-color: rgb(220,0,240);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .circle::after{
+        content: " ";
+        width: 15px;
+        height: 15px;
+        background-color: rgb(106,6,236);
+        border-radius: 50%;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        transform: translate(-50% -50%);
+    }
+    
+    /* .container1 ul li:nth-child(odd) .circle{
+        right: 300%;
+        transform: translate(50% -50%);
+    } */
+    
+    .container1 ul li:nth-child(odd) .circle{
+        left: 497px;
+        transform: translate(50% -50%);
+    }
+    
+    
+    .container1 ul li:nth-child(even) .circle{
+        left: -68px;
+        transform: translate(50% -50%);
+    }
+    
+    
+    @media screen and (max-width:1224px){
+        .container1{
+            width: 85%;
+        }
+    }
+    @media screen and (max-width:933px){
+        .container1{
+            width: 80%;
+            transform: translateX(20px);
+        }
+        .container1 ul::after{
+           left: -3300px; 
+        }
+        .container1 ul li{
+            width: 100%;
+            float: none;
+            clear: none;
+            margin-bottom: 80px;
+        }
+    
+        .container1 ul li:nth-child(odd) .circle{
+            left: 373px;
+            transform: translate(50% -50%);
+        }
+        .container1 ul li:nth-child(even) .circle{
+            left: 373px;
+            transform: translate(50% -50%);
+        }
+        
+        
+        .container1 ul li:nth-child(odd){
+            transform: translateX(0);
+            text-align: left;
+        }
+        .container1 ul li:nth-child(even){
+            transform: translateX(0);
+        }
+        .container1::after{
+            position: absolute;
+            content: " ";
+            width: 2px;
+            height: 265vh;
+            background-image: linear-gradient(to left, rgb(106,6,236),rgb(220,0,240));
+        }
+    
+    }
