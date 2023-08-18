@@ -11,8 +11,8 @@ const Payment = () => {
 
     const tk = parseFloat(fixedMoney.toFixed(2));
     return (
-        <div>
-            <h1>Please Payment : ${tk}</h1>
+        <div className='lg:mx-[20vw] mx-[5vw]'>
+            <h1 className='text-center text-2xl my-5'>Please Payment : ${tk}</h1>
             <Elements stripe={stripePromise}>
                 <CheckOut name={name} price={price}></CheckOut>
             </Elements>
