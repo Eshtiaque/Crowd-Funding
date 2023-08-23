@@ -1,10 +1,10 @@
-import logo from '../../../assets/img/logo-main/logo.png'
+import logo from '../../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <div className='bg-gradient-to-r bg-neutral text-white py-5 lg:ps-0 md:ps-5 ps-5'>
-            <footer className="footer ps-7 max-w-7xl mx-auto pt-6">
+            <footer className="footer ps-7 max-w-7xl mx-auto ">
                 <div>
                     <img className='w-56' src={logo}></img>
                     <p>Duis elementum sapien et neque<br></br> lobortis laoreet.  Pellentesque<br></br> habitant morbi tristique senectus<br></br> et netus et malesuada</p>

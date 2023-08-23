@@ -64,8 +64,7 @@ const Router = createBrowserRouter([
         {
           path: "/form",
           element: <Form></Form>
-        },
-
+        }
       ]
     },
   ]);

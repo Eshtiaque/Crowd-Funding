@@ -10,6 +10,7 @@ const Events = () => {
        fetch("event.json")
        .then(res=>res.json())
        .then(data=>{
+           console.log(data);
            setItems(data);
        })
     }, [])

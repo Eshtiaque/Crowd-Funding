@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black md:bg-opacity-40 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
+    <nav className="bg-black md:bg-opacity-50 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/">
@@ -32,7 +32,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="event"
+              <Link to="/event"
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Events
@@ -40,7 +40,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="campaigns"
+              <Link to="/campaigns"
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Campaigns
@@ -49,7 +49,7 @@ const Navbar = () => {
 
             <li>
               <Link
-                to='about'
+                to='/about'
                 className="text-white hover:text-gray-300 transition-colors duration-300"
               >
                 About
@@ -57,7 +57,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="contact"
+              <Link to="/contact"
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Contact
@@ -109,7 +109,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="event" onClick={handleClose}
+              <Link to="/event" onClick={handleClose}
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Events
@@ -117,7 +117,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="campaigns" onClick={handleClose}
+              <Link to="/campaigns" onClick={handleClose}
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Campaigns
@@ -126,7 +126,7 @@ const Navbar = () => {
 
             <li>
               <Link
-                to='about' onClick={handleClose}
+                to='/about' onClick={handleClose}
                 className="text-white hover:text-gray-300 transition-colors duration-300"
               >
                 About
@@ -134,7 +134,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="contact" onClick={handleClose}
+              <Link to="/contact" onClick={handleClose}
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Contact
