@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import img4 from "../../../../src/assets/img/others img/jeremias-ybanez-fqFm_YJGHZk-unsplash.jpg"
 import img5 from "../../../../src/assets/img/others img/joel-muniz-BlnpElo7clE-unsplash.jpg"
 import img6 from "../../../../src/assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.jpg"
@@ -20,7 +21,9 @@ const News = () => {
                             <p className="p-2">We are trying to help properly. And contribute to controlling every situation.</p>
                             <div className="card-actions justify-end">
                             <div className="card-actions justify-start">
-                                <button className="btn bg-[#F99F24] text-white">Read More</button>
+                               <Link to="/event">
+                               <button className="btn bg-[#F99F24] text-white">Read More</button>
+                               </Link>
                             </div>
                             </div>
                         </div>

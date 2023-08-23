@@ -1,18 +1,19 @@
 
 import About from "./About/About";
-import Campaign from "./Campaign/Campaign";
+import Campaign from "./CampaignHome/CampaignHome";
 import Category from "./Category/Category";
 import News from "./News/News";
 import Success from "./Success/Success";
 import Partners from "./Partners/Partners";
 import Animation from "./Animation/Animation";
-// import Header from "./Header/Header";
+import Header from "./Header/Header";
 
 const Home = () => {
    
     return (
-      <div className="max-w-7xl mx-auto">
-       {/* <Header></Header> */}
+      <div >
+        <Header></Header>
+        <div className="max-w-7xl mx-auto">
         <About></About>
         <Campaign></Campaign>
         <Category></Category>
@@ -20,6 +21,7 @@ const Home = () => {
         <Success></Success>
         <News></News>
         <Partners></Partners>
+        </div>
        
       </div>
     );

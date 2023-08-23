@@ -1,10 +1,24 @@
+import { Link } from 'react-router-dom';
 import img1 from '../../../assets/images/about-1.png';
 import img2 from '../../../assets/images/about-2.png';
+// import { useContext } from 'react';
+// import { AuthContext } from '../../../Providers/AuthProvider';
 
 const About = () => {
+  // const {logOut}=useContext(AuthContext);
+  // const handleLogout = () => {
+  //   logOut()
+  //     .then(res => res.json())
+  //     .catch(error => {
+  //       localStorage.removeItem('set-token-for-user');
+  //       alert("Logout Successfully")
+  //     })
+
+  // }
   return (
     <div>
-   
+      {/* <Link to="/login"><button className='btn btn-success'>Login</button></Link>
+      <button className='mx-10 btn btn-success' onClick={handleLogout}>logUot</button> */}
       <div className="text-center mt-8">
         <h2 className="text-3xl font-bold">About Us</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
@@ -26,10 +40,12 @@ const About = () => {
             <p>We are the dreamers who dream to make the world a better home.</p>
             <p>We are the dreamers who dream to make the world a better home.</p>
           </div>
-          <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded">See More</button>
+          <Link to="/about">
+            <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded">See More</button>
+          </Link>
         </div>
       </div>
- 
+
     </div>
   );
 };

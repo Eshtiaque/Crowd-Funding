@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useContext, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import jsPDF from 'jspdf';
@@ -11,7 +11,7 @@ const CheckOut = ({ price, name }) => {
     const [cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://crowdfunding-gamma.vercel.app/create-payment-intent', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -73,7 +73,7 @@ const CheckOut = ({ price, name }) => {
         }
         if (paymentIntent?.status) {
 
-            fetch(`http://localhost:5000/payment/saveAddress/${id}`, {
+            fetch(`https://crowdfunding-gamma.vercel.app/payment/saveAddress/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
@@ -111,7 +111,7 @@ const CheckOut = ({ price, name }) => {
         const doc = new jsPDF();
         let y = 10;
 
-        fetch(`http://localhost:5000/saveAddress/${id}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/saveAddress/${id}`)
             .then(res => res.json())
             .then(result => {
                 console.log(result);
@@ -161,9 +161,9 @@ const CheckOut = ({ price, name }) => {
 
 
     return (
-        <>
-            <form className='w-2/3 m-10' onSubmit={handleSubmit}>
-                <CardElement
+        <div>
+            <form className='text-center mt-9 lg:p-0 md:p-0 p-4 ' onSubmit={handleSubmit}>
+                <CardElement className=''
                     options={{
                         style: {
                             base: {
@@ -179,7 +179,7 @@ const CheckOut = ({ price, name }) => {
                         },
                     }}
                 />
-                <button className='mt-5 btn btn-outline btn-primary' type="submit" disabled={!stripe}>
+                <button className='mt-5 ps-9 pr-9 btn bg-[#F99F24]' type="submit" disabled={!stripe}>
                     Pay
                 </button>
             </form>
@@ -188,10 +188,10 @@ const CheckOut = ({ price, name }) => {
             }
             <div className='text-center my-5'>
                 {
-                    download ? <button onClick={generatePDF} className='btn btn-secondary'>Download Payment PDF</button> : <button disabled className='btn btn-secondary'>Download Payment</button>
+                    download ? <button onClick={generatePDF} className='btn bg-[#F99F24] text-white'>Download Payment PDF</button> : <button disabled className='btn bg-[#F99F24]'>Download Payment</button>
                 }
             </div>
-        </>
+        </div>
     );
 };
 

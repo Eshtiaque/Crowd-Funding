@@ -1,0 +1,135 @@
+
+
+@media only screen and (max-width: 600px) {
+    .first-slide-subtitle{
+    padding-bottom: 0.5rem;
+       margin-top: -1rem;
+    }
+    .first-slide-title{
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: -2rem;
+    }
+    .example {
+        font-size: 1rem;
+        margin-top: -3rem;
+    }
+    .second-slid-title{
+        margin-bottom: 2rem;
+    }
+    .second-slide-padding-top{
+        padding-top: 9rem;
+    }
+    .second-slid-margin{
+        margin-top: 0.5rem;
+    }
+    .title-left-margin{
+        margin-left: 5rem;
+        font-size: 2rem;
+        text-align: center;
+        margin-left: -0.5rem;
+    }
+    .swiper-button-next { 
+        color: rgb(212, 202, 202);
+        right: 1rem;
+        font-weight: 400;
+     }
+    .swiper-button-prev {
+        color: rgb(212, 202, 202);
+        padding-left: -4rem;
+        left: 15px;
+        border-radius: 100%;
+        font-weight: 400;
+    }
+    .button-sm{
+       margin-left: -0.3rem;
+    }
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .example {
+
+    }
+    .title-left-margin{
+        margin-left:10rem;
+    }
+    .swiper-button-next { 
+        color: rgb(212, 202, 202);
+        right: 75px;
+        font-weight: 700;
+     }
+    .swiper-button-prev {
+        color: rgb(212, 202, 202);
+        padding-left: -200px;
+        left: 75px;
+        border-radius: 100%;
+        font-weight: 700;
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .example {
+
+    }
+    .title-left-margin{
+        margin-left: 13rem;
+    }
+    .swiper-button-next { 
+        color: rgb(212, 202, 202);
+        right: 75px;
+        font-weight: 700;
+     }
+    .swiper-button-prev {
+        color: rgb(212, 202, 202);
+        padding-left: -200px;
+        left: 75px;
+        border-radius: 100%;
+        font-weight: 700;
+    }
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .title-left-margin{
+        margin-left: 5rem;
+        font-size: 4rem;
+        text-align: center;
+        margin-left: -0.5rem;
+    }
+    .title-left-margin-third-slide{
+        margin-left: 10rem;
+        font-size: 2rem/* 72px */;
+        line-height: 1;
+        text-align: start;
+        margin-top: -1.5rem;
+    }
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .first-slide-title{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 0rem;
+    }
+    .title-left-margin{
+        margin-left: 0rem;
+        font-size: 4.5rem/* 72px */;
+        line-height: 1;
+        text-align: center;
+     
+    }
+    .title-left-margin-third-slide{
+        margin-left: 15rem;
+        font-size: 4.5rem/* 72px */;
+        line-height: 1;
+        text-align: start;
+        margin-top: 5rem;
+     
+    }
+    .second-slide-padding-top{
+        padding-top: 12rem;
+    }
+  }
