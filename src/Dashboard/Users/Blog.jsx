@@ -1,70 +1,134 @@
-import pic1 from "../../assets/img/Final/05.jpg";
-import pic2 from "../../assets/img/Final/10.jpg";
-import pic3 from "../../assets/img/Final/15.jpg";
-import pic4 from "../../assets/img/Final/20.jpg";
-import pic5 from "../../assets/img/Final/business-colleagues-using-laptop-dark-office.jpg";
-import pic6 from "../../assets/img/Final/business-people-talking-meeting-table.jpg";
+import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom';
+import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
-const Blog = () => {
+const Blogs = () => {
+ 
+    const { user } = useContext(AuthContext);
+    const [Toys, setToys] = useState([]);
+    const [searchText, setSearchText] = useState("");
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/individualBLogs/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setToys(data);
+                document.title = "My Blogs";
+            })
+    }, [user])
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/individualBLogs/searchText/${searchText}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setToys(data);
+          });
+      };
+
+const handleDelete =_id =>{
+    console.log(_id);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to recover it!",
+        textColor:'#0000',
+        icon: 'warning',
+        iconColor:'red',
+        background:'black',
+        Color:'#545454',
+        showCancelButton: true,
+        confirmButtonColor: '#F40D0D',
+        cancelButtonColor: '#gray',
+        // cancelButtonAriaLabel:'white',
+        confirmButtonText: 'Yes, delete it!',
+        confirmButtonTextColor:'black'
+        
+      }).then((result) => {
+        if (result.isConfirmed) {
+       
+        fetch(`http://localhost:5000/individualBLogs//${_id}`,{
+            method:'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.deletedCount>0){
+                Swal.fire(
+                        'Deleted!',
+                        'Your blog has been deleted.',
+                        'success'
+                      )
+        const remaining =Toys.filter(toy=>toy._id!==_id)
+        setToys(remaining);
+            }
+        })
+        }
+      })
+}
+
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-7">
-            <div className="card w-96 glass text-white">
-                <figure><img src={pic1} alt="car!"/></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Project Name: Emergency Food Relief in Yemen</h2>
-                    <p>Delivering emergency food relief to children and families affected by conflict in Sana{"'"}a.</p>
-                    <div className="card-actions justify-end">
-                    </div>
-                </div>
-            </div>
-            <div className="card w-96 glass text-white">
-                <figure><img src={pic2} alt="car!"/></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Project Name: Combatting Child Hunger in Nigeria</h2>
-                    <p>Taking action against child hunger by distributing food aid in Abuja.</p>
-                    <div className="card-actions justify-end">
-                    </div>
-                </div>
-            </div>
-            <div className="card w-96 glass text-white">
-                <figure><img src={pic3} alt="car!"/></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Project Name: Nutritional Support for Children in Niger</h2>
-                    <p>Providing nutritional support to children in need in Niamey.</p>
-                    <div className="card-actions justify-end">
-                    </div>
-                </div>
-            </div>
-            <div className="card w-96 glass text-white">
-                <figure><img src={pic4} alt="car!"/></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Project Name: Food Aid and Assistance in Kabul</h2>
-                    <p>Providing essential food aid and assistance to children affected by conflict in Kabul.</p>
-                    <div className="card-actions justify-end">
-                    </div>
-                </div>
-            </div>
-            <div className="card w-96 glass text-white">
-                <figure><img src={pic5} alt="car!"/></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Project Name: Food Aid and Assistance in Kabul</h2>
-                    <p>Providing essential food aid and assistance to children affected by conflict in Kabul.</p>
-                    <div className="card-actions justify-end">
-                    </div>
-                </div>
-            </div>
-            <div className="card w-96 glass text-white">
-                <figure><img src={pic6} alt="car!"/></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Project Name: Food Aid and Assistance in Kabul</h2>
-                    <p>Providing essential food aid and assistance to children affected by conflict in Kabul.</p>
-                    <div className="card-actions justify-end">
-                    </div>
-                </div>
+
+
+        <div className="my-jobs-container">
+            <h1 className="text-center m-2 bg-black text-red-400 p-4 font-black text-4xl rounded-full">My Blog{"'"}s</h1>
+            <div className="search-box  text-center">
+                <input
+               
+                        onChange={(e) => setSearchText(e.target.value)}
+                    type="text"
+                    className="p-1 rounded-lg bg-pink-200 text-black"
+                placeholder="Blog Name "
+                    />{" "}
+                <button onClick={handleSearch} className="btn btn-sm bg-orange-500 m-4">Search</button>
+               
+                <table className="table w-full">
+                    {/* head */}
+                    <thead className="">
+                        <tr >
+                            <th className="bg-black border rounded text-center text-white">#</th>
+                            <th className="bg-black border rounded text-center text-white">Blog Name</th>
+                            <th className="bg-black border rounded text-center text-white">User Name</th>
+                            <th className="bg-black border rounded text-center text-white">Sub-category </th>
+                            {/* <th className="bg-black border rounded text-center text-white">Price</th> */}
+                            {/* <th className="bg-black border rounded text-center text-white" >Quantity</th> */}
+                            <th className="bg-black border rounded text-center text-white">Edit</th>
+                            <th className="bg-black border rounded text-center text-white">Delete</th>
+
+                        </tr>
+                    </thead>
+                    <tbody className="text-black text-center bg-black">
+                        {
+                            Toys.map((toy, index) => <tr key={toy}>
+                                <td className="text-center border-black text-black bg-red-200">{index + 1}</td>
+                                <td className="text-center border-black text-black bg-red-300 font-bold">{toy.name}</td>
+                                <td className="text-center border-black text-black bg-red-200">{toy.sellerName}</td>
+                                <td className="text-center border-black text-black bg-red-300">{toy.category}</td>
+                                {/* <td className="text-center border-black text-black bg-red-200">{toy.price}</td>
+                                <td className="text-center border-black text-black bg-red-300">{toy.quantity}</td> */}
+                                <td className="text-center border-black text-black bg-red-200">
+                                    <Link to={`/editToy/${toy._id}`}>
+                                    <button className="btn rounded-full bg-gradient-to-r from-[#ff0844] via-[#ffb199] to-orange-400 text-black " >Edit</button>
+                                    </Link>
+                                    
+                                </td>
+                                <td className="text-center border-black text-black bg-red-300">
+                                    {" "}
+                                    <button onClick={()=>handleDelete(toy._id)} className="btn bg-gradient-to-r from-orange-400 via-[#ffb199] to-[#ff0844] text-black">Delete
+                                    </button>
+                                </td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+
             </div>
         </div>
-    );
+    )
 };
 
-export default Blog;
+export default Blogs;
