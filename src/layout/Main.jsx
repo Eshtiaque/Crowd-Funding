@@ -1,15 +1,21 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import Footer from "../Components/Home/Footer/Footer";
 import Navbar from "../Components/NavBar/Navbar";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const Main = () => {
     return (
-        <div className="">
-            <Navbar></Navbar>
+        <div>
+            <Navbar />
             <ScrollRestoration />
-
-            <Outlet></Outlet>
-            <Footer></Footer>
+            <Outlet />
+            <Footer />
+            <div>
+                <MessengerCustomerChat
+                    pageId="129135300280678"
+                    appId="643817741223173"
+                />
+            </div>
         </div>
     );
 };

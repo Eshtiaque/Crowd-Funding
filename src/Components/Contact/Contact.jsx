@@ -3,13 +3,28 @@ import background from "../../assets/img/section-banner/about.jpg";
 import { FaPhoneAlt, FaEnvelope, FaLocationArrow } from 'react-icons/fa';
 import SharedBanner from "./SharedBanner";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { useRef, useEffect } from 'react'
+import { motion, useInView, useAnimation } from "framer-motion"
 
 
 const Contact = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log('clicked')
+        
     }
+
+    const ref = useRef(null)
+  const isInView = useInView(ref)
+
+  const mainControls = useAnimation()
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible")
+    }
+  }, [isInView])
+
+
     return (
         <div className="max-w-7xl mx-auto">
             <div>
@@ -26,9 +41,19 @@ const Contact = () => {
                     }
                 ></SharedBanner> 
 
-                <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bg})` }}>
-                    <div className="md:flex justify-center gap-4 mx-auto pb-8 pt-8">
-                        <div className="text-neutral">
+                <div ref={ref} className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bg})` }}>
+                    <div className="md:flex justify-center gap-4 mx-auto pb-8 pt-8 lg:ps-0 md:ps-0 ps-5 ">
+                        <motion.div className="text-neutral"
+                        
+                        variants={{
+                            hidden: { opacity: 0, y: 75 },
+                            visible: { opacity: 1, y: 0 }
+                          }}
+                          initial="hidden"
+                          animate={mainControls}
+                          transition={{ duration: 0.9, delay: 0.60 }}
+                  
+                  >
                             <h1 className="text-3xl text-[#F99F24]">Address</h1>
                             <div className="flex items-center gap-3 mt-5">
                                 <FaPhoneAlt />
@@ -51,12 +76,21 @@ const Contact = () => {
                                 <FaTwitter />
                                 <FaYoutube />
                             </div>
-                        </div>
+                        </motion.div>
 
 
 
 
-                        <div className="text-black">
+                        <motion.div className="text-black"
+                         variants={{
+                            hidden: { opacity: 0, y: 75 },
+                            visible: { opacity: 1, y: 0 }
+                          }}
+                          initial="hidden"
+                          animate={mainControls}
+                          transition={{ duration: 0.9, delay: 1 }}
+                  
+                  >
                             <h1 className="text-3xl text-[#F99F24]">Get in touch</h1>
                             <form onSubmit={handleSubmit} className="mt-5 w-[360px] flex flex-col gap-2">
                                 <input className="border-2 border-black rounded w-[230px] px-2" type="text" name="name" placeholder="Your name"></input>
@@ -64,14 +98,23 @@ const Contact = () => {
                                 <textarea className="border-2 border-black rounded w-[230px] px-2" type="area" name="name" placeholder="Write message"></textarea>
                                 <input className="btn btn-warning w-28 text-white" type="submit" />
                             </form>
-                        </div>
+                        </motion.div>
                     </div>
                 </div> 
 
 
 
 
-             <div className="mapouter relative text-right w-full h-[400px] mt-8">
+             <motion.div className="mapouter relative text-right w-full h-[400px] mt-8"
+              variants={{
+                hidden: { opacity: 0, y: 75 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              animate={mainControls}
+              transition={{ duration: 0.9, delay: 0.60 }}
+      
+      >
                     <div className="gmap_canvas">
                         <iframe
                             title="Google Map"
@@ -99,7 +142,7 @@ const Contact = () => {
           }
         `}
                     </style>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

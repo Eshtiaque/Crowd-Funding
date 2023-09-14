@@ -3,11 +3,30 @@ import campaignPhoto from "../../assets/img/Final/10.jpg";
 import project from "../../assets/img/Final/10.jpg";
 import help from "../../assets/img/Final/05.jpg";
 import { Link } from "react-router-dom";
+import { useRef, useEffect } from 'react'
+import { motion, useInView, useAnimation } from "framer-motion"
+
+
 
 const Project = () => {
+    
+    const ref = useRef(null)
+    const isInView = useInView(ref)
+
+    const mainControls = useAnimation()
+
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible")
+        }
+    }, [isInView])
+
+
+
     return (
         <>
-            <SharedBanner
+           <div ref={ref} className="max-w-7xl mx-auto">
+           <SharedBanner
                 background={campaignPhoto}
                 title="Projects"
                 titleHead="Choose your project"
@@ -16,9 +35,19 @@ const Project = () => {
                         We will help you to start a new project or to collect funds for disasters.
                     </>
                 } />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 my-16">
+           </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 my-16 ">
                 {/* //two big card */}
-                <div className="flex flex-col items-end">
+                <motion.div className="flex flex-col items-end"
+                variants={{
+                    hidden: { opacity: 0, y: 75 },
+                    visible: { opacity: 1, y: 0 }
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 1, delay: 1.2 }}
+
+>
                     <div>
                         <h2 className="uppercase font-semibold text-xl my-6 text-center">Start Your Project</h2>
                         <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
@@ -36,10 +65,19 @@ const Project = () => {
                             </div>
                         </Link>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="flex flex-col items-start">
-                    <div>
+                    <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 75 },
+                        visible: { opacity: 1, y: 0 }
+                    }}
+                    initial="hidden"
+                    animate={mainControls}
+                    transition={{ duration: 1, delay: 1.5 }}
+    
+    >
                         <h2 className="uppercase font-semibold text-xl my-6 text-center">Get help now</h2>
                         <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
                             <figure><img src={help} alt="Shoes" className="group-hover:scale-105 hover:duration-500 duration-500" /></figure>
@@ -55,7 +93,7 @@ const Project = () => {
                                 </div>
                             </div>
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </>

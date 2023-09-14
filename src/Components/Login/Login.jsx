@@ -15,7 +15,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     const from = location.state?.from?.pathname || "/";
 
     const handleGoogleSignIn = () => {
@@ -23,7 +23,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 setSuccess('Google Successfully');
-                console.log(loggedInUser);
+                // console.log(loggedInUser);
                 // setUser(loggedInUser);
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
                 // ---------------------------jwt add for google signIn----------------------
@@ -43,7 +43,7 @@ const Login = () => {
                             headers: {
                                 'Content-Type': 'application/json'
                             },
-                            body: JSON.stringify(user)
+                            body: JSON.stringify(loggedInUser)
                         })
                             .then(res => res.json())
                             .then(result => {
@@ -64,12 +64,12 @@ const Login = () => {
     } = useForm()
     const onSubmit = (data) => {
 
-        console.log(data.password, data.email);
+        // console.log(data.password, data.email);
         signIn(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 setSuccess('Login Successfully')
-                console.log(user);
+                // console.log(user);
                 // form.reset();
                 fetch('https://crowdfunding-gamma.vercel.app/jwt', {
                     method: "POST",

@@ -88,7 +88,7 @@ const SignUp = () => {
      //private route
      const navigate = useNavigate();
      const location = useLocation();
-     console.log(location);
+    //  console.log(location);
      const from = location.state?.from?.pathname || "/login";
  
 
@@ -105,7 +105,7 @@ const SignUp = () => {
                         </video>
           <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4">
 
-            <h1 className="text-2xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-white">Sign Up</h1>
+            <h1 className="text-2xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-white lg:mt-7 ">Sign Up</h1>
             <form onSubmit={handleSubmit(onSubmit)}  >
               <div className="form-control">
                 <label className="label">

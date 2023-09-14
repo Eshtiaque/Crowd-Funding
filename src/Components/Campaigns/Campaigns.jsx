@@ -9,6 +9,10 @@ import FetchData from "./FetchData";
 import SharedBanner from "../Contact/SharedBanner";
 import campaignPhoto from "../../assets/img/section-banner/melanie-lim-SkMBbB9gjQc-unsplash.jpg";
 import { BarLoader } from "react-spinners";
+import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
+import { motion, useInView, useAnimation } from "framer-motion"
+
+
 
 const Campaigns = () => {
     const campaignsRef = useRef();
@@ -33,36 +37,68 @@ const Campaigns = () => {
             setIsLoading(false);
         }, 1000);
     }, [searchText, pages]);
+    //className="bg-cover bg-center bg-no-repeat  max-w-7xl mx-auto " style={{ backgroundImage: `url(${bg})` }}
+
+    const ref = useRef(null)
+    const isInView = useInView(ref)
+
+    const mainControls = useAnimation()
+
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible")
+        }
+    }, [isInView])
+
+
+
 
     return (
-        <div className="max-w-7xl mx-auto" ref={campaignsRef}>
-            <SharedBanner
-                background={campaignPhoto}
-                title="Campaigns "
-                titleHead="Our on going campaigns"
-                titleDes={
-                    <>
-                        We have launched several event to help the refugee people from Lebanon and Syria.
-                    </>
-                }
-            ></SharedBanner>
-            <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]">
-                <input
-                    type="text"
-                    placeholder="Type Here..."
-                    value={searchText}
-                    onChange={e => setSearchText(e.target.value)}
-                    className="w-full px-4 py-2 mt-3  border border-black rounded-md"
-                />
-                <BsSearch className="absolute top-[46%] right-6 text-gray-500" />
-            </div>
-            {isLoading ? (
-                <div className="w-full flex items-center justify-center">
-                    <BarLoader />
+        <div ref={ref}>
+            <div className="max-w-7xl mx-auto bg-cover bg-center bg-no-repeat " ref={campaignsRef} style={{ backgroundImage: `url(${bg})` }}>
+                <SharedBanner
+                    background={campaignPhoto}
+                    title="Campaigns "
+                    titleHead="Our on going campaigns"
+                    titleDes={
+                        <>
+                            We have launched several event to help the refugee people from Lebanon and Syria.
+                        </>
+                    }
+                ></SharedBanner>
+                <motion.div className="text-center mt-8"
+                    variants={{
+                        hidden: { opacity: 0, y: 75 },
+                        visible: { opacity: 1, y: 0 }
+                    }}
+                    initial="hidden"
+                    animate={mainControls}
+                    transition={{ duration: 0.9, delay: 1 }}
+
+                >
+                    <h2 className="text-3xl text-white font-bold p-2">Our All Country Campaigns</h2>
+                    <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto " />
+                </motion.div>
+                <div className="mt-4 mb-4 relative w-10/12 mx-auto md:w-[20%] ">
+                    <input
+                        type="text"
+                        placeholder="Type Here..."
+                        value={searchText}
+                        onChange={e => setSearchText(e.target.value)}
+                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
+                    bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
+                    />
+                    <BsSearch className="absolute top-[46%] right-6 text-gray-500" />
                 </div>
-            ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredCampaigns?.map(({ _id, image, location, header, desc, date, progress }) => {
+                {isLoading ? (
+                    <div className="w-full flex items-center justify-center">
+                        <BarLoader />
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:p-12 md:p-12">
+                            {filteredCampaigns
+                                .filter(campaign => campaign.status === 'approved') // Filter by status
+            .map(({ _id, image, location, header, desc, date, progress }) => {
                             return (
                                 <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-base-100 shadow-xl group">
                                     <figure>
@@ -84,9 +120,10 @@ const Campaigns = () => {
                             );
                         })}
                     </div>
-            )}
-            <Pagination totalData={totalData} setCurrentPage={setCurrentPage} />
+                )}
+                <Pagination totalData={totalData} setCurrentPage={setCurrentPage} />
 
+            </div>
         </div>
     );
 };

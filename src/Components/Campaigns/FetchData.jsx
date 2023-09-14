@@ -11,7 +11,6 @@ const PaginatedData = () => {
       try {
         const result = await axios.get(`https://crowdfunding-gamma.vercel.app/campaigns?&page=${currentPage + 1}`);
         setPages(result.data);
-        console.log(currentPage + 1);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

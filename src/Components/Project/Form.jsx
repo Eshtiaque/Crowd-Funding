@@ -16,7 +16,7 @@ const Form = () => {
     const ideas = form.ideas.value;
 
     const saveUser = { name, email, phone, address, country, money, ideas };
-    fetch('http://localhost:5000/projects', {
+    fetch('https://crowdfunding-gamma.vercel.app/projects', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(saveUser)
