@@ -119,7 +119,6 @@ const Navbar = () => {
                 </button>
               </Link>
           }
-          {/*   className="text-white border border-yellow-600 bg-inherit hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 mt-6" */}
           
         </div>
         <div className="lg:hidden md:px-8">
