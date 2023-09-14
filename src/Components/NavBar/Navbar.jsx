@@ -3,7 +3,7 @@ import logo from "../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digit
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth } from "firebase/auth";
-import { app } from "../../Firebase/firebaseConfig";
+import app from "../../Firebase/firebaseConfig";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext);
