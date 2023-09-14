@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth } from "firebase/auth";
 import { app } from "../../Firebase/firebaseConfig";
-// import { space } from "postcss/lib/list";
-// import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext);
