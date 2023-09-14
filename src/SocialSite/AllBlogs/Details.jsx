@@ -1,0 +1,43 @@
+import { Link, useLoaderData } from "react-router-dom";
+import { BiTimeFive } from 'react-icons/bi';
+import { FcBusinessman } from 'react-icons/fc';
+import {FiEdit} from 'react-icons/fi';
+import {RiDeleteBin6Line} from 'react-icons/ri';
+
+
+
+
+const Details = () => {
+    const singleDetails = useLoaderData();
+    const { name, title, photo ,date,blog } = singleDetails;
+
+    return (
+        <div className="max-w-7xl mx-auto">
+            <img className="rounded-lg" src={photo} alt="" />
+            <div className="flex justify-between items-center m-5">
+                <div>
+                <h1 className="font-black lg:text-7xl md:text-5xl text-3xl my-3">{title}</h1>
+                </div>
+                <div className="">
+               <Link><button className="btn mr-3 text-xl bg-green-300"><FiEdit/></button></Link>
+                <Link><button className="btn text-white text-xl bg-[#fd092a] "><RiDeleteBin6Line/></button> </Link>
+                </div>
+            </div>
+            <div className="lg:text-xl md:text:lg text:lg">
+              <div className="flex items-center gap-2 mb-3">
+              <FcBusinessman className="text-3xl rounded-full "/>
+                <h3>Author Name: <span className="font-black text-xl pb-3">{name}</span></h3>
+              </div>
+                <div className="flex items-center gap-2">
+                <BiTimeFive className="text-2xl bg-green-400 rounded-full"/> 
+                <h3 className=""> Date: <span className="font-black text-xl pb-3 items-center">{date}</span></h3>
+                </div>
+            </div>
+<hr className="m-5" />
+            {blog}
+            
+        </div>
+    );
+};
+
+export default Details;

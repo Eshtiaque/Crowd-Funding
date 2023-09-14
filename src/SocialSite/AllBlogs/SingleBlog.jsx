@@ -26,7 +26,8 @@ const SingleBlog = ({ item }) => {
                             <FaRegCommentAlt/>
                             <BsShare/>Share
                         </div>
-                       <Link to={`/details/${item.id}`}>
+                        {/* <Link to="/socialBlog/details"> */}
+                       <Link to={`/socialBlog/details/${item?._id}`}>
                        <div className="badge bg-[#5c771e]  text-white mt-3 py-3">Read Blogs</div>
                        </Link>
                     </div>

@@ -40,6 +40,7 @@ import Blog from "../../Dashboard/Users/Blog";
 import Campaign from "../../Dashboard/Users/Campaign";
 import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
+import Details from "../../SocialSite/AllBlogs/Details";
 
 const Router = createBrowserRouter([
     {
@@ -115,6 +116,11 @@ const Router = createBrowserRouter([
         {
           path: "/socialBlog",
           element:<SocialHeader></SocialHeader>
+        },
+        {
+          path: "details/:id",
+          element:<Details></Details>,
+          loader: ({ params }) => fetch(`http://localhost:5000/allSocialPost/${params.id}`)
         }
         ]
     },
