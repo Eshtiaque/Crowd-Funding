@@ -3,6 +3,7 @@ import { FcBusinessman } from 'react-icons/fc';
 import {FcLikePlaceholder} from 'react-icons/fc';
 import {FaRegCommentAlt} from 'react-icons/fa';
 import {BsShare} from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const SingleBlog = ({ item }) => {
     const { name, title, photo ,date } = item;
@@ -23,9 +24,11 @@ const SingleBlog = ({ item }) => {
                         <div className='flex gap-5 mt-3 items-center '>
                             <FcLikePlaceholder className='text-xl '/>
                             <FaRegCommentAlt/>
-                            <BsShare/>
+                            <BsShare/>Share
                         </div>
-                        <div className="badge bg-[#5c771e] p-2 text-white mt-3"> Blogs</div>
+                       <Link to={`/details/${item.id}`}>
+                       <div className="badge bg-[#5c771e]  text-white mt-3 py-3">Read Blogs</div>
+                       </Link>
                     </div>
                 </div>
             </div>
