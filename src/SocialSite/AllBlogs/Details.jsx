@@ -3,14 +3,12 @@ import { BiTimeFive } from 'react-icons/bi';
 import { FcBusinessman } from 'react-icons/fc';
 import {FiEdit} from 'react-icons/fi';
 import {RiDeleteBin6Line} from 'react-icons/ri';
-import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProvider";
+
 
 
 
 
 const Details = () => {
-    const {user } = useContext(AuthContext)
     const singleDetails = useLoaderData();
     const { name, title, photo ,date,blog } = singleDetails;
 

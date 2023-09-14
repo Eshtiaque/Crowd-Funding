@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleBlog from "./SingleBlog";
+import { Link } from "react-router-dom";
 
 const AllBlogs = () => {
 
@@ -16,11 +17,16 @@ const AllBlogs = () => {
 
     return (
         <div className="m-2 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+           
            {
-                    items?.map(item => <SingleBlog
+                    items?.map(item => <>
+                    <Link to={`/socialBlog/details/${item?._id}`}>
+                    <SingleBlog
                         key={item._id}
                         item={item}
                     ></SingleBlog>
+                    </Link>
+                    </>
 
                     )
                 }
