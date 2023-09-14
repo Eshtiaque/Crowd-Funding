@@ -38,6 +38,7 @@ import Campaign from "../../Dashboard/Users/Campaign";
 import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 import Details from "../../SocialSite/AllBlogs/Details";
+import MyPost from "../../SocialSite/MyPost/MyPost";
 
 const Router = createBrowserRouter([
     {
@@ -108,6 +109,10 @@ const Router = createBrowserRouter([
         {
           path: "/socialBlog",
           element:<SocialHeader></SocialHeader>
+        },
+        {
+          path: "myPost",
+          element:<MyPost></MyPost>
         },
         {
           path: "details/:id",

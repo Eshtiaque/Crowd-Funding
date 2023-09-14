@@ -15,7 +15,7 @@ const AllBlogs = () => {
 
 
     return (
-        <div className="m-2 max-w-5xl mx-auto">
+        <div className="m-2 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
            {
                     items?.map(item => <SingleBlog
                         key={item._id}

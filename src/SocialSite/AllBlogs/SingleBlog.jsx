@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom';
 const SingleBlog = ({ item }) => {
     const { name, title, photo ,date } = item;
     return (
-        <div>
+        <div className='+'>
             {/* rounded-tr-full rounded-br-full rounded-tl-full */}
             <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img className='  ' src={photo} alt="Shoes" /></figure>
+                <figure><img className='h-56 w-full' src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl">
                         Title: {title}
