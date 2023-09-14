@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import image from "../../assets/SocialBLog/Green Minimalist Blog Post Linkedin Article Cover.png"
 
 const AddPost = () => {
-    const { register,
+    const {  register,
         handleSubmit,
         formState: { errors },
     } = useForm();
@@ -45,20 +45,20 @@ const AddPost = () => {
          
            
          </div>
-            <div className="">
+            <div className="max-w-4xl mx-auto">
                 <form className="" onSubmit={handleSubmit(onSubmit)}>
                 <div >
                         <h5 className="font-bold text-4xl mt-3 ps-3 ">Title . . .</h5>
                         <input className="p-2  w-full text-black  " defaultValue=""
-                            {...register("sellerName")} />
+                            {...register("title")} />
                     </div>
                     <hr className="border border-gray-400" />
                
                   <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 mt-9 ps-3">
                   <div>
-                        <h5 className="font-bold  text-">Photo :</h5>
-                        <input className="p-2  w-3/4 " type="file"
-                            {...register("photoURL")}  />
+                        <h5 className="font-bold  ">Photo :</h5>
+                        <input className="p-3 border rounded-3xl  w-3/4 "  accept=".jpeg, .png, .jpg"
+                            {...register("photo")}  />
                     </div>
                   <div>
                         <h5 className="font-bold  ">Author - Name :</h5>
@@ -69,7 +69,7 @@ const AddPost = () => {
                     <div>
                         <h5 className="font-bold ">Date :</h5>
                         <input className="p-3 w-3/4  text-black border rounded-3xl" type="date"
-                            {...register("price")} />
+                            {...register("date")} />
                     </div>
                   </div>
                    
@@ -80,7 +80,7 @@ const AddPost = () => {
                    
                     <div className="text-left m-1">
                        
-                        <input className=" w-full items-start pb-48 text-black p-4  border rounded-lg placeholder:" defaultValue="" placeholder="Write here . . ." {...register("details")} />
+                        <input className=" w-full items-start pb-48 text-black p-4  border rounded-lg placeholder:" defaultValue="" placeholder="Write here . . ." {...register("blog")} />
                     </div>
                     <div>
 
