@@ -6,7 +6,7 @@ const AllBlogs = () => {
 
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/allSocialPost")
+        fetch("https://crowdfunding-gamma.vercel.app/allSocialPost")
             .then(res => res.json())
             .then(data => {
                 console.log(data);

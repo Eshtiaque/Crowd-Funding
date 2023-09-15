@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import image from "../../../assets/img/others img/mohammed-ibrahim-jrcvHflmKvg-unsplash.jpg";
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
+import MainButton from "../../SharedComponents/MainButton";
 
 
 
@@ -21,7 +22,7 @@ const CampaignHome = () => {
 
 
     return (
-        <motion.div ref={ref} className="bg-[#EEF7FF] p-6"
+        <motion.div ref={ref} className="p-6"
 
         >
             <motion.div
@@ -34,8 +35,8 @@ const CampaignHome = () => {
                 transition={{ duration: 0.9, delay: 0.60 }}
 
             >
-                <h1 className="text-center text-3xl font-bold pt-5 mb-3">Feature Campaigns</h1>
-                <hr className="w-32 border-2 rounded border-orange-400 mx-auto mt-1" />
+                <h1 className="text-center text-3xl font-bold pt-5 mb-3">Featured Campaigns</h1>
+                <div className="h-1 w-[106px] mt-3 rounded-md bg-gradient-to-br from-blue-600 to-purple-600 mx-auto" />
 
             </motion.div>
             <motion.div className="grid lg:grid-cols-2 grid-cols-1 mt-7 gap-16"
@@ -56,7 +57,7 @@ const CampaignHome = () => {
                         <p className="text-lg mt-4">We are the dreamers who dream to make the world a better home.</p>
                     </div>
                 </div>
-                <div className="grid lg:grid-cols-2 grid-cols-1 bg-[#EEEEEE] p-5">
+                <div className="grid lg:grid-cols-2 grid-cols-1 bg-[#0a102b] p-5">
                     <div>
                         <h1 className="text-2xl font-bold">Emergency support for Palestinian crisis.</h1>
                         <p className="text-lg">Donate for Palestinian people in this war period against the Israeli Military Force. </p>
@@ -95,9 +96,12 @@ const CampaignHome = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link to="/donate">
-                            <button className="btn bg-[#F99F24] text-white mt-1">Donate Now</button>
-                        </Link>
+                        <div className="mt-2">
+                            <Link to="/donate">
+                                <MainButton text="Donate Now"></MainButton>
+                                {/* <button className="btn bg-[#F99F24] text-white mt-1">Donate Now</button> */}
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </motion.div>

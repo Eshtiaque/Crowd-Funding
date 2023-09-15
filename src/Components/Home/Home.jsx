@@ -1,7 +1,7 @@
 
 import About from "./About/About";
 import Campaign from "./CampaignHome/CampaignHome";
-import Category from "./Category/Category";
+// import Category from "./Category/Category";
 import News from "./News/News";
 import Success from "./Success/Success";
 import Partners from "./Partners/Partners";
@@ -16,7 +16,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
         <About></About>
         <Campaign></Campaign>
-        <Category></Category>
+        {/* <Category></Category> */}
         <Animation></Animation>
         <Success></Success>
         <News></News>

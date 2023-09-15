@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import SharedBanner from "../Contact/SharedBanner";
-import campaignPhoto from "../../assets/img/Final/10.jpg";
+import campaignPhoto from "../../assets/img/Final/10.webp";
 
 const Info = () => {
   const handleSubmit = e => {

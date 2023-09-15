@@ -8,6 +8,8 @@ import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import MainButton from "../../SharedComponents/MainButton";
+import MainTitle from "../../SharedComponents/MainTitle";
 
 
 const News = () => {
@@ -24,7 +26,7 @@ const News = () => {
 
 
     return (
-        <div ref={ref} className="bg-[#EEF7FF]">
+        <div ref={ref} className=" mt-10">
             <motion.div className="text-center mt-8 mb-14"
                 variants={{
                     hidden: { opacity: 0, y: 75 },
@@ -35,8 +37,9 @@ const News = () => {
                 transition={{ duration: 0.9, delay: 0.60 }}
 
             >
-                <h2 className="text-3xl font-bold p-4 "> Latest News</h2>
-                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+                {/* <h2 className="text-3xl font-bold p-4 "> Latest News</h2>
+                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" /> */}
+           <MainTitle heading="Latest News"></MainTitle>
             </motion.div>
             <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2   "
                 variants={{
@@ -49,7 +52,7 @@ const News = () => {
 
             >
                 <div className="lg:ps-44 m-2">
-                    <div className="card card-bordered lg:w-96 h-76 bg-base-100 shadow-xl  ">
+                    <div className="card card-bordered lg:w-96 h-76 bg-[#0a102b] shadow-xl  ">
                         <figure><img className="h-52 w-full" src={img4} alt="Shoes" /></figure>
                         <p className="text-end pr-2 text-slate-500">27 June 2023</p>
                         <div className="p-2">
@@ -59,7 +62,8 @@ const News = () => {
                             <div className="card-actions justify-end">
                                 <div className="card-actions justify-start">
                                     <Link to="/event">
-                                        <button className="btn bg-[#F99F24] text-white">Read More</button>
+                                        <MainButton text="Read More"></MainButton>
+                                        {/* <button className="btn bg-[#F99F24] text-white">Read More</button> */}
                                     </Link>
                                 </div>
                             </div>
@@ -103,7 +107,7 @@ const News = () => {
            
         <div className="text-end">
             <Link to="/allNews">
-            <button className="btn w-1/4 mb-3 mr-3 hover:text-black bg-transparent text-[#F99F24]   ">See more <BsFillArrowRightCircleFill className="text-xl text-[#F99F24] hover:text-black"/></button></Link>
+            <button className="btn w-1/4 mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  ">See more <BsFillArrowRightCircleFill className="text-xl bg-gradient-to-br from-blue-500 to-purple-500 hover:text-black"/></button></Link>
         </div>
         </div>
     )

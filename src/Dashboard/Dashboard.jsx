@@ -1,5 +1,5 @@
 import { FaBars, FaBell, FaHouseDamage } from "react-icons/fa";
-import logo from "../assets/img/logo-main/logo.png";
+import logo from "../assets/img/logo-main/logo.webp";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useContext } from "react";

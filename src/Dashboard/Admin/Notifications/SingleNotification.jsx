@@ -4,8 +4,23 @@ import useNotification from "../../../hooks/useNotification";
 const SingleNotification = ({ item, index }) => {
     const { header, image } = item
     const [notification, refetch] = useNotification()
+    // console.log(item);
+
+    const date = item.date
+    const img = item.image
+    const location = item.location
+    const desc = item.desc
+    const itemHeader = item.header
+    const progress = item.progress
+
+    const eventItem = {
+        date, img, location, desc, itemHeader, progress
+    }
+    console.log(eventItem);
+
 
     const handleApprove = (item) => {
+        console.log(item);
         Swal.fire({
             title: 'Do you want to approve?',
             text: "You won't be able to revert this!",
@@ -13,15 +28,24 @@ const SingleNotification = ({ item, index }) => {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, approve it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${item._id}`, {
-                    method: 'DELETE'
+
+                // for posting an event  
+
+
+                fetch(`http://localhost:5000/campaigns`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(eventItem)
                 })
+
                     .then(res => res.json())
                     .then(data => {
-                        if (data.deletedCount > 0) {
+                        if (data.approved > 0) {
                             refetch()
                             Swal.fire(
                                 'Approved!',
@@ -29,6 +53,7 @@ const SingleNotification = ({ item, index }) => {
                                 'success'
                             )
                         }
+                        console.log(data);
                     })
 
             }
@@ -45,7 +70,7 @@ const SingleNotification = ({ item, index }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${item._id}`, {
+                fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -89,14 +114,14 @@ const SingleNotification = ({ item, index }) => {
                             <td className="w-[600px] md:text-xl">
                                 {header}
                             </td>
-                           <div className="md:flex gap-3 mt-5  ">
-                           <>
-                                <button onClick={() => handleApprove(item)} className="btn btn-ghost btn-s border border-gray-500 hover:border-blue-500 mb-2 md:mb-0">Approve</button>
-                            </>
-                            <>
-                                <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-s border border-red-500 hover:border-red-700 mb-2 md:mb-0">Delete</button>
-                            </>
-                           </div>
+                            <div className="md:flex gap-3 mt-5  ">
+                                <>
+                                    <button onClick={() => handleApprove(item)} className="btn btn-ghost btn-s border border-gray-500 hover:border-blue-500 mb-2 md:mb-0">Approve</button>
+                                </>
+                                <>
+                                    <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-s border border-red-500 hover:border-red-700 mb-2 md:mb-0">Delete</button>
+                                </>
+                            </div>
                         </tr>
                     </tbody>
                 </table>

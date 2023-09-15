@@ -17,12 +17,14 @@ import Router from './Components/Routes/Routes';
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <QueryClientProvider client={queryClient}>
-        <ToastContainer/>
-        <RouterProvider router={Router} />
-      </QueryClientProvider>
-    </AuthProvider>
-  </React.StrictMode>,
+  <div className='bg-[#050816] text-white'>
+    <React.StrictMode>
+      <AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <ToastContainer />
+          <RouterProvider router={Router} />
+        </QueryClientProvider>
+      </AuthProvider>
+    </React.StrictMode>
+  </div>,
 )

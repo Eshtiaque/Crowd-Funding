@@ -6,9 +6,9 @@ import { Keyboard, Pagination, Navigation } from "swiper/modules";
 import { motion } from "framer-motion"
 
 
-import slide6 from "../../../assets/img/Final/business-people-talking-meeting-table.jpg";
-import slide10 from "../../../assets/img/Final/10.jpg";
-import slide20 from "../../../assets/img/Final/20.jpg";
+import slide6 from "../../../assets/img/Final/business-people-talking-meeting-table.webp";
+import slide10 from "../../../assets/img/Final/10.webp";
+import slide20 from "../../../assets/img/Final/20.webp";
 import "./Header.css";
 import { Link } from "react-router-dom";
 

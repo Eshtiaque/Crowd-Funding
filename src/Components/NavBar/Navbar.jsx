@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import logo from "../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png";
+import logo from "../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.webp";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth } from "firebase/auth";
@@ -107,13 +107,18 @@ const Navbar = () => {
                     <img src={user.photoURL} alt="" />
                   </div>
                 </div>
-                <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-4  hover:bg-black hover:text-[#F99F24]' onClick={handleLogOut}>LogOut</button></Link>
+                {/* <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-4  hover:bg-black hover:text-[#F99F24]' onClick={handleLogOut}>LogOut</button></Link> */}
+                <Link><button className='text-base text-white border-none me-3 bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 border-tl-15 border-tr-15 rounded-3xl' onClick={handleLogOut}>LogOut</button></Link>
               </span>
               :
               <Link to="/login">
-                <button
+                {/* <button
                   type="button" onClick={handleClose}
                   className="btn bg-[#F99F24] text-white border-none me-3 px-6 hover:bg-black hover:text-[#F99F24]"
+                > */}
+                <button
+                  type="button" onClick={handleClose}
+                  className="text-base text-white border-none me-3 bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 border-tl-15 border-tr-15 rounded-3xl"
                 >
                   Login
                 </button>

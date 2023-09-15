@@ -7,6 +7,7 @@ import brand12 from '../../../assets/img/partner-logos/brand-12.png'
 import Marquee from "react-fast-marquee";
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
+import MainTitle from '../../SharedComponents/MainTitle'
 
 
 
@@ -38,8 +39,9 @@ const Partners = () => {
                 transition={{ duration: 0.9, delay: 0.60 }}
 
             >
-                <h2 className="text-3xl font-bold">Who Work With Us</h2>
-                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+                {/* <h2 className="text-3xl font-bold">Who Work With Us</h2>
+                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" /> */}
+                <MainTitle heading="Who Work With Us"></MainTitle>
             </motion.div>
             <motion.div className='mt-8 md:mt-5 p-5 gap-5'
                 variants={{

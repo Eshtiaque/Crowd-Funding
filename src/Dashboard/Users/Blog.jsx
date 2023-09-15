@@ -13,7 +13,7 @@ const Blogs = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/individualBLogs/${user?.email}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/individualBLogs/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -23,7 +23,7 @@ const Blogs = () => {
     }, [user])
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/individualBLogs/searchText/${searchText}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/individualBLogs/searchText/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -51,7 +51,7 @@ const handleDelete =_id =>{
       }).then((result) => {
         if (result.isConfirmed) {
        
-        fetch(`http://localhost:5000/individualBLogs//${_id}`,{
+        fetch(`https://crowdfunding-gamma.vercel.app/individualBLogs//${_id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())

@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import img1 from '../../../assets/images/about-1.png';
-import img2 from '../../../assets/images/about-2.png';
+import img1 from '../../../assets/images/about-1.webp';
+import img2 from '../../../assets/images/about-2.webp';
 // import { useContext } from 'react';
 // import { AuthContext } from '../../../Providers/AuthProvider'; 
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
+import MainButton from '../../SharedComponents/MainButton';
+import MainTitle from '../../SharedComponents/MainTitle';
 
 
 const About = () => {
@@ -34,7 +36,7 @@ const About = () => {
     <div ref={ref}>
       {/* <Link to="/login"><button className='btn btn-success'>Login</button></Link>
       <button className='mx-10 btn btn-success' onClick={handleLogout}>logUot</button> */}
-      <motion.div className="text-center mt-8"
+      <motion.div className="text-center mt-10"
         variants={{
           hidden: { opacity: 0, y: 75 },
           visible: { opacity: 1, y: 0 }
@@ -44,8 +46,9 @@ const About = () => {
         transition={{ duration: 0.9, delay: 0.60 }}
 
       >
-        <h2 className="text-3xl font-bold">About Us</h2>
-        <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+        {/* <h2 className="text-3xl font-bold">About Us</h2>
+        <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" /> */}
+      <MainTitle heading="About Us"></MainTitle>
       </motion.div>
       <motion.div className="grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-16  mb-28 p-5"
         variants={{
@@ -62,7 +65,7 @@ const About = () => {
           <div>
             <img src={img1} alt="" className="w-80" />
             <img src={img2} alt="" className="w-72 absolute -bottom-14 right-4 border hidden md:block" />
-            <div className="w-[70px] h-[60px] bg-[#F99F24] absolute top-20 right-16 hidden md:block"></div>
+            <div className="w-[70px] h-[60px] bg-gradient-to-br from-blue-600 to-purple-600 absolute top-20 right-16 hidden md:block"></div>
           </div>
         </div>
 
@@ -75,9 +78,11 @@ const About = () => {
             <p>We are the dreamers who dream to make the world a better home.</p>
             <p>We are the dreamers who dream to make the world a better home.</p>
           </div>
-          <Link to="/about">
-            <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded">See More</button>
-          </Link>
+          <div className='mt-5'>
+            <Link to="/about">
+              <MainButton text="See more"></MainButton>
+            </Link>
+          </div>
         </motion.div>
       </motion.div>
 

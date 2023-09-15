@@ -13,6 +13,7 @@ import { useRef, useEffect, useState } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import MainTitle from "../SharedComponents/MainTitle";
 
 const AboutUs = () => {
     const ref = useRef(null)
@@ -42,7 +43,8 @@ const AboutUs = () => {
                     }
                 ></SharedBanner>
 
-                <section className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sectionImage})` }}>
+                {/* <section className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sectionImage})` }}> */}
+                <section className="">
 
                     <motion.div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 p-3 lg:text-left md:text-left text-center pt-7"
                         variants={{
@@ -77,18 +79,21 @@ const AboutUs = () => {
                     >
 
                         <div className="text-center mt-8">
-                            <h2 className="text-2xl font-bold">Our Mission</h2>
-                            <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+                            {/* <h2 className="text-2xl font-bold">Our Mission</h2>
+                            <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" /> */}
+                            <MainTitle heading="Our Mission"></MainTitle>
                             <p className="card card-body text-lg"> We are committed to fostering innovation, creativity, and social impact by offering a space where creators can share their stories, connect with supporters, and receive the financial backing they need to turn their visions into tangible outcomes. </p>
                         </div>
                         <div className="text-center mt-8">
-                            <h2 className="text-2xl font-bold"> Our Vision</h2>
-                            <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+                            {/* <h2 className="text-2xl font-bold"> Our Vision</h2>
+                            <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" /> */}
+                            <MainTitle heading="Our Vision"></MainTitle>
                             <p className="card card-body text-lg">Our vision is to create a global platform for positive change through crowdfunding. We envision a world where innovative ideas, creative projects, and meaningful causes are empowered by a community of individuals who believe in the power of collective action.</p>
                         </div>
                         <div className="text-center mt-8">
-                            <h2 className="text-2xl font-bold">Our Gain</h2>
-                            <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+                            {/* <h2 className="text-2xl font-bold">Our Gain</h2>
+                            <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" /> */}
+                           <MainTitle heading="Our Gain"></MainTitle>
                             <p className="card card-body text-lg">The platforms focus on innovation is a driving force for progress.The broad spectrum of projects we support ensures that both societal challenges and entrepreneurial endeavors receive the attention and resources they deserve.Transparency is woven into the fabric of our platform & accountability. </p>
                         </div>
 
@@ -155,7 +160,7 @@ const AboutUs = () => {
 
                 >
                     <h1 className="text-center text-3xl font-bold pt-5 mb-3">Meet Our Team</h1>
-                    <hr className="w-32 border-2 rounded border-orange-400 mx-auto mt-1" />
+                    <hr className="h-1 w-[106px] mt-3 rounded-md bg-gradient-to-br from-blue-600 to-purple-600 mx-auto" />
                     <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 gap-7 mt-7">
                         <div className="md:hidden lg:block"></div>
                         <div className=" bg-gray-300">

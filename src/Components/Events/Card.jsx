@@ -9,7 +9,7 @@ const Card = ({ item }) => {
         publisher_name,
         publisher_image } = item;
     return (
-        <div className="card w-96 mb-5 text-white  shadow-none ">
+        <div className="card w-96 mb-5 text-white bg-[#0a102b] shadow-none ">
            
            <div className="">
            <figure><img className="w-100% h-64 rounded-bl-full " src={image} alt="" /></figure>
@@ -37,8 +37,9 @@ const Card = ({ item }) => {
                     </div>
                     
                     <Link to="/about">
-                        <button className="btn-xs rounded-bl-full ps-3 rounded-tr-full bg-[#F99F24]  text-black">Read More</button>
+                        <button className="btn-xs rounded-bl-full ps-3 rounded-tr-full bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600  text-white">Read More</button>
                     </Link>
+                    {/* bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 */}
                 </div>
 
             </div>

@@ -8,7 +8,7 @@ const AddBlog = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        fetch('http://localhost:5000/blogAdd ', {
+        fetch('https://crowdfunding-gamma.vercel.app/blogAdd ', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
