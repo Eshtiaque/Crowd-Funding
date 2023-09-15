@@ -3,8 +3,6 @@ import useNotification from "../../../hooks/useNotification";
 
 
 const Notifications = () => {
-    // const [notification, setNotification] = useState([])
-
     const [notification] = useNotification()
 
     return (

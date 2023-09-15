@@ -14,7 +14,7 @@ const PiChartDashboard = ({ data }) => {
             left: 25,
           }}
         >
-          <Pie dataKey="expenditure" data={data} fill="#F99F24" className="" label />
+          <Pie dataKey="expenditure" data={data} fill="#130F49" className="" label />
         </PieChart>
       </ResponsiveContainer>
     </div>

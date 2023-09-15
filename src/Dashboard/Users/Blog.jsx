@@ -1,134 +1,151 @@
-import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import axios from 'axios';
 
 const Blogs = () => {
- 
+    let count = 1;
+    const [isLoading, setIsLoading] = useState(false);
     const { user } = useContext(AuthContext);
-    const [Toys, setToys] = useState([]);
-    const [searchText, setSearchText] = useState("");
+    const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/individualBLogs/${user?.email}`)
+        setIsLoading(true);
+        fetch(`https://crowdfunding-gamma.vercel.app/individualBLogs/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                setToys(data);
+                setProjects(data);
                 document.title = "My Blogs";
-            })
-    }, [user])
+                setIsLoading(false);
+            });
+    }, [user]);
 
-    const handleSearch = () => {
-        fetch(`http://localhost:5000/individualBLogs/searchText/${searchText}`)
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            setToys(data);
-          });
-      };
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const name = e.target.search.value;
+        axios
+            .get(`https://crowdfunding-gamma.vercel.app/blogsSearch/${name}`)
+            .then((result) => setProjects(result.data));
+    };
 
-const handleDelete =_id =>{
-    console.log(_id);
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to recover it!",
-        textColor:'#0000',
-        icon: 'warning',
-        iconColor:'red',
-        background:'black',
-        Color:'#545454',
-        showCancelButton: true,
-        confirmButtonColor: '#F40D0D',
-        cancelButtonColor: '#gray',
-        // cancelButtonAriaLabel:'white',
-        confirmButtonText: 'Yes, delete it!',
-        confirmButtonTextColor:'black'
-        
-      }).then((result) => {
-        if (result.isConfirmed) {
-       
-        fetch(`http://localhost:5000/individualBLogs//${_id}`,{
-            method:'DELETE'
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.deletedCount>0){
-                Swal.fire(
-                        'Deleted!',
-                        'Your blog has been deleted.',
-                        'success'
-                      )
-        const remaining =Toys.filter(toy=>toy._id!==_id)
-        setToys(remaining);
+    const handleDelete = _id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to recover it!",
+            textColor: '#0000',
+            icon: 'warning',
+            iconColor: 'red',
+            background: 'white',
+            Color: '#545454',
+            showCancelButton: true,
+            confirmButtonColor: '#F40D0D',
+            cancelButtonColor: '#gray',
+            confirmButtonText: 'Yes, delete it!',
+            confirmButtonTextColor: 'black'
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setIsLoading(true);
+                fetch(`https://crowdfunding-gamma.vercel.app/individualBLog/delete/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your blog has been deleted.',
+                                'success'
+                            );
+                            const remaining = projects.filter(project => project._id !== _id);
+                            setProjects(remaining);
+                            setIsLoading(false);
+                        }
+                    });
             }
-        })
-        }
-      })
-}
+        });
+    };
 
     return (
+        <div className="px-10 w-full h-full mt-28 mb-8">
+            <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
+                <h1 className="text-xl md:text-3xl text-[#130F49] font-semibold">
+                    Project Requests: ({projects.length})
+                </h1>
+                <div className="form-control mt-1">
+                    <div >
+                        <form className="input-group" onSubmit={handleSearch}>
+                            <input
+                                type="text"
+                                name="search"
+                                placeholder="Search…"
+                                className="input input-bordered border border-gray-600 rounded-full text-black placeholder-gray-500
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%"
+                            />
+                            <button className="btn border border-gray-600 rounded-full text-gray-600 placeholder-black
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div className="flex items-end justify-end my-4">
+            </div>
 
-
-        <div className="my-jobs-container">
-            <h1 className="text-center m-2 bg-black text-red-400 p-4 font-black text-4xl rounded-full">My Blog{"'"}s</h1>
-            <div className="search-box  text-center">
-                <input
-               
-                        onChange={(e) => setSearchText(e.target.value)}
-                    type="text"
-                    className="p-1 rounded-lg bg-pink-200 text-black"
-                placeholder="Blog Name "
-                    />{" "}
-                <button onClick={handleSearch} className="btn btn-sm bg-orange-500 m-4">Search</button>
-               
-                <table className="table w-full">
-                    {/* head */}
-                    <thead className="">
-                        <tr >
-                            <th className="bg-black border rounded text-center text-white">#</th>
-                            <th className="bg-black border rounded text-center text-white">Blog Name</th>
-                            <th className="bg-black border rounded text-center text-white">User Name</th>
-                            <th className="bg-black border rounded text-center text-white">Sub-category </th>
-                            {/* <th className="bg-black border rounded text-center text-white">Price</th> */}
-                            {/* <th className="bg-black border rounded text-center text-white" >Quantity</th> */}
-                            <th className="bg-black border rounded text-center text-white">Edit</th>
-                            <th className="bg-black border rounded text-center text-white">Delete</th>
-
-                        </tr>
-                    </thead>
-                    <tbody className="text-black text-center bg-black">
-                        {
-                            Toys.map((toy, index) => <tr key={toy}>
-                                <td className="text-center border-black text-black bg-red-200">{index + 1}</td>
-                                <td className="text-center border-black text-black bg-red-300 font-bold">{toy.name}</td>
-                                <td className="text-center border-black text-black bg-red-200">{toy.sellerName}</td>
-                                <td className="text-center border-black text-black bg-red-300">{toy.category}</td>
-                                {/* <td className="text-center border-black text-black bg-red-200">{toy.price}</td>
-                                <td className="text-center border-black text-black bg-red-300">{toy.quantity}</td> */}
-                                <td className="text-center border-black text-black bg-red-200">
-                                    <Link to={`/editToy/${toy._id}`}>
-                                    <button className="btn rounded-full bg-gradient-to-r from-[#ff0844] via-[#ffb199] to-orange-400 text-black " >Edit</button>
-                                    </Link>
-                                    
-                                </td>
-                                <td className="text-center border-black text-black bg-red-300">
-                                    {" "}
-                                    <button onClick={()=>handleDelete(toy._id)} className="btn bg-gradient-to-r from-orange-400 via-[#ffb199] to-[#ff0844] text-black">Delete
-                                    </button>
-                                </td>
-                            </tr>)
-                        }
-                    </tbody>
-                </table>
-
+            <div className="overflow-x-auto mt-12">
+                {isLoading ? (
+                    <div className="text-center text-gray-500 text-lg my-8">
+                        Refreshing...
+                    </div>
+                ) : (
+                    <table className="table p-4 bg-base-300">
+                        <thead>
+                            <tr className="text-[#130F49] text-center text-xl">
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>E-mail</th>
+                                <th>Mobile</th>
+                                <th>Value</th>
+                                <th>status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {projects?.map((item) => (
+                                <tr key={item._id}>
+                                    <th className="py-4 text-center">{count++}</th>
+                                    <td className="py-4 text-center">{item?.name}</td>
+                                    <td className="py-4 text-center">{item?.email}</td>
+                                    <td className="py-4 text-center">{item?.phone}</td>
+                                    <td className="py-4 text-center">$ {item?.money}</td>
+                                    <td className="py-4 text-center">{item?.status === 'approved' ? 'Approved' : 'Pending' || 'Pending'}</td>
+                                    <td onClick={() => handleDelete(item._id)} className='text-center cursor-pointer'>
+                                        <span className="py-2 px-4 border rounded-lg bg-red-500 font-semibold hover:bg-red-600 text-white">Delete</span>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
             </div>
         </div>
-    )
+    );
 };
 
 export default Blogs;

@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from "react";
+import { getAuth } from "firebase/auth";
+import { app } from "../../Firebase/firebaseConfig";
 
 const TopBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const auth = getAuth(app);
+  const handleLogOut = () => {
+    logOut(auth)
+      .then(result => {
+        localStorage.removeItem('set-token-for-user');
+        result;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
     return (
         <div className="max-w-7xl mx-auto  navbar bg-[#5c771e] text-white ">
         <div className="navbar-start">
@@ -16,7 +33,7 @@ const TopBar = () => {
           
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-2xl">UNIAID</a>
+          <Link to="/" className="btn btn-ghost normal-case text-2xl">UNIAID</Link>
         </div>
         <div className="navbar-center text-black hidden lg:flex">
           <ul tabIndex={0} className="menu menu-horizontal px-1 text-white text-lg">
@@ -29,11 +46,30 @@ const TopBar = () => {
         </div>
         <div className="navbar-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar w-16">
-        <div className="w-12 mr-2 rounded-full">
-          <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrTLYPUyH-UieHupbuKkh1FKZ_rq1dX0gIw&usqp=CAU" />
-        </div>
+       
       </label>
-          <a className="btn btn-md  btn-outline text-white">Logout</a>
+          {/* <a className="btn btn-md  btn-outline text-white">Logout</a> */}
+          {
+            user ?
+              <span className="flex items-center gap-3">
+                <div className="avatar placeholder">
+                  <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
+                    <img src={user.photoURL} alt="" />
+                  </div>
+                </div>
+                <Link><button className='btn btn-md  btn-outline text-white  hover:bg-black hover:text-[#5c771e] ' onClick={handleLogOut}>LogOut</button></Link>
+              </span>
+              :
+              <Link to="/login">
+                <button
+                  type="button" 
+                  className="btn btn-md  btn-outline text-white  hover:bg-black hover:text-[#5c771e]"
+                >
+                  Login
+                </button>
+              </Link>
+          }
+        
         </div>
       </div>
     );

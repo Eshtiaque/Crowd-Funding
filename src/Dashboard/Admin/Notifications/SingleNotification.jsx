@@ -3,7 +3,7 @@ import useNotification from "../../../hooks/useNotification";
 
 const SingleNotification = ({ item, index }) => {
     const { header, image } = item
-    const [notification, refetch] = useNotification()
+    const [ refetch] = useNotification()
 
     const handleApprove = (item) => {
         Swal.fire({
@@ -68,7 +68,7 @@ const SingleNotification = ({ item, index }) => {
 
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto bg-base-300 text-[#130F49] rounded-lg px-4 my-4">
                 <table className="table">
 
                     <tbody>

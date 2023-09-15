@@ -29,24 +29,29 @@ const ProjectDescription = () => {
       })
       .catch(error => console.log(error))
   }
- 
+  console.log(data);
   return (
-    <div className=' text-white min-h-screen lg:min-h-fit mt-36 lg:mt-0'>
-      <h1 className='-mt-4 text-center text-2xl font-bold'>{data.name} project description idea</h1>
-      <hr  className='md:w-8/12 mx-auto mt-4 mb-8'/>
-      <div className='md:flex flex-row mx-10 md:my-5 mt-10'>
-        <div className='basis-1/2 space-y-3'>
-          <h1 className='my-2'>Name: {data.name}</h1>
-          <p className='my-2'>Phone: {data.phone}</p>
-          <p className='my-2'>Email: {data.email}</p>
-          <p className='my-2'>Address: {data.address}</p>
-          <p className='my-2'>Country: {data.country}</p>
-          <p className='my-2'>Status: {data.status}</p>
+    <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8'>
+      <h1 className='mt-4 text-center text-xl md:text-2xl font-bold bg-[#D3F4EC] py-2 md:py-1 rounded-xl'>{data.name}'s Application Details</h1>
+
+      <div className='md:flex flex-row justify-around items-center mx-4 md:mx-10 md:my-5 mt-8 md:mt-12 rounded-xl p-8 bg-base-300'>
+        <div className='basis-1/2 space-y-3.5'>
+          <h1>Name: {data.name}</h1>
+          <p>Phone: {data.phone}</p>
+          <p>Email: {data.email}</p>
+          <p>Address: {data.address}, {data.country}</p>
+          <p>Application for: <small className='text-red-600 uppercase font-semibold'>{data.types}</small> </p>
         </div>
-        <div className='md:basis-1/2 space-y-6 mt-10 md:mt-0'>
-          <p className='my-2'><small className='font-bold text-2xl'>Project Idea: </small>{data.ideas}</p>
-          <p className='my-2'><small className='font-bold text-2xl'>Project Money: </small>{data.money}</p>
-          <button onClick={() => handleAction(data._id)} disabled={data.status === "approved"} className="btn btn-warning text-white my-5">{data.status === "approved"? 'Approved': 'Approve'}</button>
+
+        <div className='md:basis-1/2 space-y-5 mt-10 md:mt-0'>
+          <p><small className='font-semibold text-xl'>Project Idea: </small>{data.ideas}</p>
+          <p className='font-semibold text-xl'>Project Money: <small className='text-green-600 font-semibold text-xl'>${data.money}</small></p>
+
+          <div className='text-center md:text-left'>
+            <button onClick={() => handleAction(data._id)} disabled={data?.status === "approved"} className="py-2 px-4 border rounded-lg bg-[#98c292] font-semibold disabled:bg-white disabled:text-gray-400 hover:bg-[#74df66]">
+              {data.status === "approved" ? 'Approved' : 'Approve'}
+            </button>
+          </div>
         </div>      
       </div>
     </div>
