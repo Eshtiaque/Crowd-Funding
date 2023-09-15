@@ -22,7 +22,7 @@ const Campaign = () => {
             setCampaigns(data)
             setLoading(false)
         })
-    },[])
+    },[user])
 
     console.log(campaigns);
   

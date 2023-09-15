@@ -22,7 +22,7 @@ const Event = () => {
             setEvents(data)
             setLoading(false)
         })
-    },[])
+    },[user])
 
     console.log(events);
   
