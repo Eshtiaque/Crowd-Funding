@@ -10,13 +10,14 @@ const EdiPost = () => {
     event.preventDefault();
     const form =event.target;
     const date = form.date.value;
-    const name = form.title.value;
+    const title = form.title.value;
+    const name = form.name.value;
     const email = form.email.value;
     const blog = form.blog.value;
-    console.log(date,email,blog,name);
+    console.log(date,email,blog,title ,name);
     form.reset();
     console.log(data.name);
-    const update ={date , email,blog ,name};
+    const update ={date , email,blog ,title ,name};
     fetch(`https://crowdfunding-gamma.vercel.app/allPost/${data?._id}`,{
       method:"PATCH",
       headers:{
@@ -52,7 +53,9 @@ const EdiPost = () => {
       <h2 className="font-bold text-4xl mt-3  mb-5 ps-3">Title :</h2>
         <input type="text" name="title" defaultValue={data?.title} placeholder="Type here" className="p-2  w-full text-black " />
         <hr className="border border-gray-400 mb-3" />
-
+        <h2 className="text-black font-bold text-xl mt-5">Author Name :</h2>
+        <input type="text" name="name" defaultValue={data?.name}  placeholder="Type here" className="p-3  w-2/4 text-black border rounded-3xl" />
+        <br />
         <h2 className="text-black font-bold text-xl mt-5">Email :</h2>
         <input type="text" name="email" defaultValue={data?.email}  placeholder="Type here" className="p-3  w-2/4 text-black border rounded-3xl" />
         <br />
