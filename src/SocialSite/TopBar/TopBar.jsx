@@ -29,19 +29,17 @@ const TopBar = () => {
             <li><Link to="/socialBlog" >Home</Link></li>
           <li><Link to="/about" >About</Link></li>
           <li><Link to="/socialBlog/addPost" >Write</Link></li>
-          <li><Link to="/socialBlog/myPost" >My Post</Link></li>
           <li><Link to="/contact" >Contact</Link></li>
           
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-2xl">UNIAID</a>
+          <Link to="/" className="btn btn-ghost normal-case text-2xl">UNIAID</Link>
         </div>
         <div className="navbar-center text-black hidden lg:flex">
           <ul tabIndex={0} className="menu menu-horizontal px-1 text-white text-lg">
           <li><Link to="/socialBlog" >Home</Link></li>
           <li><Link to="/about" >About</Link></li>
           <li><Link to="/socialBlog/addPost" >Write</Link></li>
-          <li><Link to="/socialBlog/myPost" >My Post</Link></li>
           <li><Link to="/contact" >Contact</Link></li>
           
           </ul>

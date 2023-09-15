@@ -30,11 +30,11 @@ const CampaignDetails = () => {
 
 
     return (
-        <div >
+        <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8'>
+            <h1 className='mt-4 text-center text-xl md:text-2xl font-bold bg-[#D3F4EC] py-2 md:py-1 rounded-xl'>Campaigns Details</h1>
 
-            <h1 className='text-center text-4xl font-bold my-5 text-orange-300'>Campaigns Details</h1>
-            <div className="card card-side text-white shadow-xl">
-                <figure><img className='w-96' src={data.image} alt="Movie" /></figure>
+            <div className="card md:card-side mx-auto w-11/12 shadow-xl bg-base-300 mt-8">
+                <figure><img className='md:w-96 w-10/12 mx-auto lg:ml-4' src={data.image} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{data.header}</h2>
                     <p>{data.desc}</p>
@@ -42,10 +42,9 @@ const CampaignDetails = () => {
                     <p>{data.date}</p>
                     <div className="card-actions justify-end">
 
-                        <p><progress className="progress progress-warning bg-white h-6 w-96" value={data.progress} max="100">{data.progress}</progress>
+                        <p><progress className="progress progress-warning bg-white h-3 md:h-4 w-10/12 md:w-96" value={data.progress} max="100">{data.progress}</progress>
                         </p>
-                        {/* <p className='progress progress-error h-6 rounded-full bg-orange-300 text-center text-black'>{data.progress} %</p> */}
-                        <button disabled={data.status === 'approved'} onClick={() => handleAction(data._id)} className="btn bg-[#F99F24]">Approve</button>
+                        <button disabled={data.status === 'approved'} onClick={() => handleAction(data._id)} className="py-2 px-4 border rounded-lg bg-[#98c292] font-semibold disabled:bg-white disabled:text-gray-400 hover:bg-[#74df66]">Approve</button>
                     </div>
                 </div>
             </div>

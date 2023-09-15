@@ -34,6 +34,7 @@ const AllUsers = () => {
     })
       .then(res => res.json())
       .then(result => {
+        console.log(result)
         if (result.modifiedCount > 0) {
           toast.success("modified successfully");
           axios.get('https://crowdfunding-gamma.vercel.app/users')
@@ -43,23 +44,23 @@ const AllUsers = () => {
   }
 
   return (
-    <div className="bg-black px-10 mt w-full h-full mt-28 text-white">
+    <div className="px-10 mt w-full h-full mt-28 mb-8">
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-        <h1 className="md:text-4xl text-2xl text-orange-300 normal-case font-semibold">
-          All Users ({data?.data?.length})
+        <h1 className="md:text-3xl text-xl text-[#130F49] font-semibold">
+          Total Users ({data?.data?.length})
         </h1>
-        <div className="form-control mt-1 text-black">
+        <div className="form-control mt-1">
           <div >
             <form className="input-group" onSubmit={handleSearch}>
               <input
                 type="text"
                 name="search"
                 placeholder="Search…"
-                className=" input input-bordered border border-black rounded-full text-black placeholder-black
-                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
+                className="input input-bordered border border-gray-600 rounded-full text-black placeholder-gray-500
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%"
               />
-              <button className="btn  border border-black rounded-full text-black placeholder-black
-                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%">
+              <button className="btn border border-gray-600 rounded-full text-gray-600 placeholder-black
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -81,11 +82,11 @@ const AllUsers = () => {
       </div>
 
       <div className="overflow-x-auto mt-12">
-        <table className="table text-white">
+        <table className="table p-4 bg-base-300">
           {/* head */}
           <thead>
-            <tr className="text-orange-300 text-xl">
-              <th>Serial No</th>
+            <tr className="text-[#130F49] text-center text-xl">
+              <th>#</th>
               <th>Name</th>
               <th>E-mail</th>
               <th>Status</th>
@@ -95,12 +96,12 @@ const AllUsers = () => {
           <tbody>
             {
               data.data.map(data => <tr key={data._id}>
-                <th >{count++}</th>
-                <td>{data.name}</td>
-                <td>{data.email}</td>
-                <td>{data?.role || "User"}</td>
-                <td>
-                  <button onClick={() => handleAction(data._id, data)} className="py-2 px-4 border border-white rounded-bl-full rounded-tr-full bg-transparent text-[#F99F24] hover:text-black hover:bg-[#F99F24]">change role</button>
+                <th className="text-center">{count++}</th>
+                <td className="text-center">{data.name}</td>
+                <td className="text-center">{data.email}</td>
+                <td className="text-center">{data?.role === 'admin'? 'Admin' : 'User' || "User"}</td>
+                <td className="text-center">
+                  <button onClick={() => handleAction(data._id, data)} className="py-2 px-4 border rounded-lg bg-[#98c292] font-semibold hover:bg-[#74df66]">Change Role</button>
                 </td>
               </tr>)
             }

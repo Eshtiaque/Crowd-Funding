@@ -4,20 +4,6 @@ import useNotification from "../../../hooks/useNotification";
 const SingleNotification = ({ item, index }) => {
     const { header, image } = item
     const [notification, refetch] = useNotification()
-    // console.log(item);
-
-    const date = item.date
-    const img = item.image
-    const location = item.location
-    const desc = item.desc
-    const itemHeader = item.header
-    const progress = item.progress
-
-    const eventItem = {
-        date, img, location, desc, itemHeader, progress
-    }
-    console.log(eventItem);
-
 
     const handleApprove = (item) => {
         console.log(item);
@@ -93,7 +79,7 @@ const SingleNotification = ({ item, index }) => {
 
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto bg-base-300 text-[#130F49] rounded-lg px-4 my-4">
                 <table className="table">
 
                     <tbody>
