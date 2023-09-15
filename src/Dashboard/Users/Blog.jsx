@@ -26,7 +26,7 @@ const Blogs = () => {
         e.preventDefault();
         const name = e.target.search.value;
         axios
-            .get(`https://crowdfunding-gamma.vercel.app//blogsSearch/${name}`)
+            .get(`https://crowdfunding-gamma.vercel.app/blogsSearch/${name}`)
             .then((result) => setProjects(result.data));
     };
 

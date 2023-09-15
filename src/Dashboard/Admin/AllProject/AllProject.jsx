@@ -33,7 +33,7 @@ const AllProject = () => {
     e.preventDefault();
     const name = e.target.search.value;
     axios
-      .get(`https://crowdfunding-gamma.vercel.app//blogsSearch/${name}`)
+      .get(`https://crowdfunding-gamma.vercel.app/blogsSearch/${name}`)
       .then((result) => setData(result.data));
   };
 
