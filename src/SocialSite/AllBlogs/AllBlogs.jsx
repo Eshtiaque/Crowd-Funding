@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import SingleBlog from "./SingleBlog";
-import { Link } from "react-router-dom";
 
 const AllBlogs = () => {
     const [searchText, setSearchText] = useState("");
@@ -38,12 +37,10 @@ const AllBlogs = () => {
 
                 {
                     items?.map(item => <>
-                        <Link to={`/socialBlog/details/${item?._id}`}>
                             <SingleBlog
                                 key={item._id}
                                 item={item}
                             ></SingleBlog>
-                        </Link>
                     </>
 
                     )
