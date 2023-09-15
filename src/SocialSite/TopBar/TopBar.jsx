@@ -29,7 +29,6 @@ const TopBar = () => {
             <li><Link to="/socialBlog" >Home</Link></li>
           <li><Link to="/about" >About</Link></li>
           <li><Link to="/socialBlog/addPost" >Write</Link></li>
-          <li><Link to="/socialBlog/myPost" >My Post</Link></li>
           <li><Link to="/contact" >Contact</Link></li>
           
             </ul>
@@ -41,7 +40,6 @@ const TopBar = () => {
           <li><Link to="/socialBlog" >Home</Link></li>
           <li><Link to="/about" >About</Link></li>
           <li><Link to="/socialBlog/addPost" >Write</Link></li>
-          <li><Link to="/socialBlog/myPost" >My Post</Link></li>
           <li><Link to="/contact" >Contact</Link></li>
           
           </ul>

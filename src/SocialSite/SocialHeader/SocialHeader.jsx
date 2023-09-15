@@ -33,7 +33,7 @@ const SocialHeader = () => {
                 zIndex: "999",
             }}
             
-            className="rounded-full w-16 h-16 p-5 block md:hidden lg:hidden bg-[#5c771e]  "
+            className="rounded-full w-16 h-16 p-5 block md:hidden lg:hidden   "
             ><BsPlus className="text-5xl rounded-full text-white bg-[#5c771e]  "/> </Link>
            
         </div>
