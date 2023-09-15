@@ -37,6 +37,12 @@ import Blog from "../../Dashboard/Users/Blog";
 import Campaign from "../../Dashboard/Users/Campaign";
 import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
+import Details from "../../SocialSite/AllBlogs/Details";
+
+import VideoCall from "../../Dashboard/Users/VideoCall";
+
+import EditPost from "../../SocialSite/EditPost/EditPost";
+
 
 const Router = createBrowserRouter([
     {
@@ -107,6 +113,16 @@ const Router = createBrowserRouter([
         {
           path: "/socialBlog",
           element:<SocialHeader></SocialHeader>
+        },
+        {
+          path: "editPost/:id",
+          element:<EditPost></EditPost>,
+          loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/editPost/${params.id}`)
+        },
+        {
+          path: "details/:id",
+          element:<Details></Details>,
+          loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/allSocialPost/${params.id}`)
         }
         ]
     },
@@ -198,6 +214,10 @@ const Router = createBrowserRouter([
         {
           path:"payment",
           element: <UserPaymentHistory></UserPaymentHistory>
+        },
+        {
+          path:"videoCall",
+          element: <VideoCall></VideoCall>
         },
       ]
     }

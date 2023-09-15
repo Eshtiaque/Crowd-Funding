@@ -1,9 +1,12 @@
-import { FaBars, FaBell, FaHouseDamage } from "react-icons/fa";
+import { FaBars, FaBell, FaHouseDamage, FaPhone } from "react-icons/fa";
 import logo from "../assets/img/logo-main/logo.png";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+
+import videoCall from "../../src/assets/call.png"
+
 import {
     FaAddressCard,
     FaAngular,
@@ -42,8 +45,14 @@ function Dashboard() {
 
                 <Outlet className="h-screen overflow-y-scroll"></Outlet>
 
+
                 <div className="h-20 lg:hidden bg-gray-600 top-0 left-0 right-0 absolute border-b-[1px] border-gray-400"></div>
                 <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gray-500 border-b-[1px] shadow-lg top-0 left-0 right-0 absolute">
+
+                <div className="h-20 lg:hidden bg-black opacity-50%  top-0 left-0 right-0 absolute border-b-[1px] border-gray-700"></div>
+                
+                <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gradient-to-r from-black via-black to-[#F99F24] top-0 left-0 right-0 absolute">
+
                     <div className="flex items-center gap-7 justify-center absolute right-5">
                         <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
                         <Link to="/dashboard/notifications">
@@ -192,7 +201,16 @@ function Dashboard() {
                                         </Link>
                                     </div>
                                 </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                       <img src={videoCall} className="w-6 h-6"  alt="" />
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/videoCall">
+                                           Meeting
+                                        </Link>
+                                    </div>
+                                </li>
                             </>}
+                        
 
                         <div className="flex flex-col items-center rounded-none mt-auto">
                             <p className="text-gray-400 text-sm">{user?.email}</p>
