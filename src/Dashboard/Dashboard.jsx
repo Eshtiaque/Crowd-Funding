@@ -172,7 +172,7 @@ function Dashboard() {
                                 <li className="mt-3">
                                     <div className="flex flex-row hover:bg-gray-400">
                                         <FaBriefcase></FaBriefcase>
-                                        <Link className=" w-full rounded-none m-0" to="/dashboard/UserAddCampaign">
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/UserAllCampaign">
                                             All Campaign
                                         </Link>
                                     </div>
@@ -180,7 +180,7 @@ function Dashboard() {
                                 <li className="mt-3">
                                     <div className="flex flex-row hover:bg-gray-400">
                                         <FaBriefcase></FaBriefcase>
-                                        <Link className=" w-full rounded-none m-0" to="/dashboard/AddEvent">
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/userAllEvent">
                                             All Event
                                         </Link>
                                     </div>

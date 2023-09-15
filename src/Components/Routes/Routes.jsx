@@ -38,6 +38,8 @@ import Campaign from "../../Dashboard/Users/Campaign";
 import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 import Details from "../../SocialSite/AllBlogs/Details";
+import UserCampaignAdd from "../../Dashboard/Users/UserCampaignAdd";
+import AddEvent from "../../Dashboard/Users/AddEvent";
 
 const Router = createBrowserRouter([
     {
@@ -199,12 +201,20 @@ const Router = createBrowserRouter([
           element: <Blog></Blog>
         },
         {
-          path:"userAddCampaign",
+          path:"userAllCampaign",
           element: <Campaign></Campaign>
         },
         {
-          path:"AddEvent",
+          path:"userAddCampaign",
+          element: <UserCampaignAdd></UserCampaignAdd>
+        },
+        {
+          path:"userAllEvent",
           element: <Event></Event>
+        },
+        {
+          path:"userAddEvent",
+          element: <AddEvent></AddEvent>
         },
         {
           path:"payment",
