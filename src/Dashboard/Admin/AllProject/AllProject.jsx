@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import {  FaUndoAlt} from "react-icons/fa";
+import { FaUndoAlt } from "react-icons/fa";
 import { useLoaderData } from "react-router";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -31,9 +31,9 @@ const AllProject = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const search = e.target.search.value;
+    const name = e.target.search.value;
     axios
-      .get(`https://crowdfunding-gamma.vercel.app/blogsSearch/${search}`)
+      .get(`https://crowdfunding-gamma.vercel.app//blogsSearch/${name}`)
       .then((result) => setData(result.data));
   };
 
@@ -93,14 +93,14 @@ const AllProject = () => {
             Refreshing...
           </div>
         ) : (
-            <table className="table p-4 bg-base-300">
+          <table className="table p-4 bg-base-300">
             <thead>
-                <tr className="text-[#130F49] text-center text-xl">
-                  <th>#</th>
+              <tr className="text-[#130F49] text-center text-xl">
+                <th>#</th>
                 <th>Name</th>
                 <th>E-mail</th>
-                  <th>Mobile</th>
-                  <th>Value</th>
+                <th>Mobile</th>
+                <th>Value</th>
                 <th>status</th>
                 <th>Action</th>
               </tr>

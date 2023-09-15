@@ -14,6 +14,14 @@ import SocialShare from "./SocialShare";
 
 
 const Details = () => {
+const [like,setLike]=useState(450)
+const [isLike ,setIsLike]=useState(false)
+
+const onclickButtonClick=()=>{
+  setLike(like+(isLike?-1 :1));
+  setIsLike(!isLike);
+}
+
   const { user } = useContext(AuthContext)
   const [blogs, setBlogs] = useState([]);
 
@@ -115,7 +123,8 @@ const Details = () => {
                 </div>
                 
                 <div className='flex gap-7 mr-9 items-center justify-end '>
-                            <FcLikePlaceholder className='text-3xl '/>
+                  <p className="font-black">{like}</p>
+                            <FcLikePlaceholder onClick={onclickButtonClick} className='text-3xl '/>
                             <FaRegCommentAlt className="text-cyan-600 border text-3xl p-1"/>
                             
                             <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" bg-yellow-300 rounded p-1 text-2xl"/></button>

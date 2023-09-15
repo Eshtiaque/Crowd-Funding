@@ -12,7 +12,7 @@ const ACampaign = () => {
                 </h1>
             </div>
             <div className='bg-base-300 py-6 rounded-xl mt-12'>
-                <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 mx-6'>
+                <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-5 mx-6'>
                     {
                         campaigns?.map(campaign => <div className="card w-60 glass" key={campaign._id}>
                             <figure><img className='h-44 w-full' src={campaign.image} alt="" /></figure>

@@ -32,13 +32,12 @@ import SocialHeader from "../../SocialSite/SocialHeader/SocialHeader";
 import AddPost from "../../SocialSite/AddPost/AddPost";
 import SocialSite from "../../SocialSite/SocialSite";
 import Notifications from "../../Dashboard/Admin/Notifications/Notifications";
-import AddBlog from "../../Dashboard/Users/AddBlog";
 import Blog from "../../Dashboard/Users/Blog";
 import Campaign from "../../Dashboard/Users/Campaign";
 import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 import Details from "../../SocialSite/AllBlogs/Details";
-
+import AddProject from "../../Dashboard/Users/AddProject";
 import VideoCall from "../../Dashboard/Users/VideoCall";
 
 import EditPost from "../../SocialSite/EditPost/EditPost";
@@ -197,7 +196,7 @@ const Router = createBrowserRouter([
 
         {
           path:"userAddBlogs",
-          element: <AddBlog></AddBlog>
+          element: <AddProject></AddProject>
         },
         {
           path:"userBlog",

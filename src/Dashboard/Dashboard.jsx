@@ -1,4 +1,3 @@
-
 import { FaBars, FaBell, FaHouseDamage } from "react-icons/fa";
 import logo from "../assets/img/logo-main/logo.png";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
@@ -7,7 +6,6 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import {
     FaAddressCard,
-    FaAngular,
     FaArtstation,
     FaBriefcase,
     FaDollarSign,
@@ -19,6 +17,10 @@ import {
 import { toast } from "react-toastify";
 import useAdmin from './../hooks/useAdmin';
 import useNotification from './../hooks/useNotification';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+import videoCall from "../../src/assets/call.png";
+import { BiLogoBlogger, BiSolidDonateHeart } from "react-icons/bi";
+import { MdPayment } from "react-icons/md";
 
 function Dashboard() {
     const { user, logOut } = useContext(AuthContext);
@@ -47,12 +49,14 @@ function Dashboard() {
                 <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gray-500 border-b-[1px] shadow-lg top-0 left-0 right-0 absolute">
                     <div className="flex items-center gap-7 justify-center absolute right-5">
                         <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
-                        <Link to="/dashboard/notifications">
-                            <button className="flex">
-                                <FaBell className="text-center text-3xl text-white" />
-                                <div className="badge font-semibold">+{notification?.length || 0}</div>
-                            </button>
-                        </Link>
+                        {isAdmin &&
+                            <Link to="/dashboard/notifications">
+                                <button className="flex">
+                                    <FaBell className="text-center text-3xl text-white" />
+                                    <div className="badge font-semibold">+{notification?.length || 0}</div>
+                                </button>
+                            </Link>
+                        }
                         <div className="avatar">
                             <div className="w-14 cursor-pointer rounded-full border-2 border-[#A5A6FF]" title={user?.displayName}>
                                 <img src={user?.photoURL} className="" />
@@ -143,14 +147,14 @@ function Dashboard() {
                                     <FaLock />
                                     <span className="ml-2">Events</span>
                                 </NavLink>
-
+                                {/* 
                                 <NavLink
                                     to="/dashboard/blog"
                                     className="flex flex-row items-center hover:bg-gray-400 hover:text-black hover:rounded-lg rounded-none p-3 nav"
                                 >
                                     <FaAngular />
                                     <span className="ml-2">Blogs</span>
-                                </NavLink>
+                                </NavLink> */}
                             </> :
                             <>
                                 <li className="mt-3">
@@ -163,15 +167,15 @@ function Dashboard() {
                                 </li>
                                 <li className="mt-3">
                                     <div className="flex flex-row hover:bg-gray-400">
-                                        <FaBriefcase></FaBriefcase>
+                                        <BiLogoBlogger className='text-2xl' />
                                         <Link className=" w-full rounded-none m-0" to="/dashboard/userBlog">
-                                            My Blogs
+                                            My Projects
                                         </Link>
                                     </div>
                                 </li>
                                 <li className="mt-3">
                                     <div className="flex flex-row hover:bg-gray-400">
-                                        <FaBriefcase></FaBriefcase>
+                                        <BiSolidDonateHeart className='text-2xl' />
                                         <Link className=" w-full rounded-none m-0" to="/donate">
                                             Donate Here
                                         </Link>
@@ -187,9 +191,17 @@ function Dashboard() {
                                 </li> */}
                                 <li className="mt-3">
                                     <div className="flex flex-row hover:bg-gray-400">
-                                        <FaBriefcase></FaBriefcase>
+                                        <MdPayment className='text-2xl' />
                                         <Link className=" w-full rounded-none m-0" to="/dashboard/payment">
-                                            My Payments
+                                            My Donations
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <img src={videoCall} className="w-6 h-6" alt="" />
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/videoCall">
+                                            Meeting
                                         </Link>
                                     </div>
                                 </li>
@@ -207,6 +219,15 @@ function Dashboard() {
                     </div>
                 </ul>
             </div>
+            {
+                !isAdmin &&
+                <div>
+                    <MessengerCustomerChat
+                        pageId="129135300280678"
+                        appId="643817741223173"
+                    />
+                </div>
+            }
         </div>
     );
 }

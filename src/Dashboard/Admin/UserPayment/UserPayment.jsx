@@ -69,7 +69,7 @@ const UserPayment = () => {
                             <th>Name</th>
                             <th>Mobile No</th>
                             <th>Address</th>
-                            <th>transaction Id</th>
+                            <th>Transaction ID</th>
                             <th>Amount</th>
                         </tr>
                     </thead>
