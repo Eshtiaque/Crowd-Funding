@@ -1,4 +1,4 @@
-import { Segment } from "@mui/icons-material";
+import { useState } from "react";
 import {
     EmailShareButton,
     FacebookShareButton,
@@ -7,10 +7,11 @@ import {
     TelegramShareButton,
     TwitterShareButton,
     WhatsappShareButton,
-   
+
 } from "react-share";
 
-import {  FacebookIcon,
+import {
+    FacebookIcon,
     EmailIcon,
     LinkedinIcon,
     PinterestIcon,
@@ -20,26 +21,97 @@ import {  FacebookIcon,
 } from "react-share";
 
 const SocialShare = () => {
-    const url = "https://crowd-funding-dc81b.web.app/socialBlog";
+    const [url, setUrl] = useState('');
+
+    const handleInputChange = (event) => {
+        setUrl(event.target.value);
+    };
+
+    const handleCopyClick = () => {
+        // Create a temporary input element to copy the URL
+        const tempInput = document.createElement('input');
+        tempInput.value = url;
+        document.body.appendChild(tempInput);
+
+        // Select the URL text and copy it to the clipboard
+        tempInput.select();
+        document.execCommand('copy');
+
+        // Remove the temporary input element
+        document.body.removeChild(tempInput);
+
+        alert('URL copied to clipboard: ' + url);
+    };
+
+    const URL = "https://crowd-funding-dc81b.web.app/socialBlog";
     return (
         <div>
             <div>
                 <FacebookShareButton
-                url={url}
-                quota={"hey lets share"}
-                hashtag="#Blogs"
+                    url={URL}
+                    quota={"hey lets share"}
+                    hashtag="#Blogs"
                 >
                     <FacebookIcon logoFillColor="white" round={true} ></FacebookIcon>
                 </FacebookShareButton>
                 <WhatsappShareButton
-                url={url}
-                quota={"hey lets share"}
-                hashtag="#Blogs"
+                    url={URL}
+                    quota={"hey lets share"}
+                    hashtag="#Blogs"
                 >
                     <WhatsappIcon logoFillColor="white" round={true} ></WhatsappIcon>
                 </WhatsappShareButton>
+
+                <LinkedinShareButton
+                    url={URL}
+                    quota={"hey lets share"}
+                    hashtag="#Blogs"
+                >
+                    <LinkedinIcon logoFillColor="white" round={true} ></LinkedinIcon>
+                </LinkedinShareButton>
+
+                <EmailShareButton
+                    url={URL}
+                    quota={"hey lets share"}
+                    hashtag="#Blogs"
+                >
+                    <EmailIcon logoFillColor="white" round={true} ></EmailIcon>
+                </EmailShareButton>
+
+                <TelegramShareButton
+                    url={URL}
+                    quota={"hey lets share"}
+                    hashtag="#Blogs"
+                >
+                    <TelegramIcon logoFillColor="white" round={true} ></TelegramIcon>
+                </TelegramShareButton>
+
+                <PinterestShareButton
+                    url={URL}
+                    quota={"hey lets share"}
+                    hashtag="#Blogs"
+                >
+                    <PinterestIcon logoFillColor="white" round={true} ></PinterestIcon>
+                </PinterestShareButton>
+
+                <TwitterShareButton
+                    url={URL}
+                    quota={"hey lets share"}
+                    hashtag="#Blogs"
+                >
+                    <TwitterIcon logoFillColor="white" round={true} ></TwitterIcon>
+                </TwitterShareButton>
             </div>
-            <h1></h1>
+            <div className="lg:flex md:flex justify-center gap-1 items-center">
+                <input
+                    className="border mt-5 p-1  rounded-lg"
+                    type="text"
+                    placeholder="Enter URL"
+                    value={URL}
+                    onChange={handleInputChange}
+                />
+                <button className="btn-sm mt-5  bg-[#5c771e] text-white rounded-lg " onClick={handleCopyClick}>Copy URL</button>
+            </div>
         </div>
     );
 };

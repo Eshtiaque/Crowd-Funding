@@ -9,6 +9,7 @@ import {FcLikePlaceholder} from 'react-icons/fc';
 import {FaRegCommentAlt} from 'react-icons/fa';
 import {BsShare } from 'react-icons/bs';
 import Swal from "sweetalert2";
+import SocialShare from "./SocialShare";
 
 
 
@@ -116,7 +117,17 @@ const Details = () => {
                 <div className='flex gap-7 mr-9 items-center justify-end '>
                             <FcLikePlaceholder className='text-3xl '/>
                             <FaRegCommentAlt className="text-cyan-600 border text-3xl p-1"/>
-                            <BsShare className="bg-yellow-300 rounded p-1 text-2xl"/>
+                            
+                            <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" bg-yellow-300 rounded p-1 text-2xl"/></button>
+                            <dialog id="my_modal_2" className="modal">
+                                <div className="modal-box">
+                                    <h3 className="font-bold text-lg">Share Your Blog ...</h3>
+                                    <p className="mt-3"><SocialShare ></SocialShare></p>
+                                </div>
+                                <form method="dialog" className="modal-backdrop">
+                                    <button>close</button>
+                                </form>
+                            </dialog>
                         </div>
                
                 </div>
