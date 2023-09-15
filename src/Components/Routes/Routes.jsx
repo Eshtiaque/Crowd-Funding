@@ -39,6 +39,7 @@ import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 import Details from "../../SocialSite/AllBlogs/Details";
 import MyPost from "../../SocialSite/MyPost/MyPost";
+import VideoCall from "../../Dashboard/Users/VideoCall";
 
 const Router = createBrowserRouter([
     {
@@ -214,6 +215,10 @@ const Router = createBrowserRouter([
         {
           path:"payment",
           element: <UserPaymentHistory></UserPaymentHistory>
+        },
+        {
+          path:"videoCall",
+          element: <VideoCall></VideoCall>
         },
       ]
     }
