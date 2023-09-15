@@ -74,6 +74,8 @@ function Dashboard() {
                 </div>
             </div>
 
+            {/* for nothing  */}
+
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
