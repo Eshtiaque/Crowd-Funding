@@ -1,12 +1,15 @@
 import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const VideoCall = () => {
+  const { user}= useContext(AuthContext)
     const roomID = "UniAid";
       let myMeeting = async (element) => {
      // generate Kit Token
       const appID = 1826497658;
       const serverSecret = "9d9222ca31963ee012102c648a5c2ef2";
-      const kitToken =  ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID,  Date.now().toString(),  "Shahadat");
+      const kitToken =  ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID,  Date.now().toString(),  `${user.displayName}`);
 
 
      // Create instance object from Kit Token.

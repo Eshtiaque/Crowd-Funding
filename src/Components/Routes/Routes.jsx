@@ -39,7 +39,6 @@ import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 import Details from "../../SocialSite/AllBlogs/Details";
 
-import MyPost from "../../SocialSite/MyPost/MyPost";
 import VideoCall from "../../Dashboard/Users/VideoCall";
 
 import EditPost from "../../SocialSite/EditPost/EditPost";
