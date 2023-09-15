@@ -29,40 +29,43 @@ const EventDetails = () => {
 
 
   return (
-    <div className='text-white min-h-screen lg:min-h-fit mt-36 '>
-      <h1 className='-mt-4 text-center text-2xl font-bold'>{data.publisher_name}{'s'} Event Details</h1>
+    <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8'>
+      <h1 className='mt-4 text-center text-xl md:text-2xl font-bold bg-[#D3F4EC] py-2 md:py-1 rounded-xl'>{data.publisher_name}'s Event Details</h1>
 
-      <p className='text-yellow-700 text-lg font-semibold text-center my-2 uppercase'>{data.status}</p>
-      <hr className='md:w-8/12 mx-auto mt-4 mb-8' />
+      <p className='text-green-600 text-lg font-bold text-center my-2 uppercase'>{data.status}</p>
+      <hr className='md:w-8/12 mx-auto mt-4 mb-4 border border-[#D3F4EC]' />
 
-      <div className='flex flex-col items-center gap-6 mx-10 md:my-5 mt-10'>
-        <div className='flex items-center justify-around gap-4'>
-          <img src={data.publisher_image} alt="" className='w-14 h-14 rounded-full border' />
-          <p className='text-yellow-700 text-lg font-semibold'>Publisher: <span className='text-gray-300'>{data.publisher_name}</span></p>
-          <p className='text-yellow-700 text-lg font-semibold'>Email: <span className='text-gray-300'>{data.email ? data.email : 'N/A'}</span></p>
+      <div className='flex flex-col items-center gap-6 md:my-3 w-full mx-auto mt-10'>
+        <div className='flex flex-col md:flex-row items-center justify-around gap-4'>
+          <img src={data.publisher_image} alt="" className='w-16 h-16 rounded-full border-2 border-[#9ee0d0]' />
+          <div>
+            <p className='text-[#130F49] text-lg font-semibold'>Publisher: <span className='text-gray-700'>{data.publisher_name}</span></p>
+            <p className='text-[#130F49] text-lg font-semibold'>Email: <span className='text-gray-700'>{data.email ? data.email : 'N/A'}</span></p>
+          </div>
         </div>
 
-        <hr className='my-3 w-full' />
-        <div className='space-y-6 mt-10 md:mt-0 flex flex-col items-center'>
+        <hr className='my-3 w-full border border-[#D3F4EC]' />
+
+        <div className='space-y-6 mt-4 md:mt-0 flex flex-col items-center bg-base-300 p-4'>
           <img src={data.image} alt="" className='w-80 rounded-xl' />
           <div>
-            <p className='text-justify text-gray-300'>
-              <small className='font-bold text-xl text-yellow-700'>Event Title: </small>
+            <p className='text-justify text-gray-700'>
+              <small className='font-bold text-xl text-[#130F49]'>Event Title: </small>
               {data.title}
             </p>
 
-            <p className='text-justify text-gray-300 my-2'>
-              <small className='font-bold text-xl text-yellow-700'>Description: </small>
+            <p className='text-justify text-gray-700 my-2'>
+              <small className='font-bold text-xl text-[#130F49]'>Description: </small>
               {data.description}
             </p>
 
-            <p className='text-gray-300 text-lg'>
-              <small className='font-semibold text-yellow-700'>Publish date: </small>
+            <p className='text-gray-700 text-lg'>
+              <small className='font-semibold text-[#130F49]'>Publish date: </small>
               {data.publish_date}
             </p>
 
             <div className='flex justify-end'>
-              <button onClick={() => handleAction(data._id)} disabled={data.status === "approved"} className="btn btn-warning text-white">{data.status === "approved" ? 'Approved' : 'Approve'}</button>
+              <button onClick={() => handleAction(data._id)} disabled={data.status === "approved"} className="py-2 px-4 border rounded-lg bg-[#98c292] font-semibold disabled:bg-white disabled:text-gray-400 hover:bg-[#74df66]">{data.status === "approved" ? 'Approved' : 'Approve'}</button>
             </div>
           </div>
         </div>

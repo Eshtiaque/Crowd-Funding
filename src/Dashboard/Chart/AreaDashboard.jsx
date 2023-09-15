@@ -15,12 +15,12 @@ const AreaDashboard = ({data}) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" tick={{ fill: 'white' }} />
-          <YAxis tick={{ fill: 'white' }} />
+          <XAxis dataKey="month" tick={{ fill: '#130F49' }} />
+          <YAxis tick={{ fill: '#130F49' }} />
           <Tooltip />
-          <Area type="monotone" dataKey="expenditure" stackId="1" stroke="#FFFF" fill="#FFFF" />
-          <Area type="monotone" dataKey="earning" stackId="1" stroke="#F99F24" fill="#F99F24" />
-          <Area type="monotone" dataKey="amt" stackId="1" stroke="#FFFF" fill="#FFFF" />
+          <Area type="monotone" dataKey="expenditure" stackId="1" stroke="#130F49" fill="#00000" />
+          <Area type="monotone" dataKey="earning" stackId="1" stroke="#F99F24" fill="#130F49" />
+          <Area type="monotone" dataKey="amt" stackId="1" stroke="#130F49" fill="#68A2EE" />
         </AreaChart>
       </ResponsiveContainer>
     );

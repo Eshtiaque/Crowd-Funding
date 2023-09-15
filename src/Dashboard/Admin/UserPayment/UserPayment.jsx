@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import axios from 'axios';
 
@@ -6,45 +6,40 @@ const UserPayment = () => {
     const [payments, setPayments] = useState(useLoaderData());
     useEffect(() => {
         setPayments(payments.filter(payment => payment.transaction !== null && payment.transaction !== undefined));
-    }, [])
+    }, [payments]);
 
     let count = 1;
 
     const handleSearch = (e) => {
         e.preventDefault();
-        const name=e.target.search.value;
-        // console.log(name)
+        const name = e.target.search.value;
         axios.get(`https://crowdfunding-gamma.vercel.app/paymentHistory/${name}`)
-        .then(result=>{
-            setPayments(result.data.filter(payment => payment.transaction !== null && payment.transaction !== undefined));
-        })
-    }
+            .then(result => {
+                setPayments(result.data.filter(payment => payment.transaction !== null && payment.transaction !== undefined));
+            });
+    };
     const totalAmount = payments.reduce((accumulator, currentPayment) => {
         return accumulator + parseFloat(currentPayment.price);
     }, 0);
-    // console.log(payments)
 
     return (
-        <div className="bg-black px-10 min-h-[83vh] w-full h-full mt-28 text-white">
-
+        <div className="px-10 mt w-full h-full mt-28 mb-8">
             <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-                <h1 className="text-2xl md:text-4xl text-orange-300 normal-case font-semibold">
+                <h1 className="md:text-3xl text-xl text-[#130F49] font-semibold">
                     All Payments
                 </h1>
-                <div className="form-control mt-1 text-black">
+                <div className="form-control mt-1">
                     <div >
-                        {/* className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
-                    bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%" */}
-                        <form onSubmit={handleSearch} className="input-group">
+                        <form className="input-group" onSubmit={handleSearch}>
                             <input
-                                name="search"
                                 type="text"
+                                name="search"
                                 placeholder="Search…"
-                                className="input input-bordered border border-black rounded-full text-black placeholder-black
-                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
+                                className="input input-bordered border border-gray-600 rounded-full text-black placeholder-gray-500
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%"
                             />
-                            <button className="btn border border-black rounded-full text-black placeholder-black
-                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%">
+                            <button className="btn border border-gray-600 rounded-full text-gray-600 placeholder-black
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-6 w-6"
@@ -66,11 +61,11 @@ const UserPayment = () => {
             </div>
 
             <div className="overflow-x-auto mt-12">
-                <table className="table text-white">
+                <table className="table p-4 bg-base-300">
                     {/* head */}
                     <thead>
-                        <tr className="text-orange-300 text-xl text-center">
-                            <th>Serial No</th>
+                        <tr className="text-[#130F49] text-center text-xl">
+                            <th>#</th>
                             <th>Name</th>
                             <th>Mobile No</th>
                             <th>Address</th>
@@ -81,21 +76,21 @@ const UserPayment = () => {
                     <tbody>
                         {
                             payments?.map(data => <tr key={data._id}>
-                                <th>{count++}</th>
-                                <td>{data?.name}</td>
-                                <td>{data?.number}</td>
-                                <td>{data.address}</td>
-                                <td>{data.transaction}</td>
-                                <td>{data?.price} $</td>
+                                <th className="text-center">{count++}</th>
+                                <td className="text-center">{data?.name}</td>
+                                <td className="text-center">{data?.number}</td>
+                                <td className="text-center">{data.address}</td>
+                                <td className="text-center">{data.transaction}</td>
+                                <td className="text-center text-green-700 font-semibold">$ {data?.price}</td>
                             </tr>)
                         }
                         <tr>
-                            <td>Total Amount =</td>
+                            <td className="text-center">Total=</td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{totalAmount} $</td>
+                            <td className="text-center text-green-700 font-semibold">$ {totalAmount}</td>
                         </tr>
                     </tbody>
                 </table>

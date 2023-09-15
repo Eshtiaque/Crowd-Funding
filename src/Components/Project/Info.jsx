@@ -1,8 +1,12 @@
-import Swal from "sweetalert2";
 import SharedBanner from "../Contact/SharedBanner";
 import campaignPhoto from "../../assets/img/Final/10.jpg";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Info = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate()
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -11,11 +15,12 @@ const Info = () => {
     const email = form.email.value;
     const phone = form.phone.value;
     const address = form.address.value;
+    const types = form.types.value;
     const country = form.country.value;
     const money = form.money.value;
     const ideas = form.ideas.value;
 
-    const saveUser = { name, email, phone, address, country, money, ideas };
+    const saveUser = { name, email, phone, address, country, money, ideas, types, status: 'pending' };
     fetch('https://crowdfunding-gamma.vercel.app/blogs', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -24,19 +29,12 @@ const Info = () => {
       .then(res => res.json())
       .then(data => {
         if (data.insertedId) {
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Project Details Submitted',
-            showConfirmButton: false,
-            timer: 1000
-          });
+          toast.success('Application Submitted')
           form.reset();
+          navigate('/project')
         }
       });
   };
-  //conic-gradient(rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))
-  //bg-[conic-gradient(var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black
 
   return (
     <div className="bg-gradient-to-bl from-gray-700 via-gray-900 to-black 
@@ -66,12 +64,13 @@ const Info = () => {
             type="text"
             className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
             placeholder="Full Name"
+            value={user?.displayName}
             required />
 
           <label
             htmlFor="name"
             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
-            Full Name*
+            Full Name
           </label>
         </div>
 
@@ -81,12 +80,13 @@ const Info = () => {
             type="email"
             className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
             placeholder="Email"
+            value={user?.email}
             required />
 
           <label
             htmlFor="email"
             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
-            Email*
+            Email
           </label>
         </div>
 
@@ -96,12 +96,13 @@ const Info = () => {
             type="number"
             className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
             placeholder="+880"
+            required
           />
 
           <label
             htmlFor="phone"
             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
-            Phone Number*
+            Phone Number
           </label>
         </div>
 
@@ -116,13 +117,21 @@ const Info = () => {
           <label
             htmlFor="address"
             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
-            Address*
+            Address
           </label>
         </div>
 
         <div className="relative">
-          <select className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 focus:outline-none focus:borer-rose-600 text-sm text-gray-700" name='country'>
-            <option disabled selected required>Country*</option>
+          <select className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 focus:outline-none focus:borer-rose-600 text-sm text-gray-700" name='types' required>
+            <option disabled selected required>Apply For</option>
+            <option value="entrepreneur">Entrepreneur</option>
+            <option value="disaster">Disaster</option>
+          </select>
+        </div>
+
+        <div className="relative">
+          <select className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 focus:outline-none focus:borer-rose-600 text-sm text-gray-700" name='country' required>
+            <option disabled selected required>Country</option>
             <option value="USA">United States</option>
             <option value="UK">United Kingdom</option>
             <option value="Canada">Canada</option>
@@ -140,15 +149,16 @@ const Info = () => {
         <div className="relative">
           <input
             name="money"
-            type="text"
+            type="number"
             className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
             placeholder="Approximate Value"
+            required
           />
 
           <label
             htmlFor="money"
             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
-            Approximate Value*
+            Approximate Value $
           </label>
         </div>
 
@@ -158,12 +168,13 @@ const Info = () => {
             type="text"
             className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
             placeholder="ideas"
+            required
           />
 
           <label
             htmlFor="ideas"
             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
-            Project Details*
+            Project Details
           </label>
         </div>
 
