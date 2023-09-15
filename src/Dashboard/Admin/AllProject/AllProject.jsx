@@ -42,21 +42,23 @@ const AllProject = () => {
   };
 
   return (
-    <div className="bg-black px-10 w-full h-full mt-28 text-white min-h-[80vh]">
+    <div className="px-10 w-full h-full mt-28 mb-8">
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-        <h1 className="text-2xl md:text-4xl text-orange-300 normal-case font-semibold">
-          All Projects ({data?.data?.length})
+        <h1 className="text-xl md:text-3xl text-[#130F49] font-semibold">
+          Project Requests: ({data?.data?.length})
         </h1>
-        <div className="form-control mt-1 text-black">
-          <div>
-            <form onSubmit={handleSearch} className="input-group">
+        <div className="form-control mt-1">
+          <div >
+            <form className="input-group" onSubmit={handleSearch}>
               <input
-                name="search"
                 type="text"
+                name="search"
                 placeholder="Search…"
-                className="input input-bordered border border-black rounded-full text-black placeholder-black bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
+                className="input input-bordered border border-gray-600 rounded-full text-black placeholder-gray-500
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%"
               />
-              <button className="btn border border-black rounded-full text-black placeholder-black bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%">
+              <button className="btn border border-gray-600 rounded-full text-gray-600 placeholder-black
+                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -85,19 +87,20 @@ const AllProject = () => {
         </p>
       </div>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mt-12">
         {isLoading ? (
           <div className="text-center text-gray-500 text-lg my-8">
             Refreshing...
           </div>
         ) : (
-          <table className="table text-white">
+            <table className="table p-4 bg-base-300">
             <thead>
-              <tr className="text-orange-300 text-xl">
-                <th>Serial No</th>
+                <tr className="text-[#130F49] text-center text-xl">
+                  <th>#</th>
                 <th>Name</th>
                 <th>E-mail</th>
-                <th>Mobile No</th>
+                  <th>Mobile</th>
+                  <th>Value</th>
                 <th>status</th>
                 <th>Action</th>
               </tr>
@@ -105,14 +108,15 @@ const AllProject = () => {
             <tbody>
               {data?.data?.map((item) => (
                 <tr key={item._id}>
-                  <th className="py-4">{count++}</th>
-                  <td className="py-4">{item?.name}</td>
-                  <td className="py-4">{item?.email}</td>
-                  <td className="py-4">{item?.phone || "User"}</td>
-                  <td className="py-4">{item?.status}</td>
+                  <th className="py-4 text-center">{count++}</th>
+                  <td className="py-4 text-center">{item?.name}</td>
+                  <td className="py-4 text-center">{item?.email}</td>
+                  <td className="py-4 text-center">{item?.phone}</td>
+                  <td className="py-4 text-center">$ {item?.money}</td>
+                  <td className="py-4 text-center">{item?.status === 'approved' ? 'Approved' : 'Pending' || 'Pending'}</td>
                   <Link
                     to={`/dashboard/description/${item?._id}`}
-                    className="p-2 border border-white rounded-bl-full rounded-tr-full bg-transparent text-[#F99F24] hover:text-black hover:bg-[#F99F24] my-2"
+                    className="py-2 px-4 border rounded-lg bg-[#98c292] font-semibold hover:bg-[#74df66]"
                   >
                     <td>Details</td>
                   </Link>

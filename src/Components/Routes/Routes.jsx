@@ -164,11 +164,6 @@ const Router = createBrowserRouter([
           loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/campaigns/${params.id}`),
         },
         {
-          path:"description/:id",
-          element: <AdminRoute><ProjectDescription /></AdminRoute>,
-          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/blogs/${params.id}`)
-        },
-        {
           path:"UserPayment",
           element: <AdminRoute><UserPayment></UserPayment></AdminRoute>,
           loader:()=>fetch("https://crowdfunding-gamma.vercel.app/paymentHistory"),
