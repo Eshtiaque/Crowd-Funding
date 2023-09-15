@@ -9,7 +9,7 @@ const AddPost = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        fetch('http://localhost:5000/addSocialPostBlog', {
+        fetch('https://crowdfunding-gamma.vercel.app/addSocialPostBlog', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const AddPost = () => {
          
            
          </div>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <form className="" onSubmit={handleSubmit(onSubmit)}>
                 <div >
                         <h5 className="font-bold text-4xl mt-3 ps-3 ">Title . . .</h5>
@@ -54,13 +54,19 @@ const AddPost = () => {
                     </div>
                     <hr className="border border-gray-400" />
                
-                  <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 mt-9 ps-3">
+                  <div className="grid lg:grid-cols-4 md:grid-cols-4 grid-cols-1 mt-9 ps-3">
                   <div>
                         <h5 className="font-bold  ">Photo :</h5>
                         <input className="p-3 border rounded-3xl  w-3/4 "  accept=".jpeg, .png, .jpg"
                             {...register("photo")}  />
                     </div>
                   <div>
+                        <h5 className="font-bold  ">Author - Email :</h5>
+             <input className="p-3  w-3/4 text-black border
+                         rounded-3xl" defaultValue=""
+                            {...register("email",{ required: true })} />
+                    </div>
+                    <div>
                         <h5 className="font-bold  ">Author - Name :</h5>
              <input className="p-3  w-3/4 text-black border
                          rounded-3xl" defaultValue=""

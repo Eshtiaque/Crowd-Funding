@@ -5,8 +5,10 @@ import {FaRegCommentAlt} from 'react-icons/fa';
 import {BsShare} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
+
 const SingleBlog = ({ item }) => {
-    const { name, title, photo ,date } = item;
+    // const { user} =useContext(AuthContext)
+    const {  title, photo ,date ,name } = item;
     return (
         <div className='+'>
             {/* rounded-tr-full rounded-br-full rounded-tl-full */}
