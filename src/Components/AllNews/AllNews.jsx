@@ -1,5 +1,5 @@
 import SharedBanner from "../Contact/SharedBanner";
-import img from "../../assets/images/blogsNews.jpg"
+import img from "../../assets/images/blogsNews.webp"
 import img5 from "../../assets/img/others img/jeremias-ybanez-fqFm_YJGHZk-unsplash.jpg"
 import img6 from "../../assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.jpg"
 import img7 from "../../assets/img/others img/josh-appel-NeTPASr-bmQ-unsplash.jpg"

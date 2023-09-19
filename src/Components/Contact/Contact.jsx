@@ -27,7 +27,7 @@ const Contact = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mb-10">
             <div>
                  <SharedBanner
                     background={background}
@@ -42,9 +42,10 @@ const Contact = () => {
                     }
                 ></SharedBanner> 
 
-                <div ref={ref} className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bg})` }}>
+                {/* <div ref={ref} className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bg})` }}> */}
+                <div ref={ref} className="">
                     <div className="md:flex justify-center gap-4 mx-auto pb-8 pt-8 lg:ps-0 md:ps-0 ps-5 ">
-                        <motion.div className="text-neutral"
+                        <motion.div className="text-white"
                         
                         variants={{
                             hidden: { opacity: 0, y: 75 },
@@ -71,7 +72,7 @@ const Contact = () => {
                                 <FaLocationArrow />
                                 <p>712, Free school street, London</p>
                             </div>
-                            <div className='flex gap-5 text-neutral text-3xl mt-10 cursor-pointer'>
+                            <div className='flex gap-5 text-white text-3xl mt-10 cursor-pointer'>
                                 <FaFacebook />
                                 <FaInstagram />
                                 <FaTwitter />
@@ -97,7 +98,7 @@ const Contact = () => {
                                 <input className="border-2 border-black rounded w-[230px] px-2" type="text" name="name" placeholder="Your name"></input>
                                 <input className="border-2 border-black rounded w-[230px] px-2" type="email" name="email" placeholder="Your email"></input>
                                 <textarea className="border-2 border-black rounded w-[230px] px-2" type="area" name="name" placeholder="Write message"></textarea>
-                                <input className="btn btn-warning w-28 text-white" type="submit" />
+                                <input className="cursor-pointer w-[230px] text-base text-white border-none me-3 bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 border-tl-15 border-tr-15 rounded-3xl" type="submit" />
                             </form>
                         </motion.div>
                     </div>

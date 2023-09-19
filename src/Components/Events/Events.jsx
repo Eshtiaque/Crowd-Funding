@@ -6,6 +6,7 @@ import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
 import Card from "./Card";
 import { useRef } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
+import MainTitle from "../SharedComponents/MainTitle";
 
 
 
@@ -34,7 +35,9 @@ const Events = () => {
 
     //bg-gradient-to-r from-neutral-600 from-10% via- via-50% to-neutral-600 to-90%
     return (
-        <div ref={ref} className="bg-cover bg-center bg-no-repeat  max-w-7xl mx-auto " style={{ backgroundImage: `url(${bg})` }}>
+        // <div ref={ref} className="bg-cover bg-center bg-no-repeat  max-w-7xl mx-auto " style={{ backgroundImage: `url(${bg})` }}>
+
+        <div ref={ref} className="max-w-7xl mx-auto ">
             <div>
                 <SharedBanner
                     background={img}
@@ -58,9 +61,9 @@ const Events = () => {
                     transition={{ duration: 0.9, delay: 1 }}
 
                 >
-                    <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
-                    <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" />
-               
+                    {/* <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
+                    <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" /> */}
+               <MainTitle heading="Our All Events"></MainTitle>
                 <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]  ">
                     <input
                         type="text"

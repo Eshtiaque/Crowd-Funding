@@ -1,7 +1,7 @@
 import SharedBanner from "../Contact/SharedBanner";
-import campaignPhoto from "../../assets/img/Final/10.jpg";
-import project from "../../assets/img/Final/10.jpg";
-import help from "../../assets/img/Final/05.jpg";
+import campaignPhoto from "../../assets/img/Final/10.webp";
+import project from "../../assets/img/Final/10.webp";
+import help from "../../assets/img/Final/05.webp";
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
