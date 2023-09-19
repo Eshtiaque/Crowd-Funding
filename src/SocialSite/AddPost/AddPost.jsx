@@ -38,7 +38,7 @@ const AddPost = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto text-black">
+        <div className="max-w-7xl mx-auto">
            
          <div className="text-end">
             <img className="w-full" src={image} alt="" />
@@ -49,32 +49,32 @@ const AddPost = () => {
                 <form className="" onSubmit={handleSubmit(onSubmit)}>
                 <div >
                         <h5 className="font-bold text-4xl mt-3 ps-3 ">Title . . .</h5>
-                        <input className="p-2  w-full text-black  " defaultValue=""
+                        <input className="p-2  w-full text-white bg-[#050816]  " defaultValue="" placeholder="#ready ?"
                             {...register("title")} />
                     </div>
-                    <hr className="border border-gray-400" />
+                    <hr className="border border-primary-focus" />
                
                   <div className="grid lg:grid-cols-4 md:grid-cols-4 grid-cols-1 mt-9 ps-3">
                   <div>
                         <h5 className="font-bold  ">Photo :</h5>
-                        <input className="p-3 border rounded-3xl  w-3/4 "  accept=".jpeg, .png, .jpg"
+                        <input className="p-3 border border-primary-focus bg-[#050816] rounded-3xl  w-3/4 " placeholder="#photo"  accept=".jpeg, .png, .jpg"
                             {...register("photo")}  />
                     </div>
                   <div>
                         <h5 className="font-bold  ">Author - Email :</h5>
-             <input className="p-3  w-3/4 text-black border
-                         rounded-3xl" defaultValue=""
+             <input className="p-3  w-3/4 border border-primary-focus bg-[#050816] 
+                         rounded-3xl" placeholder="#email" defaultValue=""
                             {...register("email",{ required: true })} />
                     </div>
                     <div>
                         <h5 className="font-bold  ">Author - Name :</h5>
-             <input className="p-3  w-3/4 text-black border
-                         rounded-3xl" defaultValue=""
+             <input className="p-3  w-3/4 border border-primary-focus bg-[#050816] 
+                         rounded-3xl" placeholder="#your name" defaultValue=""
                             {...register("name")} />
                     </div>
                     <div>
                         <h5 className="font-bold ">Date :</h5>
-                        <input className="p-3 w-3/4  text-black border rounded-3xl" type="date"
+                        <input className="p-3 w-3/4 border border-primary-focus bg-[#050816] rounded-3xl" type="date" 
                             {...register("date")} />
                     </div>
                   </div>
@@ -86,7 +86,7 @@ const AddPost = () => {
                    
                     <div className="text-left m-1">
                        
-                        <input className=" w-full items-start pb-48 text-black p-4  border rounded-lg placeholder:" defaultValue="" placeholder="Write here . . ." {...register("blog")} />
+                        <input className=" w-full items-start pb-48 border border-primary-focus bg-[#151824]   p-4 rounded-lg placeholder:" defaultValue="" placeholder="Write here . . ." {...register("blog")} />
                     </div>
                     <div>
 
@@ -95,9 +95,7 @@ const AddPost = () => {
 
                         {errors.exampleRequired && <span>This field is required</span>}
 
-                        <input type="submit"  className='btn bg-[#5c771e] text-white
-                       hover:text-black   w-full mt-3 mb-3  '/>
-
+                        <input className="btn text-white mt-5 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl py-1 lg:ms-72 hover:from-purple-600 hover:to-blue-600 w-1/2 " type="submit" />
                     </div>
                 </form>
             </div>

@@ -32,7 +32,7 @@ const AllBlogs = () => {
                     className="ps-3 p-1 mt-5 rounded-lg bg-gray-300 text-black"
                     placeholder="Search Blog "
                 />{" "}
-                <button onClick={handleSearch} className="btn btn-sm items-center  bg-[#5c771e] text-white m-4">Search</button>
+                <button onClick={handleSearch} className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white m-4 hover:from-purple-600 hover:to-blue-600">Search</button>
             </div>
 
             <div className="mt-1 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 lg:p-12 md:p-12">

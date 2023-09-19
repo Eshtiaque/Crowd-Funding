@@ -4,7 +4,12 @@ import photo from "../../assets/SocialBLog/Green Minimalist Blog Post Linkedin A
 import { BsPlus } from 'react-icons/bs';
 import AllBlogs from "../AllBlogs/AllBlogs";
 
+
 const SocialHeader = () => {
+
+   
+
+    
     return (
         <div className="max-w-7xl mx-auto  ">
             
@@ -21,7 +26,7 @@ const SocialHeader = () => {
             }}
             
             className="rounded-full w-16   h-16   "
-            > <BsPlus className="text-5xl rounded-full text-white bg-[#5c771e]  "/>
+            > <BsPlus className="text-5xl  rounded-full  bg-gradient-to-br from-blue-600 to-purple-600  "/>
             
             </Link>
 

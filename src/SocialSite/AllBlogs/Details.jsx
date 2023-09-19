@@ -88,7 +88,7 @@ const onclickButtonClick=()=>{
   
     return (
         <div className="max-w-7xl mx-auto ">
-            <img className="rounded-lg h-96 lg:mt-2 mx-auto" src={photo} alt="" />
+            <img className="rounded-lg h-96  mx-auto" src={photo} alt="" />
             <div className="flex justify-between items-center m-5">
                 <div>
                 <h1 className="font-black lg:text-7xl md:text-5xl text-3xl my-3">{title}</h1>
@@ -125,12 +125,12 @@ const onclickButtonClick=()=>{
                 <div className='flex gap-7 mr-9 items-center justify-end '>
                   <p className="font-black">{like}</p>
                             <FcLikePlaceholder onClick={onclickButtonClick} className='text-3xl '/>
-                            <FaRegCommentAlt className="text-cyan-600 border text-3xl p-1"/>
+                            <FaRegCommentAlt className="text-cyan-400  text-3xl p-1"/>
                             
-                            <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" bg-yellow-300 rounded p-1 text-2xl"/></button>
+                            <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" bg-yellow-300 text-black rounded p-1 text-2xl"/></button>
                             <dialog id="my_modal_2" className="modal">
                                 <div className="modal-box">
-                                    <h3 className="font-bold text-lg">Share Your Blog ...</h3>
+                                    <h3 className="font-bold text-lg text-black italic">Share Your Blog ...</h3>
                                     <p className="mt-3"><SocialShare ></SocialShare></p>
                                 </div>
                                 <form method="dialog" className="modal-backdrop">

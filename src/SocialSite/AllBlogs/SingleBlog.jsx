@@ -32,7 +32,7 @@ const SingleBlog = ({ item }) => {
                             <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare/></button>
                             <dialog id="my_modal_2" className="modal">
                                 <div className="modal-box">
-                                    <h3 className="font-bold text-lg">Share Your Blog ...</h3>
+                                    <h3 className="font-bold text-lg text-black italic">Share Your Blog ...</h3>
                                     <p className="py-4"><SocialShare></SocialShare></p>
                                 </div>
                                 <form method="dialog" className="modal-backdrop">

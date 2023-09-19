@@ -104,7 +104,7 @@ const SocialShare = () => {
             </div>
             <div className="lg:flex md:flex justify-center gap-1 items-center">
                 <input
-                    className="border mt-5 p-1  rounded-lg"
+                    className="border mt-5 p-1  text-black rounded-lg"
                     type="text"
                     placeholder="Enter URL"
                     value={URL}
