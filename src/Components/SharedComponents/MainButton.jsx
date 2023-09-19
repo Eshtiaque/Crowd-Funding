@@ -1,4 +1,3 @@
-import React from 'react';
 
 const MainButton = (props) => {
     const { text } = props

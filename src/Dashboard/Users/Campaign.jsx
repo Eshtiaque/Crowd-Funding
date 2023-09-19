@@ -1,4 +1,3 @@
-
 import { AuthContext } from '../../Providers/AuthProvider';
 import { useEffect } from 'react';
 import { useContext } from 'react';
@@ -16,7 +15,7 @@ const Campaign = () => {
 
     useEffect( () => {
         setLoading(true)
-        fetch(`https://crowdfunding-gamma.vercel.app/individualCampaign/${user?.email}`)
+        fetch(`http://localhost:5000/individualCampaign/${user?.email}`)
         .then(result => result.json())
         .then(data=>{
             setCampaigns(data)
@@ -70,7 +69,7 @@ const Campaign = () => {
                 </div>
                 <div className="flex flex-row hover:bg-orange-400">
                     {/* <FaBriefcase></FaBriefcase> */}
-                    <Link className="btn border-2 border-orange-300 hover:bg-orange-300 hover:text-black bg-black text-orange-300 font-bold w-full rounded-none m-0" to="/dashboard/UserAddCampaign"> Add Campaign</Link>
+                    <Link className="btn border-2 border-orange-300 hover:bg-orange-300 hover:text-black bg-black text-orange-300 font-bold w-full rounded-none m-0" to="/dashboard/userAddCampaign"> Add Campaign</Link>
                 </div>
             </div>
 

@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import TopBar from "./TopBar/TopBar";
 import SocialFooter from "./SocialFooter/SocialFooter";
+import Navbar from "../Components/NavBar/Navbar";
 
 const SocialSite = () => {
     return (
         <div>
-            <TopBar></TopBar>
+            <Navbar></Navbar>
             <Outlet/>
             <SocialFooter></SocialFooter>
         </div>

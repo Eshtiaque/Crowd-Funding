@@ -1,4 +1,3 @@
-
 import { AuthContext } from '../../Providers/AuthProvider';
 import { useEffect } from 'react';
 import { useContext } from 'react';

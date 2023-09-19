@@ -87,7 +87,7 @@ const onclickButtonClick=()=>{
   }
   
     return (
-        <div className="max-w-7xl mx-auto bg-slate-100">
+        <div className="max-w-7xl mx-auto ">
             <img className="rounded-lg h-96 lg:mt-2 mx-auto" src={photo} alt="" />
             <div className="flex justify-between items-center m-5">
                 <div>

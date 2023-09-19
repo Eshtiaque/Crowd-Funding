@@ -90,11 +90,11 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero bg-base-200 text-white ">
+            <div className="hero   text-white ">
 
-                <video className='videoTag  lg:mx-auto w-auto lg:block md:block hidden ' autoPlay loop muted>
+                {/* <video className='videoTag  lg:mx-auto w-auto lg:block md:block hidden ' autoPlay loop muted>
                     <source src={video} type='video/mp4' />
-                </video>
+                </video> */}
 
                 <div className="hero-content p-0 flex-none lg:flex-row">
                     <div className="text-center text-white font-black lg:text-left w-1/2 mr-12 lg:block md:hidden hidden">
@@ -133,7 +133,7 @@ const Login = () => {
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black  hover:bg-[#F99F24] hover:border-none hover:text-black lg:font-semibold md:font-semibold font-extrabold  lg:text-base md:text-base text-lg" type='submit' value="Login" />
+                                    <input className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black  hover:bg-gradient-to-br from-blue-600 to-purple-600  hover:border-none hover:text-white lg:font-semibold md:font-semibold font-extrabold  lg:text-base md:text-base text-lg" type='submit' value="Login" />
                                 </div>
                                 <div className="form-control mt-6">
                                     <button onClick={handleGoogleSignIn} className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black hover:bg-[#F99F24] hover:border-none hover:text-black lg:font-semibold md:font-semibold font-extrabold lg:text-base md:text-base text-lg" type='submit' value="Login"><span className="mr-2 bg-white rounded-full"><FcGoogle /></span> Google</button>

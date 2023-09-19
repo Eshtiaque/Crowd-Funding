@@ -61,7 +61,7 @@ const CampaignHome = () => {
                     <div>
                         <h1 className="text-2xl font-bold">Emergency support for Palestinian crisis.</h1>
                         <p className="text-lg">Donate for Palestinian people in this war period against the Israeli Military Force. </p>
-                        <progress className="progress progress-warning w-56 mt-6" value="50" max="100"></progress>
+                        <progress className="progress progress-primary bg-gray-700 w-56 mt-6" value="50" max="100"></progress>
                         <p className="text-lg">50% Raised</p>
                         <p className="text-lg mt-3 mb-4">Goal: $5000</p>
                     </div>

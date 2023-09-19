@@ -2,8 +2,8 @@
 // import { useEffect } from "react";
 // import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import project from "../../assets/img/Final/10.jpg";
-import help from "../../assets/img/Final/05.jpg";
+import project from "../../assets/img/Final/10.webp";
+import help from "../../assets/img/Final/05.webp";
 
 const AddBlog = () => {
     // const { register,

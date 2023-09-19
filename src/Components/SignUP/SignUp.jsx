@@ -93,10 +93,8 @@ const SignUp = () => {
  
 
   return (
-    <div className="hero max-w-7xl  mx-auto  bg-base-200  ">
-       <video className='videoTag  lg:mx-auto w-auto lg:block md:block hidden' autoPlay loop muted>
-                <source src={video1} type='video/mp4' />
-            </video>
+    <div className="hero max-w-7xl  mx-auto   ">
+       
       <div className="hero-content p-0 flex-none lg:flex-row ">
         
         <div className="card flex-shrink-0 max-w-sm shadow-2xl">

@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import SingleBlog from "./SingleBlog";
 
 const AllBlogs = () => {
     const [searchText, setSearchText] = useState("");
     const [items, setItems] = useState([]);
+
     useEffect(() => {
+      
         fetch("https://crowdfunding-gamma.vercel.app/allSocialPost")
             .then(res => res.json())
             .then(data => {
@@ -22,7 +24,7 @@ const AllBlogs = () => {
     };
 
     return (
-        <div className=" ">
+        <div className="">
             <div className="search-box  text-center">
                 <input
                     onChange={(e) => setSearchText(e.target.value)}

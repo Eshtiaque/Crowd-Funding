@@ -5,6 +5,7 @@ import { FaRegCommentAlt } from 'react-icons/fa';
 import { BsShare } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import SocialShare from './SocialShare';
+import MainButton from '../../Components/SharedComponents/MainButton';
 
 
 const SingleBlog = ({ item }) => {
@@ -13,7 +14,7 @@ const SingleBlog = ({ item }) => {
     return (
         <div className='+'>
             {/* rounded-tr-full rounded-br-full rounded-tl-full */}
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-[#0a102b] shadow-xl">
                 <figure><img className='h-56 w-full' src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl">
@@ -40,8 +41,9 @@ const SingleBlog = ({ item }) => {
                             </dialog>
                         </div>
                         {/* <Link to="/socialBlog/details"> */}
-                        <Link to={`/socialBlog/details/${item?._id}`}>
-                            <div className="badge bg-[#5c771e]  text-white mt-3 py-3">Read Blogs</div>
+                        <Link  to={`/socialBlog/details/${item?._id}`}>
+                            <MainButton text="Read Blogs" > </MainButton>
+                            {/* <div className="badge bg-[#5c771e]  text-white mt-3 py-3">Read Blogs</div> */}
                         </Link>
                     </div>
                 </div>

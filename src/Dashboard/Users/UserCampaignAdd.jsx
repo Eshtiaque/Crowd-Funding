@@ -14,7 +14,7 @@ const UserCampaignAdd = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        fetch('https://crowdfunding-gamma.vercel.app/campaignsAdd', {
+        fetch('http://localhost:5000/campaignsAdd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

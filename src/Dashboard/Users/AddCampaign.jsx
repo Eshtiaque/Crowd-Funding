@@ -8,7 +8,7 @@ const AddCampaign = () => {
         const saveData = {
             status: 'approved',
         };
-        fetch(`http://localhost:5000/individualCampaign/${email}`, {
+        fetch(`https://crowdfunding-gamma.vercel.app/individualCampaign/${email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -31,7 +31,6 @@ const AddCampaign = () => {
 
     return (
         <div >
-
             <h1 className='text-center text-4xl font-bold my-5 text-orange-300'>Campaigns Details</h1>
             <div className="card card-side text-white shadow-xl">
                 <figure><img className='w-96' src={data.photoURL} alt="Movie" /></figure>

@@ -1,5 +1,8 @@
 import SharedBanner from "../Contact/SharedBanner";
-import campaignPhoto from "../../assets/img/Final/10.jpg";
+import campaignPhoto from "../../assets/img/Final/10.webp";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
 
 const Info = () => {
   const { user } = useAuth();
