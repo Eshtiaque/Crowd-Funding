@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from "../../Providers/AuthProvider";
-import video from "../../assets/Video/348855346_6387300347996886_8348118468822906576_n.mp4"
 import { useForm } from "react-hook-form";
 const Login = () => {
     const auth = getAuth();
@@ -90,7 +89,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero   text-white ">
+            <div className="hero h-screen   text-white ">
 
                 {/* <video className='videoTag  lg:mx-auto w-auto lg:block md:block hidden ' autoPlay loop muted>
                     <source src={video} type='video/mp4' />
@@ -107,9 +106,7 @@ const Login = () => {
                     </div>
 
                     <div className="card rounded-none flex-shrink-0 max-w-sm shadow-2xl">
-                        <video className='videoTag lg:mx-auto w-auto lg:hidden md:hidden block' autoPlay loop muted>
-                            <source src={video} type='video/mp4' />
-                        </video>
+                        
                         <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4">
 
                             <h1 className="text-2xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-white">Login</h1>

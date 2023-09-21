@@ -76,7 +76,7 @@ const Header = () => {
                   <Link to="/project">
                     <motion.button
                       type="button"
-                      className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-[#F99F24] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded"
+                      className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600"
 
                       variants={{
                         hidden: { opacity: 0, y: 75 },
@@ -92,7 +92,7 @@ const Header = () => {
                   <Link to="/donate">
                     <motion.button
                       type="button"
-                      className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded-full mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       variants={{
                         hidden: { opacity: 0, y: 75 },
                         visible: { opacity: 1, y: 0 }
@@ -150,7 +150,7 @@ const Header = () => {
                   <Link to="/project">
                     <motion.button
                       type="button"
-                      className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-[#F99F24] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded"
+                      className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600"
 
                       variants={{
                         hidden: { opacity: 0, y: 75 },
@@ -167,7 +167,7 @@ const Header = () => {
                   <Link to="/donate">
                     <motion.button
                       type="button"
-                      className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded-full mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 
                       variants={{
                         hidden: { opacity: 0, y: 75 },
@@ -224,7 +224,7 @@ const Header = () => {
                   <Link to="/project">
                     <motion.button
                       type="button"
-                      className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-[#F99F24] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded"
+                      className="text-white mt-8 font-semibold text-xl h-14 w-48   bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600"
 
                       variants={{
                         hidden: { opacity: 0, y: 75 },
@@ -241,7 +241,7 @@ const Header = () => {
                   <Link to="/donate">
                     <motion.button
                       type="button"
-                      className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded-full mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 
                       variants={{
                         hidden: { opacity: 0, y: 75 },

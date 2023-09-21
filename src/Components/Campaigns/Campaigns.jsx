@@ -9,7 +9,6 @@ import FetchData from "./FetchData";
 import SharedBanner from "../Contact/SharedBanner";
 import campaignPhoto from "../../assets/img/section-banner/melanie-lim-SkMBbB9gjQc-unsplash.jpg";
 import { BarLoader } from "react-spinners";
-import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
 import { motion, useInView, useAnimation } from "framer-motion"
 import MainButton from "../SharedComponents/MainButton";
 import MainTitle from "../SharedComponents/MainTitle";

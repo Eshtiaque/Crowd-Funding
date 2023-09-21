@@ -106,7 +106,7 @@ const Router = createBrowserRouter([
     },
     {
       path: "/socialBlog",
-      element: <PrivateRoute><SocialSite></SocialSite></PrivateRoute>,
+      element: <SocialSite></SocialSite>,
       children: [
         {
           path: "addPost",

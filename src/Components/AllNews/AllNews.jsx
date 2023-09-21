@@ -13,16 +13,16 @@ import { FaShare } from 'react-icons/fa';
 const AllNews = () => {
 
     const { user } = useContext(AuthContext);
-    const [comments, setComments] = useState([]);
-    const [, setLoading] = useState(true)
+    const [comment, setComment] = useState([]);
+    // const [, setLoading] = useState(true)
     useEffect(() => {
-        setLoading(true)
-        fetch("https://crowdfunding-gamma.vercel.app/allComments")
+       
+        fetch("http:localhost:5000/allComments")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setComments(data);
-                setLoading(false)
+                setComment(data);
+                
             })
     }, [user])
     return (
@@ -48,7 +48,7 @@ const AllNews = () => {
 
 
                 <div className="text-center mt-8">
-                    <h2 className="text-3xl font-bold text-black "> All Blogs</h2>
+                    <h2 className="text-3xl font-bold "> All Blogs</h2>
                     <hr className="border-b-[3px] w-[164px] mt-1 mb-5 border-[#F99F24] mx-auto" />
                 </div>
             </div>
@@ -57,7 +57,7 @@ const AllNews = () => {
                 <div className="col-span-5 text-center mt-8">
                     {/* News section */}
 
-                    <h2 className="text-xl font-bold text-black ">World-wide Blogs</h2>
+                    <h2 className="text-xl font-bold ">World-wide Blogs</h2>
                     <hr className=" border-b-[3px] w-[164px] mt-1 mb-5 border-[#F99F24] mx-auto" />
                     <div className="grid-cols-1 p-3 justify-between ">
 
@@ -125,7 +125,7 @@ const AllNews = () => {
                     {/* comment section */}
                     {/* <hr  className="border h-96 w-0"/> */}
                     <div className="text-center mt-8 ">
-                        <h2 className="text-xl font-bold text-black ">Comments</h2>
+                        <h2 className="text-xl font-bold ">Comments</h2>
                         <hr className=" border-b-[3px] w-[164px] mt-1 mb-5 border-[#F99F24] mx-auto" />
                         {/* comment UI */}
                         <Comments></Comments>
@@ -133,13 +133,14 @@ const AllNews = () => {
                     </div>
                     {/* user comments */}
                     <div className="bg-white mt-5 mb-5 text-black lg:text-left text-center ">
-                        {
-                            comments.map((com) => <div key={com}>
+                        { user &&
+                            comment.map(com =>
+                             <div key={com} >
                                 <div className="grid grid-cols-2 ">
                                     <div className="flex gap-3">
                                         <div className=" text-neutral-content  w-12">
                                             <img className="rounded-full w-12 h-12"
-                                                src={user.photoURL} alt="" />
+                                                src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="" />
                                         </div>
                                         <p className="my-2 text-lg">{user.displayName}</p>
                                     </div>
