@@ -5,8 +5,8 @@ import { FiEdit, FiMail } from 'react-icons/fi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { FcLikePlaceholder } from 'react-icons/fc';
-import { FaRegCommentAlt } from 'react-icons/fa';
+import { FiAlertCircle } from 'react-icons/fi';
+import { BiSolidDownload } from 'react-icons/bi';
 import { BsShare } from 'react-icons/bs';
 import Swal from "sweetalert2";
 import SocialShare from "./SocialShare";
@@ -14,13 +14,7 @@ import SocialShare from "./SocialShare";
 
 
 const Details = () => {
-  const [like, setLike] = useState(450)
-  const [isLike, setIsLike] = useState(false)
 
-  const onclickButtonClick = () => {
-    setLike(like + (isLike ? -1 : 1));
-    setIsLike(!isLike);
-  }
 
   const { user } = useContext(AuthContext)
   const [blogs, setBlogs] = useState([]);
@@ -86,8 +80,11 @@ const Details = () => {
     })
   }
 
+
+
+
   return (
-    <div className="max-w-7xl mx-auto ">
+    <div className="max-w-7xl mx-auto  py-24 ">
       <img className="rounded-lg h-96  mx-auto" src={photo} alt="" />
       <div className="flex justify-between items-center m-5">
         <div>
@@ -123,20 +120,37 @@ const Details = () => {
           </div>
 
           <div className='flex gap-7 mr-9 items-center justify-end '>
-            <p className="font-black">{like}</p>
-            <FcLikePlaceholder onClick={onclickButtonClick} className='text-3xl ' />
-            <FaRegCommentAlt className="text-cyan-400  text-3xl p-1" />
 
-            <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" bg-yellow-300 text-black rounded p-1 text-2xl" /></button>
+            <button>
+              <BiSolidDownload className="text-cyan-400  text-4xl p-1" />
+
+            </button>
+            <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" text-yellow-300  rounded p-1 text-3xl" /></button>
             <dialog id="my_modal_2" className="modal">
-              <div className="modal-box">
-                <h3 className="font-bold text-lg text-black italic">Share Your Blog ...</h3>
-                <p className="mt-3"><SocialShare ></SocialShare></p>
+              <div className="modal-box bg-[#050816]">
+                <h3 className="font-bold text-lg  italic">Share Your Blog ...</h3>
+                <p className="mt-3 "><SocialShare ></SocialShare></p>
               </div>
               <form method="dialog" className="modal-backdrop">
                 <button>close</button>
               </form>
             </dialog>
+
+           
+            <button className="" onClick={() => document.getElementById('my_modal_4').showModal()}><FiAlertCircle className=" text-red-500 rounded p-1 text-4xl" /></button>
+            <dialog id="my_modal_4" className="modal">
+              <div className="modal-box bg-[#050816]">
+                <h3 className="font-bold text-lg  italic text-red-500">Important</h3>
+                <p className="mt-3 text-red-300 ">Copyright in Canada
+                  As of 2022, copyright in Canada applies to your work automatically and lasts the author’s lifetime plus 70 years past their death.
+
+                  Previously, the protection only lasted for 50 years past the author’s death. </p>
+              </div>
+              <form method="dialog" className="modal-backdrop">
+                <button>close</button>
+              </form>
+            </dialog>
+
           </div>
 
         </div>

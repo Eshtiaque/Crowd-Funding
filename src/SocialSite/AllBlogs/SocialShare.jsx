@@ -45,7 +45,7 @@ const SocialShare = () => {
 
     const URL = "https://crowd-funding-dc81b.web.app/socialBlog";
     return (
-        <div>
+        <div >
             <div>
                 <FacebookShareButton
                     url={URL}
@@ -110,7 +110,7 @@ const SocialShare = () => {
                     value={URL}
                     onChange={handleInputChange}
                 />
-                <button className="btn-sm mt-5  bg-[#5c771e] text-white rounded-lg " onClick={handleCopyClick}>Copy URL</button>
+                <button className="btn-sm mt-5  bg-gradient-to-br from-blue-600 to-purple-600  text-white rounded-lg " onClick={handleCopyClick}>Copy URL</button>
             </div>
         </div>
     );

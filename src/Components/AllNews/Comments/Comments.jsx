@@ -38,10 +38,13 @@ const Comments = () => {
             
             <div className="">
                 <form className="md:grid md:grid-cols-1 lg:grid lg:grid-cols-1  p-5 gap-3  justify-end " onSubmit={handleSubmit(onSubmit)}>
-                   
+                <div>
+                        <h5 className="font-bold "> Comment Here </h5>
+                        <input className="p-2  w-full text-black  bg-gray-400 border rounded-lg border-black "   {...register("email")} />
+                </div>
                  
                     <div>
-                        <h5 className="font-bold mt-3"> Comment Here </h5>
+                       
                         <input className="p-2  w-full text-black  bg-gray-400 border rounded-lg border-black h-32"  {...register("text")} />
                     </div>
                    

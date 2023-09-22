@@ -23,7 +23,6 @@ import AEvent from "../../Dashboard/Admin/AEvent/AEvent";
 import BlogNews from "../../Dashboard/Admin/BlogNews/BlogNews";
 import AllNews from "../AllNews/AllNews";
 import CampaignDetails from "../../Dashboard/Admin/ACampaign/CampaignDetails";
-import PrivateRoute from "./PrivateRoute";
 import Revenue from "../../Dashboard/Admin/Revenue/Revenue";
 import AdminRoute from './AdminRoute';
 import EventDetails from "../../Dashboard/Admin/AEvent/EventDetails";

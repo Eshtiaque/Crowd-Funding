@@ -1,7 +1,7 @@
 import { BiTimeFive } from 'react-icons/bi';
 import { FcBusinessman } from 'react-icons/fc';
-import { FcLikePlaceholder } from 'react-icons/fc';
-import { FaRegCommentAlt } from 'react-icons/fa';
+import { FiAlertCircle } from 'react-icons/fi';
+import { BiSolidDownload } from 'react-icons/bi';
 import { BsShare } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import SocialShare from './SocialShare';
@@ -26,8 +26,8 @@ const SingleBlog = ({ item }) => {
                     <hr className='mt-2' />
                     <div className="card-actions justify-between">
                         <div className='flex gap-5 mt-3 items-center '>
-                            <FcLikePlaceholder className='text-xl ' />
-                            <FaRegCommentAlt />
+                            <FiAlertCircle className='text-xl ' />
+                            <BiSolidDownload />
                             {/* <BsShare/>Share */}
                             <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare/></button>
                             <dialog id="my_modal_2" className="modal">

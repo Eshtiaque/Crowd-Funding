@@ -52,7 +52,7 @@ const SignUp = () => {
 
          updateUserProfile(data.name, data.photoURL)
             .then(() => {
-                const saveUser = { name: data.name, email: data.email }
+                const saveUser = { name: data.name, email: data.email , role:"user" }
                 fetch('https://crowdfunding-gamma.vercel.app/users', {
                     method: 'POST',
                     headers: {
@@ -74,7 +74,7 @@ const SignUp = () => {
                                     showConfirmButton: false,
                                     timer: 1500
                                     })
-                            navigate(from,'/');
+                                    navigate(from, { replace: true });
                         }
                     })
 
@@ -88,7 +88,7 @@ const SignUp = () => {
      const navigate = useNavigate();
      const location = useLocation();
      console.log(location);
-     const from = location.state?.from?.pathname || "/login";
+     const from = location.state?.from?.pathname || "/";
  
 
   return (

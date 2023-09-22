@@ -24,7 +24,7 @@ const Login = () => {
                 setSuccess('Google Successfully');
                 console.log(loggedInUser);
                 // setUser(loggedInUser);
-                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email , role:"user" }
                 // ---------------------------jwt add for google signIn----------------------
                 fetch('https://crowdfunding-gamma.vercel.app/users', {
                     method: "POST",
