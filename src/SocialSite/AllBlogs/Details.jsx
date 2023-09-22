@@ -142,7 +142,7 @@ const Details = () => {
               <div className="modal-box bg-[#050816]">
                 <h3 className="font-bold text-lg  italic text-red-500">Important</h3>
                 <p className="mt-3 text-red-300 ">Copyright in Canada
-                  As of 2022, copyright in Canada applies to your work automatically and lasts the author’s lifetime plus 70 years past their death.
+                  As of 2023, copyright in Canada applies to your work automatically and lasts the author’s lifetime plus 70 years past their death.
 
                   Previously, the protection only lasted for 50 years past the author’s death. </p>
               </div>

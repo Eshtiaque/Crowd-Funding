@@ -193,7 +193,7 @@ const AllNews = () => {
                                         </div>
                                         <div className="flex gap-3 my-2 justify-end pb-2">
 
-                                            <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><FaShare className=" text-yellow-300  rounded p-1 text-2xl" /></button>
+                                            <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><FaShare className=" text-yellow-200  rounded p-1 text-2xl" /></button>
                                             <dialog id="my_modal_2" className="modal">
                                                 <div className="modal-box bg-[#050816]">
                                                     <h3 className="font-bold text-lg  italic">Share Your Comment</h3>
@@ -204,7 +204,7 @@ const AllNews = () => {
                                                 </form>
                                             </dialog>
                                             
-                                            <button onClick={()=>handleDelete(com._id)} className="text-xl text-red-500 mr-3"><AiFillDelete /></button>
+                                            <button onClick={()=>handleDelete(com._id)} className="text-xl text-red-400 mr-3"><AiFillDelete /></button>
 
                                         </div>
                                     </div>
