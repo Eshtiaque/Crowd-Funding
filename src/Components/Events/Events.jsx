@@ -80,7 +80,7 @@ const handleSearch = () => {
                     onChange={(e) => setSearchText(e.target.value)}
                     type="text"
                     className="ps-3 p-1 mt-5 rounded-lg bg-gray-300 text-black"
-                    placeholder="Search Blog "
+                    placeholder="Search event "
                 />{" "}
                 <button onClick={handleSearch} className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white m-4 hover:from-purple-600 hover:to-blue-600">Search</button>
             </div>
