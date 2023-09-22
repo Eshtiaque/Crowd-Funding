@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { BsSearch } from "react-icons/bs";
 import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.jpg"
 import SharedBanner from "../Contact/SharedBanner";
 // import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
@@ -11,6 +10,7 @@ import MainTitle from "../SharedComponents/MainTitle";
 
 
 const Events = () => {
+    const [searchText, setSearchText] = useState("");
     const [items, setItems] = useState([]);
     useEffect(() => {
         fetch("event.json")
@@ -34,6 +34,17 @@ const Events = () => {
     }, [isInView])
 
     //bg-gradient-to-r from-neutral-600 from-10% via- via-50% to-neutral-600 to-90%
+
+const handleSearch = () => {
+        fetch(`https://crowdfunding-gamma.vercel.app/searchText/${searchText}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setItems(data);
+            });
+    };
+
+
     return (
         // <div ref={ref} className="bg-cover bg-center bg-no-repeat  max-w-7xl mx-auto " style={{ backgroundImage: `url(${bg})` }}>
 
@@ -51,7 +62,7 @@ const Events = () => {
                         </>
                     }
                 ></SharedBanner>
-                <motion.div className="text-center mt-8"
+                <motion.div className=" text-center mt-8"
                     variants={{
                         hidden: { opacity: 0, y: 75 },
                         visible: { opacity: 1, y: 0 }
@@ -64,17 +75,15 @@ const Events = () => {
                     {/* <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" /> */}
                <MainTitle heading="Our All Events"></MainTitle>
-                <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]  ">
-                    <input
-                        type="text"
-                        placeholder="Search Here..."
-                        value=""
-                        onChange=""
-                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
-                    bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
-                    />
-                    <BsSearch className="absolute top-[30%] right-2 text-black  p-1 w-8 h-8 rounded-full" />
-                </div>
+               <div className="search-box  text-center">
+                <input
+                    onChange={(e) => setSearchText(e.target.value)}
+                    type="text"
+                    className="ps-3 p-1 mt-5 rounded-lg bg-gray-300 text-black"
+                    placeholder="Search Blog "
+                />{" "}
+                <button onClick={handleSearch} className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white m-4 hover:from-purple-600 hover:to-blue-600">Search</button>
+            </div>
                 </motion.div>
             </div>
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-2  gap-2" >

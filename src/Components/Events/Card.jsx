@@ -9,7 +9,7 @@ const Card = ({ item }) => {
         publisher_name,
         publisher_image } = item;
     return (
-        <div className="card w-96 mb-5 text-white bg-[#0a102b] shadow-none ">
+        <div className="card w-96 mb-5 text-white  shadow-none ">
            
            <div className="">
            <figure><img className="w-100% h-64 rounded-bl-full " src={image} alt="" /></figure>
