@@ -1,6 +1,6 @@
-import img1 from "../../../../src/assets/img/others img/joel-muniz-3k3l2brxmwQ-unsplash.jpg"
-import img2 from "../../../../src/assets/img/others img/joel-muniz-A4Ax1ApccfA-unsplash.jpg"
-import img3 from "../../../../src/assets/img/others img/joel-muniz-y3ZY6qFln_g-unsplash.jpg"
+import img1 from "../../../../src/assets/img/others img/joel-muniz-3k3l2brxmwQ-unsplash (1).webp"
+import img2 from "../../../../src/assets/img/others img/joel-muniz-A4Ax1ApccfA-unsplash (1).webp"
+import img3 from "../../../../src/assets/img/others img/joel-muniz-y3ZY6qFln_g-unsplash.webp"
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 import MainTitle from "../../SharedComponents/MainTitle"

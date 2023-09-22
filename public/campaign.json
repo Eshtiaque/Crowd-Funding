@@ -11,7 +11,7 @@
   {
     "id": 2,
     "location": "Damascus, Syria",
-    "image": "https://www.ramanmedianetwork.com/wp-content/uploads/2017/09/ooscl-800x445.jpg",
+    "image": "https://www.ramanmedianetwork.com/wp-content/uploads/2017/09/ooscl-800x445.webp",
     "header": "Emergency Food Assistance for Syrian Children",
     "desc": "Delivering much-needed food assistance to children affected by conflict in Damascus.",
     "date": "26th June 2020",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "location": "Baghdad, Iraq",
-    "image": "https://www.partners.ngo/assets/images/middle-east-fb-preview-2020.jpg",
+    "image": "https://www.partners.ngo/assets/images/middle-east-fb-preview-2020.webp",
     "header": "Food Distribution for Vulnerable Children in Iraq",
     "desc": "Providing food aid to vulnerable children in conflict-affected areas of Baghdad.",
     "date": "26th June 2020",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "location": "Kabul, Afghanistan",
-    "image": "https://image.cnbcfm.com/api/v1/image/105124199-Syria_war_.jpg?v=1532563657",
+    "image": "https://image.cnbcfm.com/api/v1/image/105124199-Syria_war_.webp?v=1532563657",
     "header": "Food Aid and Assistance in Kabul",
     "desc": "Providing essential food aid and assistance to children affected by conflict in Kabul.",
     "date": "26th June 2020",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "location": "Khartoum, Sudan",
-    "image": "https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2016/09/20160207_Syrian-refugee-children-covered-in-mud-stuck-in-Latakia-province-waiting-to-cross-into-Turkey.jpg?resize=1200%2C800&quality=75&strip=all&ssl=1",
+    "image": "https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2016/09/20160207_Syrian-refugee-children-covered-in-mud-stuck-in-Latakia-province-waiting-to-cross-into-Turkey.webp?resize=1200%2C800&quality=75&strip=all&ssl=1",
     "header": "Addressing Hunger and Conflict in Sudan",
     "desc": "Working to alleviate hunger and support children affected by conflict in Khartoum.",
     "date": "26th June 2020",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "location": "Niamey, Niger",
-    "image": "https://www.ramanmedianetwork.com/wp-content/uploads/2017/09/ooscl-800x445.jpg",
+    "image": "https://www.ramanmedianetwork.com/wp-content/uploads/2017/09/ooscl-800x445.webp",
     "header": "Nutritional Support for Children in Niger",
     "desc": "Providing nutritional support to children in need in Niamey.",
     "date": "26th June 2020",
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "location": "Sana'a, Yemen",
-    "image": "https://middleeast-business.com/wp-content/uploads/2016/03/middle_east_business_children-of-war-960x600.jpg",
+    "image": "https://middleeast-business.com/wp-content/uploads/2016/03/middle_east_business_children-of-war-960x600.webp",
     "header": "Emergency Food Relief in Yemen",
     "desc": "Delivering emergency food relief to children and families affected by conflict in Sana'a.",
     "date": "26th June 2020",
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "location": "Juba, South Sudan",
-    "image": "https://www.partners.ngo/assets/images/middle-east-fb-preview-2020.jpg",
+    "image": "https://www.partners.ngo/assets/images/middle-east-fb-preview-2020.webp",
     "header": "Food Aid for Children in South Sudan",
     "desc": "Providing essential food aid to children in South Sudan to combat hunger.",
     "date": "26th June 2020",
@@ -101,7 +101,7 @@
   {
     "id": 12,
     "location": "Kinshasa, Congo",
-    "image": "https://middleeast-business.com/wp-content/uploads/2016/03/middle_east_business_children-of-war-960x600.jpg",
+    "image": "https://middleeast-business.com/wp-content/uploads/2016/03/middle_east_business_children-of-war-960x600.webp",
     "header": "Addressing Nutritional Needs in Congo",
     "desc": "Addressing the nutritional needs of children affected by conflict in Kinshasa.",
     "date": "26th June 2020",
@@ -110,7 +110,7 @@
   {
     "id": 13,
     "location": "Beirut, Lebanon",
-    "image": "https://image.cnbcfm.com/api/v1/image/105124199-Syria_war_.jpg?v=1532563657",
+    "image": "https://image.cnbcfm.com/api/v1/image/105124199-Syria_war_.webp?v=1532563657",
     "header": "Food distribution among war child",
     "desc": "This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.",
     "date": "26th June 2020",
@@ -128,7 +128,7 @@
   {
     "id": 15,
     "location": "Beirut, Lebanon",
-    "image": "https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2016/09/20160207_Syrian-refugee-children-covered-in-mud-stuck-in-Latakia-province-waiting-to-cross-into-Turkey.jpg?resize=1200%2C800&quality=75&strip=all&ssl=1",
+    "image": "https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2016/09/20160207_Syrian-refugee-children-covered-in-mud-stuck-in-Latakia-province-waiting-to-cross-into-Turkey.webp?resize=1200%2C800&quality=75&strip=all&ssl=1",
     "header": "Food distribution among war child",
     "desc": "This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.",
     "date": "26th June 2020",

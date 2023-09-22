@@ -1,6 +1,9 @@
+import { motion } from "framer-motion"
+
 import logo from '../../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.webp'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import MainButton from '../../SharedComponents/MainButton';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -36,7 +39,9 @@ const Footer = () => {
                         <img className='w-56' src={logo}></img>
                         <p>Duis elementum sapien et neque<br></br> lobortis laoreet.  Pellentesque<br></br> habitant morbi tristique senectus<br></br> et netus et malesuada</p>
                         {/* <button className="btn border-none bg-[#F99F24] text-white mt-1">Explore more</button> */}
-                        <MainButton text="Explore more"></MainButton>
+                        <Link to="/about">
+                            <MainButton text="Explore more"></MainButton>
+                        </Link>
                     </div>
                     <div>
                         <span className="footer-title">Category</span>
@@ -61,10 +66,17 @@ const Footer = () => {
                                 <span className="label-text text-white">Write your email into below field and <br></br> join our quick support forum.</span>
                             </label>
                             <form onSubmit={handleSubscribe} className="">
-                                <input className="border-2 border-black rounded w-[230px] px-2 py-2" type="email" name="email" placeholder="username@site.com"></input>
+                                <input className="border-2 border-black text-black rounded w-[230px] px-2 py-2" type="email" name="email" placeholder="username@site.com"></input>
                                 <br></br>
                                 {/* <input type='submit' value="subscribe" className="btn bg-[#F99F24] border-none text-white mt-1"></input> */}
-                                <input type='submit' value="subscribe" className="text-base text-white bg-gradient-to-br mt-2 from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600 cursor-pointer"></input>
+                                <motion.input
+                                    whileHover={{
+                                        scale: 1.1,
+                                        textShadow: "0px 0px 8px #fff",
+                                        boxShadow: "0px 0px 8px #fff"
+                                    }}
+                                    type='submit' value="subscribe" className="text-base text-white bg-gradient-to-br mt-2 from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600 cursor-pointer"></motion.input>
+
 
                             </form>
                         </div>
@@ -95,11 +107,11 @@ const Footer = () => {
                     <FaYoutube />
                 </div> */}
                 </div>
-                <div className='flex justify-center gap-2 text-2xl mt-5'>
-                    <FaFacebook />
-                    <FaInstagram />
-                    <FaTwitter />
-                    <FaYoutube />
+                <div className='flex justify-center gap-4 text-2xl mt-5 cursor-pointer'>
+                    <FaFacebook className="hover:text-[#1877F2]" />
+                    <FaInstagram className="hover:text-[#bc2a8d]" />
+                    <FaTwitter className="hover:text-[#1DA1F2]" />
+                    <FaYoutube className="hover:text-[#c4302b]" />
                 </div>
             </div>
 

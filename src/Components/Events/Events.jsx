@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.jpg"
+import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.webp"
 import SharedBanner from "../Contact/SharedBanner";
 // import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
 import Card from "./Card";
@@ -70,8 +70,7 @@ const Events = () => {
                         placeholder="Search Here..."
                         value=""
                         onChange=""
-                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
-                    bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
+                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black"
                     />
                     <BsSearch className="absolute top-[30%] right-2 text-black  p-1 w-8 h-8 rounded-full" />
                 </div>

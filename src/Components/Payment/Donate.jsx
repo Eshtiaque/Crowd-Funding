@@ -1,7 +1,7 @@
 // import  { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SharedBanner from '../Contact/SharedBanner';
-import img from "../../assets/img/section-banner/robert-collins-tvc5imO5pXk-unsplash.jpg"
+import img from "../../assets/img/section-banner/robert-collins-tvc5imO5pXk-unsplash.webp"
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 

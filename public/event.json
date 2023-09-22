@@ -10,7 +10,7 @@
     },
     {
         "_id": {"$oid": "614d903d1a39634e7da83224"},
-      "image": " https://c1.wallpaperflare.com/preview/519/305/263/park-london-england-nature.jpg",
+      "image": " https://c1.wallpaperflare.com/preview/519/305/263/park-london-england-nature.webp",
       "title": "Transforming Cities with Urban Gardens",
       "description": "Support our mission to create green spaces in urban environments, and community engagement.",
       "publish_date": "2023-08-18",
@@ -37,7 +37,7 @@
     },
     {
         "_id":  {"$oid":"614d903d1a39634e7da83226"},
-        "image": "https://c0.wallpaperflare.com/preview/524/860/912/screen-code-coding-programming.jpg",
+        "image": "https://c0.wallpaperflare.com/preview/524/860/912/screen-code-coding-programming.webp",
         "title": "Empowering Seniors Through Tech Literacy",
         "description": "Support our initiative to teach senior citizens about technology, enabling them to connect and learn in the digital age.",
         "publish_date": "2023-08-18",

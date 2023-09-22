@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import SharedBanner from "../Contact/SharedBanner";
 import campaignPhoto from "../../assets/img/Final/10.webp";
 import { useNavigate } from "react-router-dom";
@@ -179,9 +180,15 @@ const Info = () => {
         </div>
 
         <div className="text-center">
-          <button type="submit" className="px-3 w-1/2  py-1 border hover:border-[#F99F24] hover:text-white font-semibold bg-[#F99F24] text-black cursor-pointer hover:scale-95 duration-300 hover:duration-300 rounded-xl mt-4">
+          <motion.button type="submit"
+          whileHover={{
+            scale: 1.1,
+            textShadow: "0px 0px 8px #000",
+            boxShadow: "0px 0px 8px #000"
+        }}
+          className="btn w-3/4 mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  ">
             Submit
-          </button>
+          </motion.button>
         </div>
       </form>
     </div>

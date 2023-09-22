@@ -7,6 +7,7 @@ const SingleNotification = ({ item, index }) => {
 
     const handleApprove = (item) => {
         console.log(item);
+        const eventItem = { item }
         Swal.fire({
             title: 'Do you want to approve?',
             text: "You won't be able to revert this!",
@@ -56,7 +57,7 @@ const SingleNotification = ({ item, index }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd${item._id}`, {
+                fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
