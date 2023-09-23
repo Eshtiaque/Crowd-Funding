@@ -96,20 +96,20 @@ const Login = () => {
                 </video> */}
 
                 <div className="hero-content p-0 flex-none lg:flex-row">
-                    <div className="text-center text-white font-black lg:text-left w-1/2 mr-12 lg:block md:hidden hidden">
+                    {/* <div className="text-center text-white font-black lg:text-left w-1/2 mr-12 lg:block md:hidden hidden">
                         <h1 className="font-black text-3xl"><span className="text-[#F99F24] text-4xl">CrowdFunding</span> - All You Need To Know</h1>
                         <br></br><br />
                         <p className="">It sounds simple, but exactly how does crowdfunding look in practice? Well, sometimes crowdfunding campaigns seek financing in the form of donations or investments, but that’s not always the case.
                             <br /><br />
                             Crowdfunding is the practice of collecting money from multiple individuals or sources in order to finance a new project. Often, CrowdFounders turn to social media to share their platform or idea with the purpose of inspiring others to contribute to the crowdfunding campaign.
                         </p>
-                    </div>
+                    </div> */}
 
                     <div className="card rounded-none flex-shrink-0 max-w-sm shadow-2xl">
                         
                         <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4">
 
-                            <h1 className="text-2xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-white">Login</h1>
+                            <h1 className="text-2xl text-center font-bold  text-cyan-300 rounded-lg p-1 ">Login</h1>
                             <form onSubmit={handleSubmit(onSubmit)} >
 
                                 <div className="form-control ">
@@ -117,27 +117,27 @@ const Login = () => {
                                         <span className="label-text font-bold text-xl lg:text-white md:text-white text-black">Email</span>
                                     </label>
                                     <input type="email"
-                                        {...register("email", { required: true })} name="email" placeholder="Email" className="input bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black" />
+                                        {...register("email", { required: true })} name="email" placeholder="Email" className="input bg-transparent border-1 border-cyan-300 lg:text-white md:text-white text-black" />
                                 </div>
                                 <div className="form-control text-white">
                                     <label className="label">
                                         <span className="label-text font-bold text-xl lg:text-white md:text-white text-black">Password</span>
                                     </label>
                                     <input type="password"
-                                        {...register("password", { required: true })} name="password" placeholder="password" className="input bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black" />
+                                        {...register("password", { required: true })} name="password" placeholder="password" className="input bg-transparent border-1 border-cyan-300 lg:text-white md:text-white text-black" />
                                     <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover text-[#F99F24]">Forgot password?</a>
+                                        <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black  hover:bg-gradient-to-br from-blue-600 to-purple-600  hover:border-none hover:text-white lg:font-semibold md:font-semibold font-extrabold  lg:text-base md:text-base text-lg" type='submit' value="Login" />
+                                    <input className="btn bg-transparent  border-1 border-cyan-300 text-cyan-300 " type='submit' value="Login" />
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button onClick={handleGoogleSignIn} className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black hover:bg-[#F99F24] hover:border-none hover:text-black lg:font-semibold md:font-semibold font-extrabold lg:text-base md:text-base text-lg" type='submit' value="Login"><span className="mr-2 bg-white rounded-full"><FcGoogle /></span> Google</button>
+                                    <button onClick={handleGoogleSignIn} className="btn bg-transparent  border-1 border-cyan-300 text-cyan-300" type='submit' value="Login"><span className="mr-2 bg-white rounded-full"><FcGoogle /></span> Google</button>
                                 </div>
                             </form>
 
-                            <p className='my-4 text-center lg:text-white md:text-white text-black'>New Member ?  ::  <Link className="font-bold   text-[#F99F24]" to="/signUp">Sign Up</Link></p>
+                            <p className='my-4 text-center lg:text-white md:text-white text-black'>New Member ?  ::  <Link className="font-bold   text-[#87c2f8]" to="/signUp">Sign Up</Link></p>
 
                             <p className="text-success">{success}</p>
                         </div>
