@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black md:bg-opacity-50 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
+    <nav className="bg-[#050816] md:bg-opacity-50 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center ms-3">
           <Link to="/">

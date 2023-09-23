@@ -3,7 +3,6 @@ import { useContext } from "react";
 // import img  from "../../assets/images/login/login.svg"
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../Providers/AuthProvider";
-import video1 from "../../assets/Video/348855346_6387300347996886_8348118468822906576_n.mp4"
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form"
 
@@ -53,7 +52,7 @@ const SignUp = () => {
 
          updateUserProfile(data.name, data.photoURL)
             .then(() => {
-                const saveUser = { name: data.name, email: data.email }
+                const saveUser = { name: data.name, email: data.email , role:"user" }
                 fetch('https://crowdfunding-gamma.vercel.app/users', {
                     method: 'POST',
                     headers: {
@@ -75,7 +74,7 @@ const SignUp = () => {
                                     showConfirmButton: false,
                                     timer: 1500
                                     })
-                            navigate(from,'/');
+                                    navigate(from, { replace: true });
                         }
                     })
 
@@ -89,18 +88,16 @@ const SignUp = () => {
      const navigate = useNavigate();
      const location = useLocation();
      console.log(location);
-     const from = location.state?.from?.pathname || "/login";
+     const from = location.state?.from?.pathname || "/";
  
 
   return (
-    <div className="hero max-w-7xl  mx-auto   ">
+    <div className="hero max-w-7xl  h-screen   mx-auto   ">
        
       <div className="hero-content p-0 flex-none lg:flex-row ">
         
         <div className="card flex-shrink-0 max-w-sm shadow-2xl">
-        <video className='videoTag lg:mx-auto w-auto lg:hidden md:hidden block' autoPlay loop muted>
-                            <source src={video1} type='video/mp4' />
-                        </video>
+        
           <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4">
 
             <h1 className="text-2xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-white lg:mt-7 ">Sign Up</h1>

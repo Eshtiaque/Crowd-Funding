@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../../../Providers/AuthProvider";
 const Comments = () => {
+    const {user }=useContext(AuthContext)
     const { register,
         handleSubmit,
         formState: { errors },
@@ -30,20 +33,22 @@ const Comments = () => {
                         })
                 } 
             })
-
     }
 
    
     return (
-        <div className="border text-black">
+        <div className="border rounded-lg">
             
             <div className="">
-                <form className="md:grid md:grid-cols-1 lg:grid lg:grid-cols-1  p-5 gap-3  justify-end" onSubmit={handleSubmit(onSubmit)}>
-                   
+                <form className="md:grid md:grid-cols-1 lg:grid lg:grid-cols-1  p-5 gap-3  justify-end " onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                        <h5 className="font-bold "> Comment Here </h5>
+                        <input className="p-2  w-full text-black  bg-gray-400 border rounded-lg border-black " defaultValue={user?.email}  {...register("email")} />
+                </div>
                  
                     <div>
-                        <h5 className="font-bold mt-3"> Comment Here </h5>
-                        <input className="p-2  w-full text-black  bg-white border border-black h-32"  {...register("text")} />
+                       
+                        <input className="p-2  w-full text-black  bg-gray-400 border rounded-lg border-black h-32"  {...register("text")} />
                     </div>
                    
                     <div className="md:grid md:grid-cols-1 lg:grid grid-cols-1 mt-3">

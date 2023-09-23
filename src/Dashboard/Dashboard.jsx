@@ -37,7 +37,7 @@ function Dashboard() {
             })
             .catch(error => toast.error(error.message));
     };
-
+console.log(isAdmin);
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
