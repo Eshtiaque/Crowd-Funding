@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 import { Link } from "react-router-dom";
 import { AiOutlineFall } from 'react-icons/ai';
 //[#F99F24]
@@ -37,7 +39,13 @@ const Card = ({ item }) => {
                     </div>
                     
                     <Link to="/about">
-                        <button className="btn-xs rounded-bl-full ps-3 rounded-tr-full bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600  text-white">Read More</button>
+                        <motion.button
+                        whileHover={{
+                            scale: 1.1,
+                            textShadow: "0px 0px 8px #fff",
+                            boxShadow: "0px 0px 8px #fff"
+                        }}
+                         className="btn-xs rounded-bl-full ps-3 rounded-tr-full bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600  text-white">Read More</motion.button>
                     </Link>
                     {/* bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 */}
                 </div>

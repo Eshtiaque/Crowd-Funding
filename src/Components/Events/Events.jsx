@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.jpg"
+import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.webp"
+
+
 import SharedBanner from "../Contact/SharedBanner";
 // import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
 import Card from "./Card";
@@ -75,6 +77,8 @@ const handleSearch = () => {
                     {/* <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" /> */}
                <MainTitle heading="Our All Events"></MainTitle>
+
+              
                <div className="search-box  text-center">
                 <input
                     onChange={(e) => setSearchText(e.target.value)}

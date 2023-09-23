@@ -1,8 +1,8 @@
 import SharedBanner from "../Contact/SharedBanner";
 import img from "../../assets/images/blogsNews.webp"
-import img5 from "../../assets/img/others img/jeremias-ybanez-fqFm_YJGHZk-unsplash.jpg"
-import img6 from "../../assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.jpg"
-import img7 from "../../assets/img/others img/josh-appel-NeTPASr-bmQ-unsplash.jpg"
+import img5 from "../../assets/img/others img/jeremias-ybanez-fqFm_YJGHZk-unsplash (1).webp"
+import img6 from "../../assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.webp"
+import img7 from "../../assets/img/others img/josh-appel-NeTPASr-bmQ-unsplash.webp"
 import Comments from "./Comments/Comments";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";

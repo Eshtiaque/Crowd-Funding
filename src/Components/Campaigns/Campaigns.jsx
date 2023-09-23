@@ -7,7 +7,7 @@ import { useRef } from "react";
 import Pagination from './Pagination';
 import FetchData from "./FetchData";
 import SharedBanner from "../Contact/SharedBanner";
-import campaignPhoto from "../../assets/img/section-banner/melanie-lim-SkMBbB9gjQc-unsplash.jpg";
+import campaignPhoto from "../../assets/img/section-banner/melanie-lim-SkMBbB9gjQc-unsplash.webp";
 import { BarLoader } from "react-spinners";
 import { motion, useInView, useAnimation } from "framer-motion"
 import MainButton from "../SharedComponents/MainButton";
@@ -88,8 +88,7 @@ const Campaigns = () => {
                         placeholder="Type Here..."
                         value={searchText}
                         onChange={e => setSearchText(e.target.value)}
-                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
-                    bg-gradient-to-r from-[#c6c6c6] from-10% to-white to-90%"
+                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black"
                     />
                     <BsSearch className="absolute top-[46%] right-6 text-black" />
                 </div>

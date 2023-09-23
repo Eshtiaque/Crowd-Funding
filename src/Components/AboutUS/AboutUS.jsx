@@ -1,14 +1,14 @@
 import SharedBanner from "../Contact/SharedBanner";
 import Partners from "../Home/Partners/Partners";
-import background from "../../assets/img/section-banner/about-section.jpg";
-import sectionImage from "../../assets/img/section-banner/contact-banner.jpg"
-import ocg from "../../assets/img/others img/ocg-saving-the-ocean-uXfYLTmF6fo-unsplash.jpg";
-import sajid from "../../../src/assets/img/OurTeam/sajid.jpg";
-import sakib from "../../../src/assets/img/OurTeam/sakib.jpg";
-import mahdi from "../../../src/assets/img/OurTeam/mahdi.jpg";
-import shahadat from "../../../src/assets/img/OurTeam/shahadat.jpg";
-import saroar from "../../../src/assets/img/OurTeam/saroar.jpg";
-import rasel from "../../../src/assets/img/OurTeam/rasel.jpg";
+import background from "../../assets/img/section-banner/about-section.webp";
+import sectionImage from "../../assets/img/section-banner/contact-banner.webp"
+import ocg from "../../assets/img/others img/ocg-saving-the-ocean-uXfYLTmF6fo-unsplash.webp";
+import sajid from "../../../src/assets/img/OurTeam/sajid.webp";
+import sakib from "../../../src/assets/img/OurTeam/sakib.webp";
+import mahdi from "../../../src/assets/img/OurTeam/mahdi.webp";
+import shahadat from "../../../src/assets/img/OurTeam/shahadat.webp";
+import saroar from "../../../src/assets/img/OurTeam/saroar.webp";
+import rasel from "../../../src/assets/img/OurTeam/rasel.webp";
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 import CountUp from "react-countup";
@@ -43,7 +43,7 @@ const AboutUs = () => {
                     }
                 ></SharedBanner>
 
-                {/* <section className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sectionImage})` }}> */}
+                {/* <section className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sectionImage})` }}> </section> */}
                 <section className="">
 
                     <motion.div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 p-3 lg:text-left md:text-left text-center pt-7"
@@ -163,43 +163,43 @@ const AboutUs = () => {
                     <hr className="h-1 w-[106px] mt-3 rounded-md bg-gradient-to-br from-blue-600 to-purple-600 mx-auto" />
                     <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 gap-7 mt-7">
                         <div className="md:hidden lg:block"></div>
-                        <div className=" bg-gray-300">
+                        <div className=" bg-[#0a102b] rounded-md">
                             <img className="" src={sajid} alt="" />
-                            <h2 className="text-xl font-bold text-center">Estiaque Ahmed</h2>
-                            <p className="text-md text-center">Developer</p>
+                            <h2 className="text-xl font-bold text-center mt-4">Estiaque Ahmed</h2>
+                            <p className="text-md text-center mb-4">Developer</p>
                         </div>
-                        <div className=" bg-gray-300">
+                        <div className=" bg-[#0a102b] rounded-md">
                             <img src={sakib} alt="" />
                             <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center">Md. Sakib Mia</h2>
-                            <p className="text-md text-center">Developer</p>
+                            <h2 className="text-xl font-bold text-center mt-4">Md. Sakib Mia</h2>
+                            <p className="text-md text-center mb-4">Developer</p>
                         </div>
-                        <div className=" bg-gray-300">
+                        <div className=" bg-[#0a102b] rounded-md">
                             <img src={mahdi} alt="" />
                             <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center">Mahdi Mortuza</h2>
-                            <p className="text-md text-center">Developer</p>
+                            <h2 className="text-xl font-bold text-center mt-4">Mahdi Mortuza</h2>
+                            <p className="text-md text-center mb-4">Developer</p>
                         </div>
-                        <div className=" bg-gray-300">
+                        <div className=" bg-[#0a102b] rounded-md">
                             <img src={shahadat} alt="" />
                             <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center">Shahadat Hosan</h2>
-                            <p className="text-md text-center">Developer</p>
+                            <h2 className="text-xl font-bold text-center mt-4">Shahadat Hosan</h2>
+                            <p className="text-md text-center mb-4">Developer</p>
                         </div>
                         <div className="hidden lg:block md:hidden"></div>
                         <div className="hidden lg:block md:hidden"></div>
                         <div className="hidden lg:block md:hidden"></div>
-                        <div className=" bg-gray-300">
+                        <div className=" bg-[#0a102b] rounded-md">
                             <img src={saroar} alt="" />
                             <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center">Saroar Jahan</h2>
-                            <p className="text-md text-center">Developer</p>
+                            <h2 className="text-xl font-bold text-center mt-4">Saroar Jahan</h2>
+                            <p className="text-md text-center mb-4">Developer</p>
                         </div>
-                        <div className=" bg-gray-300">
+                        <div className=" bg-[#0a102b] rounded-md">
                             <img src={rasel} alt="" />
                             <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center">Md. Rasel Islam</h2>
-                            <p className="text-md text-center">Developer</p>
+                            <h2 className="text-xl font-bold text-center mt-4">Md. Rasel Islam</h2>
+                            <p className="text-md text-center mb-4">Developer</p>
                         </div>
                     </div>
                 </motion.section>

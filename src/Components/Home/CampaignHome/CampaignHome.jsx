@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import image from "../../../assets/img/others img/mohammed-ibrahim-jrcvHflmKvg-unsplash.jpg";
+import image from "../../../assets/img/others img/mohammed-ibrahim-jrcvHflmKvg-unsplash.webp";
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 import MainButton from "../../SharedComponents/MainButton";

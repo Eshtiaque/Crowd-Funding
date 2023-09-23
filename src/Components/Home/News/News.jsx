@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import img4 from "../../../../src/assets/img/others img/jeremias-ybanez-fqFm_YJGHZk-unsplash.jpg"
-import img5 from "../../../../src/assets/img/others img/joel-muniz-BlnpElo7clE-unsplash.jpg"
-import img6 from "../../../../src/assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.jpg"
-import img7 from "../../../../src/assets/img/others img/josh-appel-NeTPASr-bmQ-unsplash.jpg"
+import img4 from "../../../../src/assets/img/others img/jeremias-ybanez-fqFm_YJGHZk-unsplash (1).webp"
+import img5 from "../../../../src/assets/img/others img/joel-muniz-y3ZY6qFln_g-unsplash.webp"
+import img6 from "../../../../src/assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.webp"
+import img7 from "../../../../src/assets/img/others img/josh-appel-NeTPASr-bmQ-unsplash.webp"
 
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
@@ -39,7 +39,7 @@ const News = () => {
             >
                 {/* <h2 className="text-3xl font-bold p-4 "> Latest News</h2>
                 <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" /> */}
-           <MainTitle heading="Latest News"></MainTitle>
+                <MainTitle heading="Latest News"></MainTitle>
             </motion.div>
             <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2   "
                 variants={{
@@ -104,11 +104,21 @@ const News = () => {
 
             </motion.div>
 
-           
-        <div className="text-end">
-            <Link to="/allNews">
-            <button className="btn mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  hover:text-black border-0 ">See more <BsFillArrowRightCircleFill className="text-xl bg-gradient-to-br from-blue-500 to-purple-500 hover:text-black"/></button></Link>
-        </div>
+
+
+            <div className="text-end">
+                <Link to="/allNews">
+                    <motion.button
+                        whileHover={{
+                            scale: 1.1,
+                            textShadow: "0px 0px 8px #fff",
+                            boxShadow: "0px 0px 8px #fff"
+                        }}
+                        className="btn mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  hover:text-black border-0 ">See more <BsFillArrowRightCircleFill className="text-xl bg-gradient-to-br from-blue-500 to-purple-500 hover:text-black"/>
+                        </motion.button>
+                        </Link>
+            </div>
+
         </div>
     )
 };
