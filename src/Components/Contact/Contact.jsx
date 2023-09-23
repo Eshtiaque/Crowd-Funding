@@ -1,10 +1,11 @@
-import bg from "../../assets/img/section-banner/contact-banner.jpg";
-import background from "../../assets/img/section-banner/about.jpg";
+import bg from "../../assets/img/section-banner/contact-banner.webp";
+import background from "../../assets/img/section-banner/about.webp";
 import { FaPhoneAlt, FaEnvelope, FaLocationArrow } from 'react-icons/fa';
 import SharedBanner from "./SharedBanner";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
+import { Link } from "react-router-dom";
 
 
 const Contact = () => {
@@ -56,9 +57,13 @@ const Contact = () => {
                           transition={{ duration: 0.9, delay: 0.60 }}
                   
                   >
+                    {/* hover:from-purple-600 hover:to-blue-600 */}
+
                             <h1 className="text-3xl text-[#F99F24]">Address</h1>
                             <div className="flex items-center gap-3 mt-5">
+                                <div className="text-bg-gradient-to-br from-blue-600 to-purple-600">
                                 <FaPhoneAlt />
+                                </div>
                                 <p>+88 00 000 000</p>
                             </div>
                             <div className="flex items-center gap-3 mt-2">
@@ -73,10 +78,10 @@ const Contact = () => {
                                 <p>712, Free school street, London</p>
                             </div>
                             <div className='flex gap-5 text-white text-3xl mt-10 cursor-pointer'>
-                                <FaFacebook />
-                                <FaInstagram />
-                                <FaTwitter />
-                                <FaYoutube />
+                                <FaFacebook className="hover:text-[#1877F2]" />
+                                <FaInstagram className="hover:text-[#bc2a8d]" />
+                                <FaTwitter className="hover:text-[#1DA1F2]" />
+                                <FaYoutube className="hover:text-[#c4302b]" />
                             </div>
                         </motion.div>
 

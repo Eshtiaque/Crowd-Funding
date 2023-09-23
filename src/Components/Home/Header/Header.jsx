@@ -74,7 +74,7 @@ const Header = () => {
                 </motion.h1>
                 <div className=" md:mt-0 lg:mt-0">
                   <Link to="/project">
-                    <motion.button
+                    <motion.button 
                       type="button"
                       className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600"
 
@@ -90,7 +90,7 @@ const Header = () => {
                     </motion.button>
                   </Link>
                   <Link to="/donate">
-                    <motion.button
+                    <motion.button 
                       type="button"
                       className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded-full mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       variants={{
@@ -148,7 +148,7 @@ const Header = () => {
               </p> */}
                 <div className=" md:mt-0 lg:mt-0">
                   <Link to="/project">
-                    <motion.button
+                    <motion.button 
                       type="button"
                       className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600"
 
@@ -165,7 +165,7 @@ const Header = () => {
                   </Link>
                   
                   <Link to="/donate">
-                    <motion.button
+                    <motion.button 
                       type="button"
                       className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded-full mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 
@@ -222,7 +222,7 @@ const Header = () => {
                 </motion.h1>
                 <div className=" md:mt-0 lg:mt-0">
                   <Link to="/project">
-                    <motion.button
+                    <motion.button 
                       type="button"
                       className="text-white mt-8 font-semibold text-xl h-14 w-48   bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600"
 
@@ -239,7 +239,7 @@ const Header = () => {
                   </Link>
                   
                   <Link to="/donate">
-                    <motion.button
+                    <motion.button 
                       type="button"
                       className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center rounded-full mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 

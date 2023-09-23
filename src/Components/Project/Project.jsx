@@ -50,7 +50,7 @@ const Project = () => {
 >
                     <div>
                         <h2 className="uppercase font-semibold text-xl my-6 text-center">Start Your Project</h2>
-                        <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
+                        <Link to="/form" className="card  w-11/12 mx-auto md:w-96 bg-[#0a102b]  shadow-xl group">
                             <figure><img src={project} alt="Shoes" className="group-hover:scale-105 hover:duration-500 duration-500" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">
@@ -79,7 +79,7 @@ const Project = () => {
     
     >
                         <h2 className="uppercase font-semibold text-xl my-6 text-center">Get help now</h2>
-                        <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
+                        <Link to="/form" className="card  w-11/12 mx-auto md:w-96 bg-[#0a102b]  shadow-xl group">
                             <figure><img src={help} alt="Shoes" className="group-hover:scale-105 hover:duration-500 duration-500" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">

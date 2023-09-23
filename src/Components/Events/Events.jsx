@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
+import { BsSearch } from "react-icons/bs";
+import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.webp"
+
 import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.jpg"
+
 import SharedBanner from "../Contact/SharedBanner";
 // import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
 import Card from "./Card";
@@ -75,6 +79,17 @@ const handleSearch = () => {
                     {/* <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" /> */}
                <MainTitle heading="Our All Events"></MainTitle>
+
+                <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]  ">
+                    <input
+                        type="text"
+                        placeholder="Search Here..."
+                        value=""
+                        onChange=""
+                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black"
+                    />
+                    <BsSearch className="absolute top-[30%] right-2 text-black  p-1 w-8 h-8 rounded-full" />
+                </div>
                <div className="search-box  text-center">
                 <input
                     onChange={(e) => setSearchText(e.target.value)}

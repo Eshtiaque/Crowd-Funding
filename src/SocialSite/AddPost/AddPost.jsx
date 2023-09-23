@@ -57,7 +57,7 @@ const AddPost = () => {
                   <div className="grid lg:grid-cols-4 md:grid-cols-4 grid-cols-1 mt-9 ps-3">
                   <div>
                         <h5 className="font-bold  ">Photo :</h5>
-                        <input className="p-3 border border-primary-focus bg-[#050816] rounded-3xl  w-3/4 " placeholder="#photo"  accept=".jpeg, .png, .jpg"
+                        <input className="p-3 border border-primary-focus bg-[#050816] rounded-3xl  w-3/4 " placeholder="#photo"  accept=".jpeg, .png, .webp"
                             {...register("photo")}  />
                     </div>
                   <div>

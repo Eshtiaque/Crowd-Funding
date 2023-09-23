@@ -1,9 +1,9 @@
-import brand1 from '../../../assets/img/partner-logos/brand-1.png'
-import brand2 from '../../../assets/img/partner-logos/brand-2.png'
-// import brand3 from '../../../assets/img/partner-logos/brand-3.png'
-import brand4 from '../../../assets/img/partner-logos/brand-4.png'
-import brand11 from '../../../assets/img/partner-logos/brand-11.png'
-import brand12 from '../../../assets/img/partner-logos/brand-12.png'
+import brand1 from '../../../assets/img/partner-logos/brand-1.webp'
+import brand2 from '../../../assets/img/partner-logos/brand-2.webp'
+// import brand3 from '../../../assets/img/partner-logos/brand-3.webp'
+import brand4 from '../../../assets/img/partner-logos/brand-4.webp'
+import brand11 from '../../../assets/img/partner-logos/brand-11.webp'
+import brand12 from '../../../assets/img/partner-logos/brand-12.webp'
 import Marquee from "react-fast-marquee";
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
