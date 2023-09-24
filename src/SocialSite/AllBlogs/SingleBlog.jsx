@@ -14,8 +14,8 @@ const SingleBlog = ({ item }) => {
     return (
         <div className='+'>
             {/* rounded-tr-full rounded-br-full rounded-tl-full */}
-            <div className="card w-96 bg-[#0a102b] shadow-xl">
-                <figure><img className='h-56 w-full' src={photo} alt="Shoes" /></figure>
+            <div className="card w-96  shadow-xl">
+                <figure><img className='h-56 w-full rounded-br-full ' src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl">
                         Title: {title}

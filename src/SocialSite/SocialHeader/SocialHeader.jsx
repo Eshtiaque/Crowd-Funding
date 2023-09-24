@@ -11,7 +11,7 @@ const SocialHeader = () => {
 
     
     return (
-        <div className="max-w-7xl mx-auto  ">
+        <div className="max-w-7xl mx-auto pt-16 ">
             
             <img className="" src={photo} alt="" />
             {/* <button className="rounded-full  bg-green-800 sticky r-0 mb-0 "> LInk</button> */}

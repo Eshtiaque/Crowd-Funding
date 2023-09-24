@@ -1,10 +1,12 @@
 // import React from 'react';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 // import img  from "../../assets/images/login/login.svg"
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form"
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 const SignUp = () => {
 
@@ -89,10 +91,17 @@ const SignUp = () => {
      const location = useLocation();
      console.log(location);
      const from = location.state?.from?.pathname || "/";
- 
+ //show password
+ const [password, setPassword] = useState('');
+ const [showPassword, setShowPassword] = useState(false);
+
+ const togglePasswordVisibility = () => {
+     setShowPassword(!showPassword);
+ };
+ //end password
 
   return (
-    <div className="hero  pt-16 md:pt-40 md:pb-40 bg-login  mx-auto   ">
+    <div className="hero pt-16 md:pt-40 md:pb-40 bg-login  mx-auto   ">
        
       <div className="hero-content p-0 flex-none lg:flex-row ">
         
@@ -128,9 +137,16 @@ const SignUp = () => {
                 <label className="label">
                   <span className="label-text font-bold text-xl lg:text-white md:text-white text-white"> Password</span>
                 </label>
-                <input type="password" name="password" 
+                <input type={showPassword ? 'text' : 'password'} name="password" 
                  {...register("password",{required:true})} 
                 placeholder="password" className="input bg-transparent border-1 border-cyan-300 lg:text-white md:text-white text-white" />
+                 <button
+                                        type="button"
+                                        onClick={togglePasswordVisibility}
+                                        className="text-white hover:text-white  pr-4 text-lg  focus:outline-none absolute ms-64 mt-16"
+                                    >
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />} 
+                                    </button>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                 </label>

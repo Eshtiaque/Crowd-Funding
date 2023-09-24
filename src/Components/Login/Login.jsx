@@ -5,9 +5,10 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const Login = () => {
     const auth = getAuth();
-    const { signIn ,user } = useContext(AuthContext);
+    const { signIn, user } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
 
     const googleProvider = new GoogleAuthProvider;
@@ -17,6 +18,16 @@ const Login = () => {
     console.log(location);
     const from = location.state?.from?.pathname || "/";
 
+
+    //show password
+    const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+    //end password
+
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
@@ -24,7 +35,7 @@ const Login = () => {
                 setSuccess('Google Successfully');
                 console.log(loggedInUser);
                 // setUser(loggedInUser);
-                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email , role:"user" }
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, role: "user" }
                 // ---------------------------jwt add for google signIn----------------------
                 fetch('https://crowdfunding-gamma.vercel.app/users', {
                     method: "POST",
@@ -36,7 +47,7 @@ const Login = () => {
                     .then(res => res.json())
                     .then(result => {
                         // console.log(result);
-                        
+
                         fetch('https://crowdfunding-gamma.vercel.app/jwt', {
                             method: "POST",
                             headers: {
@@ -93,19 +104,7 @@ const Login = () => {
             >
 
                 <div className="hero-content p-0 flex-none lg:flex-row">
-                    {/* <div className="text-center text-white font-black lg:text-left w-1/2 mr-12 lg:block md:hidden hidden">
-                        <h1 className="font-black text-3xl"><span className="text-[#F99F24] text-4xl">CrowdFunding</span> - All You Need To Know</h1>
-                        <br></br><br />
-                        <p className="">It sounds simple, but exactly how does crowdfunding look in practice? Well, sometimes crowdfunding campaigns seek financing in the form of donations or investments, but that’s not always the case.
-                            <br /><br />
-                            Crowdfunding is the practice of collecting money from multiple individuals or sources in order to finance a new project. Often, CrowdFounders turn to social media to share their platform or idea with the purpose of inspiring others to contribute to the crowdfunding campaign.
-                        </p>
-                        backdrop-blur-none  md:backdrop-blur-sm  md:bg-black bg-black lg:bg-black-none  bg-opacity-70 md:bg-opacity-60 lg:bg-opacity-none lg:p-16 md:p-12
 
-
-
-
-                    </div> */}
 
                     <div className="card w-96 rounded-lg flex-shrink-0 max-w-sm  shadow-2xl  
                     lg:backdrop-blur-lg lg:p-8 lg:bg-transparent
@@ -113,11 +112,11 @@ const Login = () => {
                     bg-black bg-opacity-60 
                     
                     ">
-                        
-                        <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4">
+
+                        <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4 relative">
 
                             <h1 className="text-4xl text-center font-bold  text-cyan-300 rounded-lg p-1 bg-gradient-to-r from-cyan-600 via-sky-300 to-purple-500 bg-clip-text text-transparent mt-5 ">Login</h1>
-                            <hr  className="opacity-25"/>
+                            <hr className="opacity-25" />
                             <form onSubmit={handleSubmit(onSubmit)} >
 
                                 <div className="form-control ">
@@ -130,9 +129,18 @@ const Login = () => {
                                 <div className="form-control text-white">
                                     <label className="label">
                                         <span className="label-text font-bold text-xl lg:text-white md:text-white text-white">Password</span>
+
                                     </label>
-                                    <input type="password"
-                                        {...register("password", { required: true })} name="password" placeholder="password" className="input bg-transparent border-1 border-cyan-600 lg:text-white md:text-white text-black" />
+                                    <input type={showPassword ? 'text' : 'password'}
+                                        {...register("password", { required: true })} name="password"
+                                        placeholder="password" className="input bg-transparent border-1 border-cyan-600 lg:text-white md:text-white text-black" />
+                                    <button
+                                        type="button"
+                                        onClick={togglePasswordVisibility}
+                                        className="text-white hover:text-white  pr-4 text-lg  focus:outline-none absolute ms-64 mt-16"
+                                    >
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />} 
+                                    </button>
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                                     </label>
@@ -143,6 +151,7 @@ const Login = () => {
                                     
                                     hover:bg-gradient-to-r from-blue-600  to-purple-600 hover:text-white hover:border-none
                                     " type='submit' value="Login" />
+
                                 </div>
                                 <div className="form-control mt-6">
                                     <button onClick={handleGoogleSignIn} className="btn bg-transparent  border-1 border-cyan-600 text-cyan-300

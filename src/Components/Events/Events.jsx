@@ -15,7 +15,7 @@ const Events = () => {
     const [searchText, setSearchText] = useState("");
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch("event.json")
+        fetch("https://crowdfunding-gamma.vercel.app/event")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -83,14 +83,14 @@ const handleSearch = () => {
                 <input
                     onChange={(e) => setSearchText(e.target.value)}
                     type="text"
-                    className="ps-3 p-1 mt-5 rounded-lg bg-gray-300 text-black"
+                    className="ps-3 p-1 m-2 mt-5 rounded-lg bg-gray-300 text-black"
                     placeholder="Search event "
                 />{" "}
                 <button onClick={handleSearch} className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white m-4 hover:from-purple-600 hover:to-blue-600">Search</button>
             </div>
                 </motion.div>
             </div>
-            <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-2  gap-2" >
+            <div className="card-72 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-2  gap-2" >
                 {
                     items?.map(item => <Card
                         key={item._id}

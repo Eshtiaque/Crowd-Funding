@@ -1,7 +1,7 @@
 import SharedBanner from "../Contact/SharedBanner";
 import Partners from "../Home/Partners/Partners";
 import background from "../../assets/img/section-banner/about-section.webp";
-import sectionImage from "../../assets/img/section-banner/contact-banner.webp"
+// import sectionImage from "../../assets/img/section-banner/contact-banner.webp"
 import ocg from "../../assets/img/others img/ocg-saving-the-ocean-uXfYLTmF6fo-unsplash.webp";
 import sajid from "../../../src/assets/img/OurTeam/sajid.webp";
 import sakib from "../../../src/assets/img/OurTeam/sakib.webp";
@@ -132,7 +132,7 @@ const AboutUs = () => {
                         <div className="text-center">
                         <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
                                 {
-                                    counterOn && <CountUp className="text-6xl font-bold " start={0} end={1500} duration={2} delay={0}></CountUp>
+                                    counterOn && <CountUp className="text-6xl font-bold " start={0} end={999} duration={2} delay={0}></CountUp>
                                 }
                             </ScrollTrigger>
                             <p className="text-2xl font-bold text-orange-400">Volunteer</p>

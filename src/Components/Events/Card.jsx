@@ -11,10 +11,10 @@ const Card = ({ item }) => {
         publisher_name,
         publisher_image } = item;
     return (
-        <div className="card w-96 mb-5 text-white  shadow-none ">
+        <div className="card w- mb-5 text-white  shadow-none ">
            
            <div className="">
-           <figure><img className="w-100% h-64 rounded-bl-full " src={image} alt="" /></figure>
+           <figure><img className="w-full h-64 rounded-bl-full " src={image} alt="" /></figure>
           
            <AiOutlineFall className="absolute -mt-16 w-16 bg-transparent bg-rounded-full  text-[#F99F24] h-16"></AiOutlineFall>
            
