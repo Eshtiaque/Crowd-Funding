@@ -101,7 +101,7 @@ console.log(isAdmin);
                             <span className="ml-2">Dashboard</span>
                         </NavLink>
 
-                        {isAdmin ?
+                        {isAdmin && isAdmin ?
                             <>
                                 <NavLink
                                     to="/dashboard/revenue"

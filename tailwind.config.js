@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'sup': "url('/src/assets/img/OurTeam/sup.png')",
+        'login':"url('/src/assets/images/wallpaperflare.com_wallpaper (2).jpg')",
       },
       
     },
