@@ -16,7 +16,7 @@ import SocialShare from "./SocialShare";
 const Details = () => {
 
 
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const [blogs, setBlogs] = useState([]);
 
   const navigate = useNavigate()
@@ -33,8 +33,8 @@ const Details = () => {
         console.log(data);
         setPost(data);
       })
-  }, [user.email])
-  console.log(user.email);
+  }, [user?.email])
+  console.log(user?.email);
   console.log(email);
   const id = _id
   console.log(id);
@@ -91,7 +91,7 @@ const Details = () => {
           <h1 className="font-black lg:text-7xl md:text-5xl text-3xl my-3">{title}</h1>
         </div>
         {
-          user.email === email &&
+          user?.email === email &&
           <>
             <div className="">
               <Link to={`/socialBlog/editPost/${_id}`}><button className="btn mr-3 text-xl bg-green-300 hover:text-white hover:bg-black"><FiEdit /></button></Link>
@@ -120,6 +120,7 @@ const Details = () => {
           </div>
 
           <div className='flex gap-7 mr-9 items-center justify-end '>
+          
 
             <button>
               <BiSolidDownload className="text-cyan-400  text-4xl p-1" />
