@@ -1,115 +1,174 @@
-import { useForm } from "react-hook-form";
-import Swal from 'sweetalert2';
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import useAuth from "../../hooks/useAuth";
+import { useRef } from "react";
+
 const UserCampaignAdd = () => {
-    const [date, setDate] = useState('');
     const dateInputRef = useRef(null);
+  const { user } = useAuth();
+  const navigate = useNavigate()
+  const handleSubmit = e => {
+    e.preventDefault();
 
-    const HandleChange = (e) => {
-        setDate(e.target.value);
-    }
-    const { register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
-    const onSubmit = (data) => {
-        console.log(data);
-        fetch('http://localhost:5000/campaignsAdd', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body:JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.insertedId) {
-                    Swal.fire(
-                        'Good job!',
-                        'You Added a Blog Successfully',
-                        'success'
-                      )
-                } 
-            })
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const img = form.img.value;
+    const itemHeader = form.itemHeader.value;
+    const desc = form.desc.value;
+    const date = form.date.value;
+    const location = form.location.value;
+    const progress = form.progress.value;
 
-    }
+    const saveUser = { name, email, img, itemHeader, desc, date, location, progress, status: 'pending' };
+    fetch('https://crowdfunding-gamma.vercel.app/campaignsAdd', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(saveUser)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          toast.success('Campaign Submitted')
+          form.reset();
+          navigate('/dashboard/userAllCampaign')
+        }
+      });
+  };
 
-    useEffect ( () => {
-        document.title = "Add a Blogs";
-    },[])
-    return (
-        <div className="bg-black text-black">
-            <div className="bg-gradient-to-r from-[#F99F24] to-[#3c3b3b] rounded p-2" >
-                <h1 className="text-left font-black ps-5 text-5xl mt-32 mb-4">Add Your Campaign{"'"}s </h1>
-                <p className='text-left font-bold p-5'>NB: You can Add your campaigns in Our website.This is Best platform for campaign.<br />You Can find proper Campaign what you have needed ! PLEASE <br /> give the true and right information.<br /> # Thank You #</p>
-                <h2 className="text-center justify-end mb-5">________________________________________</h2>
-            </div>
-            <div className="bg-gradient-to-r from-[#F99F24] to-[#3c3b3b]">
-                <form className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-2  p-5 gap-3  justify-end" onSubmit={handleSubmit(onSubmit)}>
-                    <div>
-                        <h5 className="font-bold pt-3 ">Blog - Name :</h5>
-             <input className="p-2 w-full text-black  bg-pink-200 border border-black
-                         rounded-3xl" defaultValue=""
-                            {...register("name")} />
-                    </div>
-                    <div >
-                        <h5 className="font-bold mt-3">Blog - Username :</h5>
-                        <input className="p-2  w-full text-black   bg-pink-200 border border-black  rounded-3xl" defaultValue=""
-                            {...register("sellerName")} />
-                    </div>
-                    <div>
-                        <h5 className="font-bold mt-3">User - Email :</h5>
-                        <input className="p-2  w-full text-black   bg-pink-200 border border-black rounded-3xl" defaultValue=""
-                            {...register("email", { required: true })} />
-                    </div>
-                    <div>
-                        <h5 className="font-bold mt-3">Blog Photo URL :</h5>
-                        <input className="p-2  w-full text-black   bg-pink-200 border border-black rounded-3xl" defaultValue=""
-                            {...register("photoURL")} />
-                    </div>
-                    <div>
-                        <h5 className="font-bold mt-3">Location :</h5>
-                        <input className="p-2  w-full text-black    bg-pink-200 border border-black rounded-3xl" defaultValue=""
-                            {...register("price")} />
-                    </div>
-                    <div>
-                        <h5 className="font-bold mt-3">Date : {date}</h5>
-                        <input type="date" onChange={HandleChange} ref={dateInputRef} className="p-2  w-full text-black   bg-pink-200 border border-black rounded-3xl" defaultValue=""
-                            {...register("Rating")} />
-                    </div>
-                    {/* <div>
-                        <h5 className="font-bold mt-3">Quantity :</h5>
-                        <input className="p-2  w-full text-black   bg-pink-200 border border-black rounded-3xl" defaultValue=""
-                            {...register("quantity")} />
-                    </div> */}
-                    {/* <div className=" gap-1 mt-3 ">
-                        <h5 className="font-bold y-center ">Category :</h5>
-                        <select className=" w-full  h-10 p-2 text-black  bg-pink-200 border border-black rounded-3xl"
-                            {...register("category")}>
-                            <option value="Robot">Robot</option>
-                            <option value="Lego">Lego</option>
-                            <option value="Marvel">Marvel</option>
-                        </select>
-                    </div> */}
-                    <div>
-                        <h5 className="font-bold mt-3"> Blog Description :</h5>
-                        <input className="p-2  w-full h-32 text-black  bg-pink-200 border border-black rounded-3xl" defaultValue="" {...register("details")} />
-                    </div>
-                    <div>
+  return (
+    <div className=" 
+      w-3/4 text-black">      
+       <div className="text-center mt-24">
+        <h2 className="text-3xl  font-bold">Submit Campaign&apos;s</h2>
+        <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+      </div>
+      
+      <form className="card  shadow-2xl p-10 mx-auto text-base leading-6 space-y-6 sm:text-lg sm:leading-7 overflow-hidden mb-16 mt-8 bg-white" onSubmit={handleSubmit}>
 
-                    </div>
-                    <div className="md:grid md:grid-cols-1 lg:grid grid-cols-1 mt-5">
+        <div className="relative">
+          <input
+            name="email"
+            type="email"
+            className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+            placeholder="Email"
+            value={user?.email}
+            required />
 
-                        {errors.exampleRequired && <span>This field is required</span>}
-
-                        <input type="submit" className='btn btn-outline text-orange-300 border-orange-500 hover:bg-gradient-to-r from-[#F99F24] via-[#ffb199] to-orange-400 hover:text-black bg-black  w-full mt-3 mb-3 font-bold  '/>
-
-                    </div>
-                </form>
-            </div>
+          <label
+            htmlFor="email"
+            className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+            Email
+          </label>
         </div>
-    );
+
+        <div className="relative">
+          <input
+            name="itemHeader"
+            type="text"
+            className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+            placeholder="address"
+            required />
+
+          <label
+            htmlFor="itemHeader"
+            className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+            Campaign Title
+          </label>
+        </div>
+
+        <div className="relative">
+          <input
+            name="img"
+            type="text"
+            className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+            placeholder="address"
+            required />
+
+          <label
+            htmlFor="img"
+            className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+            Campaign Photo URL
+          </label>
+        </div>
+
+        <div className="relative">
+          <input
+            name="location"
+            type="text"
+            className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+            placeholder="address"
+            required />
+
+          <label
+            htmlFor="location"
+            className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+            Location
+          </label>
+        </div>
+
+        <div className="relative">
+          <input
+            name="date"
+            type="date"
+            ref={dateInputRef}
+            className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+            placeholder="address"
+            required />
+
+          <label
+            htmlFor="date"
+            className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+            Date
+          </label>
+        </div>
+
+        <div className="relative">
+          <input
+            name="progress"
+            type="number"
+            className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+            placeholder="address"
+            required />
+
+          <label
+            htmlFor="progress"
+            className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+            Progress
+          </label>
+        </div>
+
+        <div className="relative">
+          <input
+            name="desc"
+            type="text"
+            className="peer placeholder-transparent h-10  w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+            placeholder="ideas"
+            required
+          />
+
+          <label
+            htmlFor="desc"
+            className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+            Campaign Details
+          </label>
+        </div>
+
+        <div className="text-center">
+          <motion.button type="submit"
+          whileHover={{
+            scale: 1.1,
+            textShadow: "0px 0px 8px #000",
+            boxShadow: "0px 0px 8px #000"
+        }}
+          className="btn w-3/4 mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  ">
+            Submit
+          </motion.button>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default UserCampaignAdd;
