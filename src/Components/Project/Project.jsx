@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 
-
+///media/sajid/b160a550-b5f4-4f99-933c-3d24c12c6471/home
 
 const Project = () => {
     

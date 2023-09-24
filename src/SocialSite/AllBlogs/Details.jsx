@@ -15,7 +15,6 @@ import SocialShare from "./SocialShare";
 
 const Details = () => {
 
-
   const { user } = useContext(AuthContext);
   const [blogs, setBlogs] = useState([]);
 
@@ -82,7 +81,6 @@ const Details = () => {
 
 
 
-
   return (
     <div className="max-w-7xl mx-auto  py-24 ">
       <img className="rounded-lg h-96  mx-auto" src={photo} alt="" />
@@ -120,12 +118,16 @@ const Details = () => {
           </div>
 
           <div className='flex gap-7 mr-9 items-center justify-end '>
-          
+            
 
-            <button>
-              <BiSolidDownload className="text-cyan-400  text-4xl p-1" />
 
-            </button>
+              <button>
+                <BiSolidDownload className="text-cyan-400  text-4xl p-1" />
+
+              </button>
+
+
+           
             <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" text-yellow-300  rounded p-1 text-3xl" /></button>
             <dialog id="my_modal_2" className="modal">
               <div className="modal-box bg-[#050816]">
@@ -137,7 +139,7 @@ const Details = () => {
               </form>
             </dialog>
 
-           
+
             <button className="" onClick={() => document.getElementById('my_modal_4').showModal()}><FiAlertCircle className=" text-red-500 rounded p-1 text-4xl" /></button>
             <dialog id="my_modal_4" className="modal">
               <div className="modal-box bg-[#050816]">
