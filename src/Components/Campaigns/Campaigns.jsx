@@ -122,7 +122,7 @@ const Campaigns = () => {
                                                    Details <BiDownArrowAlt className="text-3xl ms-2"/>
                                                 </div>
                                                 <div className="collapse-content text-white">
-                                                    <p>tabIndex={0}{desc} </p>
+                                                    <p>{desc} </p>
                                                 </div>
                                             </div>
 

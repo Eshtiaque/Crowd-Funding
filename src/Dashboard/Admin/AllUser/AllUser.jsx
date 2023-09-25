@@ -46,7 +46,7 @@ const AllUsers = () => {
   return (
     <div className="px-10 mt w-full h-full mt-28 mb-8 text-black">
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-        <h1 className="md:text-4xl text-xl text-[#130F49] font-semibold">
+        <h1 className="md:text-4xl text-xl lg:text-4xl font-black text-[#130F49]">
           Total Users ({data?.data?.length})
           <hr className="border-2 border-slate-300 mt-2"/>
         </h1>

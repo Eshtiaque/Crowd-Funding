@@ -41,7 +41,7 @@ const AddEvent = () => {
     <div className=" 
       w-3/4 text-black">      
        <div className="text-center mt-24">
-        <h2 className="text-3xl  font-bold">Submit Event&apos;s</h2>
+        <h2 className="text-3xl  font-black text-[#130F49]">Submit Event&apos;s</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-blue-600 mx-auto" />
       </div>
       

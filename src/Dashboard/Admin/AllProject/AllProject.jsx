@@ -44,7 +44,7 @@ const AllProject = () => {
   return (
     <div className="px-10 w-full h-full mt-28 mb-8 text-black">
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-        <h1 className="text-xl lg:text-4xl md:text-3xl text-[#130F49] font-semibold">
+        <h1 className="text-xl lg:text-4xl md:text-3xl font-black text-[#130F49]">
           Project Requests: ({data?.data?.length})
           <hr className="border-2 border-slate-300 mt-2"/>
 

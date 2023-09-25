@@ -24,7 +24,7 @@ const Admin = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-5 gap-x-5 mt-8 gap-y-5">
         <div className="bg-[#D3F4EC] text-2xl font-semibold py-5 rounded-bl-full flex flex-col gap-8 p-4">
           <div className="flex mx-1 items-center justify-between">
-            <h1>Revenue</h1>
+            <h1 className="text-2xl font-black text-[#130F49]">Revenue</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -41,11 +41,11 @@ const Admin = () => {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-semibold"><span>$</span>628</h1>
+          <h1 className="text-4xl font-black text-[#130F49]"><span>$</span>628</h1>
         </div>
         <div className="bg-[#FEF4EA] text-2xl font-semibold py-5 rounded-bl-full  flex flex-col gap-8 p-4">
           <div className="flex mx-1 items-center justify-between">
-            <h1>Donation</h1>
+            <h1 className="text-2xl font-black text-[#130F49]">Donation</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -61,11 +61,11 @@ const Admin = () => {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-semibold"><span className="te">$</span>1437</h1>
+          <h1 className="text-4xl font-black text-[#130F49]"><span className="te">$</span>1437</h1>
         </div>
         <div className="bg-[#E3F9E0] text-2xl font-semibold py-5 rounded-bl-full flex flex-col gap-8 p-4">
           <div className="flex mx-1 items-center justify-between">
-            <h1>Projects</h1>
+            <h1 className="text-2xl font-black text-[#130F49]">Projects</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -80,18 +80,18 @@ const Admin = () => {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-semibold"><span></span>35 +</h1>
+          <h1 className="text-4xl font-black text-[#130F49]"><span></span>35 +</h1>
         </div>
         <div className="bg-purple-200 text-2xl font-semibold py-5 rounded-bl-full flex flex-col gap-8 p-4">
           <div className="flex mx-1 items-center justify-between">
-            <h1>Campaigns</h1>
+            <h1 className="text-2xl font-black text-[#130F49]">Campaigns</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-12 h-12"            >
+              className="w-12 h-12 "            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -99,14 +99,14 @@ const Admin = () => {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-semibold"><span></span>200 +</h1>
+          <h1 className="text-4xl font-black text-[#130F49]"><span></span>200 +</h1>
         </div>
       </div>
 
       <div className="grid md:grid-cols-3 w-full grid-cols-1 md:grid-rows-2 grid-rows-1 grid-flow-row gap-3 mt-2 ">
         {/* <!-- First Container --> */}
         <div className="rounded bg-[#FEF4EA] text-[#130F49] pr-5 pb-12 pt-0 pl-1 md:col-span-2 w-full h-[35vh] shadow-lg col-span-1 row-span-1">
-          <p className="text-2xl font-bold text-[#130F49] mb-2 mt-2 ml-5  text-center">Donations</p>
+          <p className="text-2xl font-black text-[#130F49] mb-2 mt-2 ml-5  text-center">Donations</p>
           <BarChartDashboard data={data} />
         </div>
 
@@ -119,7 +119,7 @@ const Admin = () => {
 
         {/* <!-- Third Container --> */}
         <div className="md:col-span-2  pb-14 px-5 shadow-lg col-span-1 h-[33vh] rounded bg-[#D3F4EC] row-span-1">
-          <p className="text-2xl font-bold text-[#130F49] mb-2 mt-2 ml-5 ">Revenue</p>
+          <p className="text-2xl font-black text-[#130F49] mb-2 mt-2 ml-5 ">Revenue</p>
           <AreaDashboard data={data} />
         </div>
       </div>

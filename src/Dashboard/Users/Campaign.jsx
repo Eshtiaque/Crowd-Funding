@@ -34,8 +34,9 @@ const Campaign = () => {
         <div className='text-black px-10 w-full h-full mt-28 min-h-[80vh]'>
            
             <div className="flex flex-col md:flex-row gap-6 items-center justify-between mt-5">
-                <h1 className="md:text-4xl text-2xl font-bold">
+                <h1 className="md:text-4xl text-2xl font-black text-[#130F49]">
                     My Campaigns ({ campaigns.length }) 
+                    <hr  className="border-slate-400 border-b-[3px] w-[350px] mx-auto mt-3"/>
                 </h1>
                 
                 <div className="flex flex-row">
