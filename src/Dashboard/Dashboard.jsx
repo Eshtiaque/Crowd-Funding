@@ -126,6 +126,14 @@ console.log(isAdmin);
                                     <FaArtstation />
                                     <span className="ml-2">Applications</span>
                                 </NavLink>
+                                <NavLink
+                                    to="/dashboard/UserPayment"
+                                    className="flex flex-row items-center hover:bg-gray-400 hover:text-black hover:rounded-lg rounded-none p-3 nav"
+                                >
+                                    <FaRegClone />
+                                    <span className="ml-2">Payments</span>
+                                </NavLink>
+
 
                                 <NavLink
                                     to="/dashboard/aCampaign"
@@ -135,14 +143,7 @@ console.log(isAdmin);
                                     <span className="ml-2">Campaigns</span>
                                 </NavLink>
 
-                                <NavLink
-                                    to="/dashboard/UserPayment"
-                                    className="flex flex-row items-center hover:bg-gray-400 hover:text-black hover:rounded-lg rounded-none p-3 nav"
-                                >
-                                    <FaRegClone />
-                                    <span className="ml-2">Payments</span>
-                                </NavLink>
-
+                               
                                 <NavLink
                                     to="/dashboard/aEvent"
                                     className="flex flex-row items-center hover:bg-gray-400 hover:text-black hover:rounded-lg rounded-none p-3 nav"

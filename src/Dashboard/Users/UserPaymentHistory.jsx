@@ -23,12 +23,12 @@ const UserPaymentHistory = () => {
     return (
         <div className="px-10 mt w-full h-full mt-28 mb-8">
 
-            <h1 className="md:text-3xl mt-5 w-full text-xl text-center text-[#130F49] font-semibold">
+            <h1 className="md:text-3xl lg:text-4xl mt-5 w-full text-2xl text-center text-[#130F49] font-semibold">
                 My Donations
             </h1>
 
             <div className="overflow-x-auto mt-12">
-                <table className="table p-4 bg-base-300">
+                <table className="table p-4 bg-base-300 text-[#130F49]">
                     {/* head */}
                     <thead>
                         <tr className="text-[#130F49] text-center text-xl">
@@ -40,14 +40,14 @@ const UserPaymentHistory = () => {
                             <th>Amount</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='text-[#130F49]'>
                         {
                             donations?.map(data => <tr key={data._id}>
-                                <th className="text-center">{count++}</th>
-                                <td className="text-center">{data?.name}</td>
-                                <td className="text-center">{data?.number}</td>
-                                <td className="text-center">{data?.address}</td>
-                                <td className="text-center">{data?.transaction ? data.transaction : "Not Found"}</td>
+                                <th className="text-center ">{count++}</th>
+                                <td className="text-center ">{data?.name}</td>
+                                <td className="text-center ">{data?.number}</td>
+                                <td className="text-center ">{data?.address}</td>
+                                <td className="text-center ">{data?.transaction ? data.transaction : "Not Found"}</td>
                                 <td className="text-center text-green-700 font-semibold">$ {data?.price}</td>
                             </tr>)
                         }

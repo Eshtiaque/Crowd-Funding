@@ -31,8 +31,8 @@ const ProjectDescription = () => {
   }
   console.log(data);
   return (
-    <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8'>
-      <h1 className='mt-4 text-center text-xl md:text-2xl font-bold bg-[#D3F4EC] py-2 md:py-1 rounded-xl'>{data.name}'s Application Details</h1>
+    <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8 text-black'>
+      <h1 className='mt-4 text-center text-xl md:text-2xl font-bold bg-[#cccecd] py-2 md:py-1 rounded-xl'>{data.name}'s Application Details</h1>
 
       <div className='md:flex flex-row justify-around items-center mx-4 md:mx-10 md:my-5 mt-8 md:mt-12 rounded-xl p-8 bg-base-300'>
         <div className='basis-1/2 space-y-3.5'>

@@ -34,6 +34,7 @@ const VideoCall = () => {
   };
   return (
     <div
+    
       className='flex items-center justify-center'
       ref={myMeeting}
       style={{ width: '75vw', height: '100vh', marginRight: "10vh" }}

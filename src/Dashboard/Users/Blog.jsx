@@ -73,6 +73,8 @@ const Blogs = () => {
             <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
                 <h1 className="text-xl md:text-3xl text-[#130F49] font-semibold">
                     Project Requests: ({projects.length})
+                    <hr className="border-2 border-slate-300 mt-2"/>
+
                 </h1>
                 <div className="form-control mt-1">
                     <div >
@@ -81,11 +83,9 @@ const Blogs = () => {
                                 type="text"
                                 name="search"
                                 placeholder="Search…"
-                                className="input input-bordered border border-gray-600 rounded-full text-black placeholder-gray-500
-                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%"
+                                className="input ps-3 p-1 mt-5 rounded-lg bg-gray-300 text-black"
                             />
-                            <button className="btn border border-gray-600 rounded-full text-gray-600 placeholder-black
-                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%">
+                            <button className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white my-5 h-12 hover:from-purple-600 hover:to-blue-600">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-6 w-6"
@@ -126,7 +126,7 @@ const Blogs = () => {
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className='text-black'>
                             {projects?.map((item) => (
                                 <tr key={item._id}>
                                     <th className="py-4 text-center">{count++}</th>
@@ -135,8 +135,8 @@ const Blogs = () => {
                                     <td className="py-4 text-center">{item?.phone}</td>
                                     <td className="py-4 text-center">$ {item?.money}</td>
                                     <td className="py-4 text-center">{item?.status === 'approved' ? 'Approved' : 'Pending' || 'Pending'}</td>
-                                    <td onClick={() => handleDelete(item._id)} className='text-center cursor-pointer'>
-                                        <span className="py-2 px-4 border rounded-lg bg-red-500 font-semibold hover:bg-red-600 text-white">Delete</span>
+                                    <td onClick={() => handleDelete(item._id)} className='text-center cursor-pointer '>
+                                        <span className="py-2 px-4 border rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 font-semibold text-white">Delete</span>
                                     </td>
                                 </tr>
                             ))}

@@ -6,7 +6,7 @@ const UserEventDetails = () => {
 
     return (
         <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8 text-black'>
-            <h1 className='mt-4 text-center text-black text-xl md:text-2xl font-bold bg-[#D3F4EC] py-2 md:py-1 rounded-xl'>Events Details</h1>
+            <h1 className='mt-4 text-center text-black text-xl md:text-2xl font-black bg-[#c7cac9] py-2 md:py-1 rounded-xl '>Events Details</h1>
 
             <div className="card md:card-side mx-auto w-11/12 shadow-xl bg-base-300 mt-8 text-black">
                 <div>
@@ -24,7 +24,7 @@ const UserEventDetails = () => {
                     <div className='flex justify-between'>
                         <div>
                         <p>Date: {data.publish_date}</p>
-                        <p>Status: {data.status}</p>
+                        <p>Status: <span className='text-red-500'>{data.status}</span></p>
                         </div>
                         <div className='flex text-center items-center gap-5'>
                         <p className='font-bold'> {data.publisher_name}</p>

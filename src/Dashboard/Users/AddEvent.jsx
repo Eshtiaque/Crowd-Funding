@@ -42,7 +42,7 @@ const AddEvent = () => {
       w-3/4 text-black">      
        <div className="text-center mt-24">
         <h2 className="text-3xl  font-bold">Submit Event&apos;s</h2>
-        <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+        <hr className="border-b-[3px] w-[106px] mt-1 border-blue-600 mx-auto" />
       </div>
       
       <form className="card  shadow-2xl p-10 mx-auto text-base leading-6 space-y-6 sm:text-lg sm:leading-7 overflow-hidden mb-16 mt-8 bg-white" onSubmit={handleSubmit}>

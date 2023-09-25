@@ -18,6 +18,8 @@ const Revenue = () => {
 
   return (
     <div className="p-10 mt w-full h-full mt-28 text-white min-h-[80vh]">
+      <h1 className="mb-8 text-black font-black text-4xl">World-wide Total Revenue :</h1>
+      <hr className="mb-16 border-2 border-slate-300"/>
       <div className="bg-base-300 rounded-xl px-1 pt-6 flex flex-col items-center justify-between">
         <h1 className="lg:text-4xl text-2xl text-[#130F49] font-bold mb-12">
           Revenue of 2022: <span>$</span>628

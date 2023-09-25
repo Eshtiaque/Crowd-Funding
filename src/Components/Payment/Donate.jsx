@@ -81,7 +81,7 @@ const Donate = () => {
 
 >
         <h2 className="text-3xl font-bold">Please fill-up your information</h2>
-        <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+        <hr className="border-b-[3px] w-[106px] mt-1 border-blue-600 mx-auto" />
       </motion.div>
            
             <motion.form className='my-3 mx-[5vw]' onSubmit={handlePayment}
@@ -103,7 +103,7 @@ const Donate = () => {
             {/* <Elements stripe={stripePromise}>
                 <CheckOut price={tk}></CheckOut>
             </Elements> */}
-            <input type="submit" value="submit" className='btn btn-warning input-bordered w-full my-2 ' /><br/>
+            <input type="submit" value="submit" className='btn bg-gradient-to-br from-blue-600 to-purple-600  input-bordered w-full my-2 text-white ' /><br/>
             </motion.form>
         </div>
     );

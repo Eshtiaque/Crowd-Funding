@@ -34,7 +34,10 @@ const AddBlog = () => {
     // }, []);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mt-16">
+        <div>
+            <h1 className="mt-12 text-black font-black text-4xl uppercase">Start your project with submit proper information</h1>
+            <hr  className="border-slate-400 border-2 mt-3"/>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mt-16 text-black">
             {/* //two big card */}
             <div>
                 <h2 className="uppercase font-semibold text-xl my-6 text-center">Start Your Project</h2>
@@ -71,6 +74,7 @@ const AddBlog = () => {
                     </div>
                 </Link>
             </div>
+        </div>
         </div>
         // <div className="bg-black text-black">
         //     <div className="bg-gradient-to-r from-[#F99F24] to-[#3c3b3b] rounded p-2" >
