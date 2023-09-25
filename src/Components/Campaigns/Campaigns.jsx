@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsSearch } from "react-icons/bs";
+
+import { BiDownArrowAlt } from "react-icons/bi";
+
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import Pagination from './Pagination';
@@ -80,7 +83,7 @@ const Campaigns = () => {
                 >
                     {/* <h2 className="text-3xl text-white font-bold p-2">Our All Country Campaigns</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto " /> */}
-                <MainTitle heading="Our All Country Campaigns"></MainTitle>
+                    <MainTitle heading="Our All Country Campaigns"></MainTitle>
                 </motion.div>
                 <div className="mt-4 mb-4 relative w-10/12 mx-auto md:w-[20%] ">
                     <input
@@ -109,12 +112,25 @@ const Campaigns = () => {
                                         </figure>
                                         <div className="card-body">
                                             <div className="flex items-center justify-between">
-                                                <progress className="progress progress-warning w-56" value={progress} max="100"></progress>
-                                                <span className="text-gray-600">{date}</span>
+                                                <progress className="progress progress-primary w-56" value={progress} max="100"></progress>
+                                                <span className="text-gray-300">{date}</span>
                                             </div>
                                             <h2 className="card-title pt-2">{itemHeader}</h2>
-                                            <p>{desc}</p>
+                                            {/* <p>{desc}</p> */}
+                                            <div tabIndex={0} className="collapse ">
+                                                <div className="collapse-title flex items-center text-xl font-medium text-white underline">
+                                                   Details <BiDownArrowAlt className="text-3xl ms-2"/>
+                                                </div>
+                                                <div className="collapse-content text-white">
+                                                    <p>tabIndex={0}{desc} </p>
+                                                </div>
+                                            </div>
+
                                             <div className="card-actions justify-end">
+                                                {/* <Link to={`/dashboard/userAllCampaign/${_id}`}>
+                                                    <MainButton text="Details"></MainButton>
+
+                                                </Link> */}
                                                 <Link to="/donate">
                                                     {/* <button className="px-3 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded text-md">Donate Now</button> */}
                                                     <MainButton text="Donate Now"></MainButton>
