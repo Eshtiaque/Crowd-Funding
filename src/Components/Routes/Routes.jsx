@@ -42,6 +42,8 @@ import VideoCall from "../../Dashboard/Users/VideoCall";
 import UserCampaignAdd from "../../Dashboard/Users/UserCampaignAdd";
 import AddEvent from "../../Dashboard/Users/AddEvent";
 import EditPost from "../../SocialSite/EditPost/EditPost";
+import UserCampaignDetails from "../../Dashboard/Users/UserCampaignDetails";
+import UserEventDetails from "../../Dashboard/Users/UserEventDetails";
 
 
 
@@ -213,12 +215,22 @@ const Router = createBrowserRouter([
           element: <UserCampaignAdd></UserCampaignAdd>
         },
         {
+          path:"userAllCampaign/:id",
+          element: <UserCampaignDetails></UserCampaignDetails>,
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${params.id}`)
+        },
+        {
           path:"userAllEvent",
           element: <Event></Event>
         },
         {
           path:"userAddEvent",
           element: <AddEvent></AddEvent>
+        },
+        {
+          path:"userAllEvent/:id",
+          element: <UserEventDetails></UserEventDetails>,
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/event/${params.id}`)
         },
         {
           path:"payment",
