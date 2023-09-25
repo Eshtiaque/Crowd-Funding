@@ -30,7 +30,7 @@ const AddBlog = () => {
     }
 
     useEffect ( () => {
-        document.title = "Add a Blog";
+        document.title = "Add a Project";
     },[])
     return (
         <div className="bg-black text-black">

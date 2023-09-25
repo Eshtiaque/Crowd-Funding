@@ -23,9 +23,12 @@ const UserPaymentHistory = () => {
     return (
         <div className="px-10 mt w-full h-full mt-28 mb-8">
 
-            <h1 className="md:text-3xl lg:text-4xl mt-5 w-full text-2xl text-center text-[#130F49] font-semibold">
+            <h1 className="md:text-3xl lg:text-4xl mt-5 w-full text-2xl text-center font-black text-[#130F49]">
                 My Donations
+                
+
             </h1>
+            <hr  className="border-slate-400 border-b-[3px] w-[300px] mx-auto mt-3"/>
 
             <div className="overflow-x-auto mt-12">
                 <table className="table p-4 bg-base-300 text-[#130F49]">

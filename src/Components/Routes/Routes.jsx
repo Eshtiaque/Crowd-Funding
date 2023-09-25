@@ -45,6 +45,7 @@ import EditPost from "../../SocialSite/EditPost/EditPost";
 import UserCampaignDetails from "../../Dashboard/Users/UserCampaignDetails";
 import UserEventDetails from "../../Dashboard/Users/UserEventDetails";
 import ErrorPage from "../ErrorPage/Errorpage";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -100,7 +101,7 @@ const Router = createBrowserRouter([
         },
         {
           path: "/Project",
-          element: <Project></Project>
+          element: <PrivateRoute><Project></Project></PrivateRoute>
         },
         {
           path: "/form",
@@ -110,7 +111,7 @@ const Router = createBrowserRouter([
     },
     {
       path: "/socialBlog",
-      element: <SocialSite></SocialSite>,
+      element: <PrivateRoute><SocialSite></SocialSite></PrivateRoute>,
       errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
@@ -235,7 +236,7 @@ const Router = createBrowserRouter([
         },
         {
           path:"userAllEvent/:id",
-          element: <UserEventDetails></UserEventDetails>,
+          element: <PrivateRoute><UserEventDetails></UserEventDetails></PrivateRoute>,
           loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/event/${params.id}`)
         },
         {
