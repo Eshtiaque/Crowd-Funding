@@ -44,13 +44,16 @@ import AddEvent from "../../Dashboard/Users/AddEvent";
 import EditPost from "../../SocialSite/EditPost/EditPost";
 import UserCampaignDetails from "../../Dashboard/Users/UserCampaignDetails";
 import UserEventDetails from "../../Dashboard/Users/UserEventDetails";
+import ErrorPage from "../ErrorPage/Errorpage";
 
 
 
 const Router = createBrowserRouter([
     {
+
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
@@ -108,6 +111,7 @@ const Router = createBrowserRouter([
     {
       path: "/socialBlog",
       element: <SocialSite></SocialSite>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path: "addPost",
@@ -132,6 +136,8 @@ const Router = createBrowserRouter([
     {
       path: "/dashboard",
       element:<Dashboard></Dashboard>,
+      errorElement:<ErrorPage></ErrorPage>,
+
       children:[
         {
           path:"/dashboard",

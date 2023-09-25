@@ -28,8 +28,8 @@ const Campaigns = () => {
 
         const filtered = pages.filter(campaign => {
             const searchTerm = searchText.toLowerCase();
-            const headerMatch = campaign.header.toLowerCase().includes(searchTerm);
-            const locationMatch = campaign.location.toLowerCase().includes(searchTerm);
+            const headerMatch = campaign?.header?.toLowerCase().includes(searchTerm);
+            const locationMatch = campaign?.location?.toLowerCase().includes(searchTerm);
             return headerMatch || locationMatch;
         });
 
@@ -100,11 +100,11 @@ const Campaigns = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:p-12 md:p-12">
                         {filteredCampaigns
                             .filter(campaign => campaign.status === 'approved') // Filter by status
-                            .map(({ _id, image, location, header, desc, date, progress }) => {
+                            .map(({ _id, img, location, itemHeader, desc, date, progress }) => {
                                 return (
                                     <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-[#0a102b] shadow-xl group">
                                         <figure>
-                                            <img src={image} alt="image" className="w-full h-60 group-hover:scale-105 duration-500 hover:duration-500" />
+                                            <img src={img} alt="image" className="w-full h-60 group-hover:scale-105 duration-500 hover:duration-500" />
                                             <span className="absolute text-white left-2 bottom-[58%] md:bottom-[52%] text-sm bg-black bg-opacity-50 rounded font-semibold flex items-center gap-2 px-1"><FaLocationDot /> {location}</span>
                                         </figure>
                                         <div className="card-body">
@@ -112,7 +112,7 @@ const Campaigns = () => {
                                                 <progress className="progress progress-warning w-56" value={progress} max="100"></progress>
                                                 <span className="text-gray-600">{date}</span>
                                             </div>
-                                            <h2 className="card-title pt-2">{header}</h2>
+                                            <h2 className="card-title pt-2">{itemHeader}</h2>
                                             <p>{desc}</p>
                                             <div className="card-actions justify-end">
                                                 <Link to="/donate">
