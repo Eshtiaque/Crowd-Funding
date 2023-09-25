@@ -10,16 +10,16 @@ const UserEventDetails = () => {
 
             <div className="card md:card-side mx-auto w-11/12 shadow-xl bg-base-300 mt-8 text-black">
                 <div>
-                <figure><img className='md:w-96 h-64 rounded-lg' src={data.image} alt="Movie" /></figure>
+                <figure><img className='md:w-72 lg:w-96 h-64 rounded-lg' src={data.image} alt="Movie" /></figure>
                 </div>
                 <div className="card-body">
                     <h2 className="card-title font-bold text-4xl">{data.title}</h2>
                     <p>Email: {data.email}</p>
                     <div className='grid grid-cols-2 gap-12'>
-                        <div></div>
+                        <div className='hidden lg:block md:hidden'></div>
                         <progress className="progress w-56"></progress>
-                        <progress className="progress w-56"></progress>
-                        <div></div>
+                        <progress className="progress w-56 hidden lg:block md:hidden"></progress>
+                        <div className=''></div>
                     </div>
                     <div className='flex justify-between'>
                         <div>

@@ -10,7 +10,7 @@ const UserCampaignDetails = () => {
 
             <div className="card md:card-side mx-auto w-9/12 shadow-xl bg-base-300 mt-8 text-black">
                 <div>
-                <figure><img className='md:w-96 h-64 rounded-lg' src={data.img} alt="Movie" /></figure>
+                <figure><img className='md:w-72 lg:w-96 h-64 rounded-lg' src={data.img} alt="Movie" /></figure>
                 </div>
                 <div className="card-body">
                     <h2 className="card-title font-bold text-4xl">{data.itemHeader}</h2>

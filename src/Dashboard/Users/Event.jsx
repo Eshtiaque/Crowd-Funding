@@ -41,7 +41,7 @@ const Event = () => {
                 </div>
             </div>
 
-            <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mx-6 mt-12'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mx-6 mt-12'>
                 {
                     events?.map(event => <div className="card w-72 bg-gray-300" key={event._id}>
                         <figure><img className='h-44 w-full' src={event.image} alt="" /></figure>
