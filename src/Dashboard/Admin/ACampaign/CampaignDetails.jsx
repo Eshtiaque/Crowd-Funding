@@ -34,9 +34,9 @@ const CampaignDetails = () => {
             <h1 className='mt-4 text-center text-xl md:text-2xl font-bold bg-[#d3d6d5] py-2 md:py-1 rounded-xl'>Campaigns Details</h1>
 
             <div className="card md:card-side mx-auto w-11/12 shadow-xl bg-base-300 mt-8">
-                <figure><img className='md:w-96 w-10/12 mx-auto lg:ml-4' src={data.image} alt="Movie" /></figure>
+                <figure><img className='md:w-96 w-10/12 mx-auto lg:ml-4' src={data.img} alt="Movie" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{data.header}</h2>
+                    <h2 className="card-title">{data.itemHeader}</h2>
                     <p>{data.desc}</p>
                     <p>{data.location}</p>
                     <p>{data.date}</p>
