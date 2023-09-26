@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
-import { useEffect } from "react";
 const AddBlog = () => {
     const { register,
         handleSubmit,
