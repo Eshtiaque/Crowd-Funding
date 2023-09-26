@@ -20,7 +20,7 @@ const Admin = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen lg:mt-12 md:mt-20 items-center justify-center text-[#130F49] py-4 md:p-8">
+    <div className="w-full min-h-screen lg:mt-12 md:mt-20 mt-16 items-center justify-center text-[#130F49] py-4 md:p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-5 gap-x-5 mt-8 gap-y-5">
         <div className="bg-[#D3F4EC] text-2xl font-semibold py-5 rounded-bl-full flex flex-col gap-8 p-4">
           <div className="flex mx-1 items-center justify-between">
@@ -103,7 +103,7 @@ const Admin = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 w-full grid-cols-1 md:grid-rows-2 grid-rows-1 grid-flow-row gap-3 mt-2 ">
+      <div className="grid xl:grid-cols-3 w-full grid-cols-1 xl:grid-rows-2 grid-rows-1 grid-flow-row gap-3 mt-2 ">
         {/* <!-- First Container --> */}
         <div className="rounded bg-[#FEF4EA] text-[#130F49] pr-5 pb-12 pt-0 pl-1 md:col-span-2 w-full h-[35vh] shadow-lg col-span-1 row-span-1">
           <p className="text-2xl font-black text-[#130F49] mb-2 mt-2 ml-5  text-center">Donations</p>
