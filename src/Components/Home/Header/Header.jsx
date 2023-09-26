@@ -61,7 +61,7 @@ const Header = () => {
                 >
                   Raising money is Easy Now
                 </motion.h1>
-                <motion.h1 className="title-left-margin first-slide-title text-7xl mb-3 opacity-90  font-sans tracking-[0.09em] drop-shadow-2xl font-[700]"
+                <motion.h1 className="title-left-margin first-slide-title lg:mr-0 md:mr-28 sm:mr-20 mr-8 text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-3 opacity-90  font-sans tracking-[0.09em] drop-shadow-2xl font-[700]"
                   variants={{
                     hidden: { opacity: 0, y: 75 },
                     visible: { opacity: 1, y: 0 }
