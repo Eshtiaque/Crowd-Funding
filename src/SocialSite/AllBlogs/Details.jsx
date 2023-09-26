@@ -6,7 +6,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FiAlertCircle } from 'react-icons/fi';
-import { BiSolidDownload } from 'react-icons/bi';
+import { FaHome } from 'react-icons/fa';
 import { BsShare } from 'react-icons/bs';
 import Swal from "sweetalert2";
 import SocialShare from "./SocialShare";
@@ -121,11 +121,12 @@ const Details = () => {
             
 
 
-              <button>
-                <BiSolidDownload className="text-cyan-400  text-4xl p-1" />
+            
+            <Link to="/">
+                <FaHome className="text-cyan-300  text-4xl p-1 " />
 
-              </button>
-
+              </Link>
+         
 
            
             <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" text-yellow-300  rounded p-1 text-3xl" /></button>

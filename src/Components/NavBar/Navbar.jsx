@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth } from "firebase/auth";
 import { app } from "../../Firebase/firebaseConfig";
+import MainButton from "../SharedComponents/MainButton";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -223,7 +224,9 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                <Link onClick={handleLogOut}><button className="text-[#F99F24] border border-[#F99F24] bg-inherit hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0" >LogOut</button></Link>
+                <Link onClick={handleLogOut}>
+                  <MainButton text={"Logout"}></MainButton>
+                </Link>
               </div>
               :
               <Link to="/login">

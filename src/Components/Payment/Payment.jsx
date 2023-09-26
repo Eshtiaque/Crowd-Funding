@@ -30,7 +30,7 @@ const Payment = () => {
 
             <div className="text-center mt-8">
                 <h2 className="text-3xl font-bold">Please Payment : ${tk}</h2>
-                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+                <hr className="border-b-[3px] w-[106px] mt-1 border-blue-600 mx-auto" />
             </div>
             <div className="max-w-xl mx-auto">
                 <Elements stripe={stripePromise}>

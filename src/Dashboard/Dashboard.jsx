@@ -47,7 +47,7 @@ console.log(isAdmin);
                 <Outlet className="h-screen overflow-y-scroll"></Outlet>
 
                 <div className="h-20 lg:hidden bg-gray-600 top-0 left-0 right-0 absolute border-b-[1px] border-gray-400"></div>
-                <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gray-500 border-b-[1px] shadow-lg top-0 left-0 right-0 absolute">
+                <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gradient-to-r from-slate-400 to-[#050816]  border-b-[1px] shadow-lg top-0 left-0 right-0 absolute">
                     <div className="flex items-center gap-7 justify-center absolute right-5">
                         <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
                         {isAdmin &&
@@ -84,7 +84,7 @@ console.log(isAdmin);
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
-                <ul className="bg-gray-600 text-white overflow-hidden menu p-4 w-80 h-full mt-20 lg:mt-0">
+                <ul className="bg-gradient-to-t from-slate-500 to-[#050816] text-white overflow-hidden menu p-4 w-80 h-full mt-20 lg:mt-0">
                     {/* Sidebar content here */}
                     <Link to="/" className="hidden lg:block">
                         <img src={logo} className="w-52 ml-8" alt="" />
@@ -126,6 +126,14 @@ console.log(isAdmin);
                                     <FaArtstation />
                                     <span className="ml-2">Applications</span>
                                 </NavLink>
+                                <NavLink
+                                    to="/dashboard/UserPayment"
+                                    className="flex flex-row items-center hover:bg-gray-400 hover:text-black hover:rounded-lg rounded-none p-3 nav"
+                                >
+                                    <FaRegClone />
+                                    <span className="ml-2">Payments</span>
+                                </NavLink>
+
 
                                 <NavLink
                                     to="/dashboard/aCampaign"
@@ -135,14 +143,7 @@ console.log(isAdmin);
                                     <span className="ml-2">Campaigns</span>
                                 </NavLink>
 
-                                <NavLink
-                                    to="/dashboard/UserPayment"
-                                    className="flex flex-row items-center hover:bg-gray-400 hover:text-black hover:rounded-lg rounded-none p-3 nav"
-                                >
-                                    <FaRegClone />
-                                    <span className="ml-2">Payments</span>
-                                </NavLink>
-
+                               
                                 <NavLink
                                     to="/dashboard/aEvent"
                                     className="flex flex-row items-center hover:bg-gray-400 hover:text-black hover:rounded-lg rounded-none p-3 nav"

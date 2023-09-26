@@ -44,11 +44,13 @@ const AllUsers = () => {
   }
 
   return (
-    <div className="px-10 mt w-full h-full mt-28 mb-8">
+    <div className="px-10 mt w-full h-full mt-28 mb-8 text-black">
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-        <h1 className="md:text-3xl text-xl text-[#130F49] font-semibold">
+        <h1 className="md:text-4xl text-xl lg:text-4xl font-black text-[#130F49]">
           Total Users ({data?.data?.length})
+          <hr className="border-2 border-slate-300 mt-2"/>
         </h1>
+        
         <div className="form-control mt-1">
           <div >
             <form className="input-group" onSubmit={handleSearch}>
@@ -56,11 +58,9 @@ const AllUsers = () => {
                 type="text"
                 name="search"
                 placeholder="Search…"
-                className="input input-bordered border border-gray-600 rounded-full text-black placeholder-gray-500
-                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%"
+                className="input ps-3 p-1 mt-5 rounded-lg bg-gray-300 text-black"
               />
-              <button className="btn border border-gray-600 rounded-full text-gray-600 placeholder-black
-                bg-gradient-to-r from-[#E3F9E0] from-10% to-white to-90%">
+              <button className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white my-5 h-12 hover:from-purple-600 hover:to-blue-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -101,7 +101,7 @@ const AllUsers = () => {
                 <td className="text-center">{data.email}</td>
                 <td className="text-center">{data?.role === 'admin'? 'Admin' : 'User' || "User"}</td>
                 <td className="text-center">
-                  <button onClick={() => handleAction(data._id, data)} className="py-2 px-4 border rounded-lg bg-[#98c292] font-semibold hover:bg-[#74df66]">Change Role</button>
+                  <button onClick={() => handleAction(data._id, data)} className="py-2 px-4 border rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 text-white font-semibold hover:bg-[#74df66]">Change Role</button>
                 </td>
               </tr>)
             }

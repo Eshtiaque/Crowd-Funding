@@ -42,13 +42,19 @@ import VideoCall from "../../Dashboard/Users/VideoCall";
 import UserCampaignAdd from "../../Dashboard/Users/UserCampaignAdd";
 import AddEvent from "../../Dashboard/Users/AddEvent";
 import EditPost from "../../SocialSite/EditPost/EditPost";
+import UserCampaignDetails from "../../Dashboard/Users/UserCampaignDetails";
+import UserEventDetails from "../../Dashboard/Users/UserEventDetails";
+import ErrorPage from "../ErrorPage/Errorpage";
+import PrivateRoute from "./PrivateRoute";
 
 
 
 const Router = createBrowserRouter([
     {
+
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
@@ -95,7 +101,7 @@ const Router = createBrowserRouter([
         },
         {
           path: "/Project",
-          element: <Project></Project>
+          element: <PrivateRoute><Project></Project></PrivateRoute>
         },
         {
           path: "/form",
@@ -105,7 +111,8 @@ const Router = createBrowserRouter([
     },
     {
       path: "/socialBlog",
-      element: <SocialSite></SocialSite>,
+      element: <PrivateRoute><SocialSite></SocialSite></PrivateRoute>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path: "addPost",
@@ -130,6 +137,8 @@ const Router = createBrowserRouter([
     {
       path: "/dashboard",
       element:<Dashboard></Dashboard>,
+      errorElement:<ErrorPage></ErrorPage>,
+
       children:[
         {
           path:"/dashboard",
@@ -213,12 +222,22 @@ const Router = createBrowserRouter([
           element: <UserCampaignAdd></UserCampaignAdd>
         },
         {
+          path:"userAllCampaign/:id",
+          element: <UserCampaignDetails></UserCampaignDetails>,
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${params.id}`)
+        },
+        {
           path:"userAllEvent",
           element: <Event></Event>
         },
         {
           path:"userAddEvent",
           element: <AddEvent></AddEvent>
+        },
+        {
+          path:"userAllEvent/:id",
+          element: <PrivateRoute><UserEventDetails></UserEventDetails></PrivateRoute>,
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/event/${params.id}`)
         },
         {
           path:"payment",

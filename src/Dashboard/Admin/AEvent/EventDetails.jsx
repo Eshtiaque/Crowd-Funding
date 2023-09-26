@@ -29,8 +29,8 @@ const EventDetails = () => {
 
 
   return (
-    <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8'>
-      <h1 className='mt-4 text-center text-xl md:text-2xl font-bold bg-[#D3F4EC] py-2 md:py-1 rounded-xl'>{data.publisher_name}'s Event Details</h1>
+    <div className='px-4 md:px-10 w-full h-full mt-28 md:mt-36 mb-8 text-black'>
+      <h1 className='mt-4 text-center text-xl md:text-2xl lg:text-4xl font-black text-[#130F49] bg-[#e3e6e5] py-2 md:py-1 rounded-xl'>{data.publisher_name}'s Event Details</h1>
 
       <p className='text-green-600 text-lg font-bold text-center my-2 uppercase'>{data.status}</p>
       <hr className='md:w-8/12 mx-auto mt-4 mb-4 border border-[#D3F4EC]' />
@@ -65,7 +65,7 @@ const EventDetails = () => {
             </p>
 
             <div className='flex justify-end'>
-              <button onClick={() => handleAction(data._id)} disabled={data.status === "approved"} className="py-2 px-4 border rounded-lg bg-[#98c292] font-semibold disabled:bg-white disabled:text-gray-400 hover:bg-[#74df66]">{data.status === "approved" ? 'Approved' : 'Approve'}</button>
+              <button onClick={() => handleAction(data._id)} disabled={data.status === "approved"} className="py-2 px-4 border rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 font-semibold text-white disabled:bg-white disabled:text-gray-400 hover:bg-[#74df66]">{data.status === "approved" ? 'Approved' : 'Approve'}</button>
             </div>
           </div>
         </div>

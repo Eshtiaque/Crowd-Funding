@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsSearch } from "react-icons/bs";
+
+import { BiDownArrowAlt } from "react-icons/bi";
+
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import Pagination from './Pagination';
@@ -28,8 +31,8 @@ const Campaigns = () => {
 
         const filtered = pages.filter(campaign => {
             const searchTerm = searchText.toLowerCase();
-            const headerMatch = campaign.header.toLowerCase().includes(searchTerm);
-            const locationMatch = campaign.location.toLowerCase().includes(searchTerm);
+            const headerMatch = campaign?.header?.toLowerCase().includes(searchTerm);
+            const locationMatch = campaign?.location?.toLowerCase().includes(searchTerm);
             return headerMatch || locationMatch;
         });
 
@@ -80,7 +83,7 @@ const Campaigns = () => {
                 >
                     {/* <h2 className="text-3xl text-white font-bold p-2">Our All Country Campaigns</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto " /> */}
-                <MainTitle heading="Our All Country Campaigns"></MainTitle>
+                    <MainTitle heading="Our All Country Campaigns"></MainTitle>
                 </motion.div>
                 <div className="mt-4 mb-4 relative w-10/12 mx-auto md:w-[20%] ">
                     <input
@@ -100,21 +103,34 @@ const Campaigns = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:p-12 md:p-12">
                         {filteredCampaigns
                             .filter(campaign => campaign.status === 'approved') // Filter by status
-                            .map(({ _id, image, location, header, desc, date, progress }) => {
+                            .map(({ _id, img, location, itemHeader, desc, date, progress }) => {
                                 return (
                                     <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-[#0a102b] shadow-xl group">
                                         <figure>
-                                            <img src={image} alt="image" className="w-full h-60 group-hover:scale-105 duration-500 hover:duration-500" />
+                                            <img src={img} alt="image" className="w-full h-60 group-hover:scale-105 duration-500 hover:duration-500" />
                                             <span className="absolute text-white left-2 bottom-[58%] md:bottom-[52%] text-sm bg-black bg-opacity-50 rounded font-semibold flex items-center gap-2 px-1"><FaLocationDot /> {location}</span>
                                         </figure>
                                         <div className="card-body">
                                             <div className="flex items-center justify-between">
-                                                <progress className="progress progress-warning w-56" value={progress} max="100"></progress>
-                                                <span className="text-gray-600">{date}</span>
+                                                <progress className="progress progress-primary w-56" value={progress} max="100"></progress>
+                                                <span className="text-gray-300">{date}</span>
                                             </div>
-                                            <h2 className="card-title pt-2">{header}</h2>
-                                            <p>{desc}</p>
+                                            <h2 className="card-title pt-2">{itemHeader}</h2>
+                                            {/* <p>{desc}</p> */}
+                                            <div tabIndex={0} className="collapse ">
+                                                <div className="collapse-title flex items-center text-xl font-medium text-white underline">
+                                                   Details <BiDownArrowAlt className="text-3xl ms-2"/>
+                                                </div>
+                                                <div className="collapse-content text-white">
+                                                    <p>{desc} </p>
+                                                </div>
+                                            </div>
+
                                             <div className="card-actions justify-end">
+                                                {/* <Link to={`/dashboard/userAllCampaign/${_id}`}>
+                                                    <MainButton text="Details"></MainButton>
+
+                                                </Link> */}
                                                 <Link to="/donate">
                                                     {/* <button className="px-3 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded text-md">Donate Now</button> */}
                                                     <MainButton text="Donate Now"></MainButton>
