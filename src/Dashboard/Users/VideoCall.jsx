@@ -5,7 +5,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const VideoCall = () => {
   const { user } = useContext(AuthContext);
   const roomID = "UniAid";
-  let myMeeting = async (element) => {
+let myMeeting = async (element) => {
     // generate Kit Token
     const appID = 1826497658;
     const serverSecret = "9d9222ca31963ee012102c648a5c2ef2";
@@ -35,7 +35,7 @@ const VideoCall = () => {
   return (
     <div
     
-      className='flex items-center justify-center'
+      className='flex items-center justify-center lg:mt-0 md:mt-24 mt-28 lg:ps-0 md:ps-12 ps-16'
       ref={myMeeting}
       style={{ width: '75vw', height: '100vh', marginRight: "10vh" }}
     ></div>

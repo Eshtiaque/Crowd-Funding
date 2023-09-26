@@ -17,7 +17,6 @@ const Blogs = () => {
             .then(res => res.json())
             .then(data => {
                 setProjects(data);
-                document.title = "My Projects";
                 setIsLoading(false);
             });
     }, [user]);
@@ -71,7 +70,7 @@ const Blogs = () => {
     return (
         <div className="px-10 w-full h-full mt-28 mb-8">
             <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-                <h1 className="text-xl md:text-3xl text-[#130F49] font-black">
+                <h1 className="text-3xl md:text-3xl text-[#130F49] font-black">
                     Project Requests: ({projects.length})
                     <hr className="border-2 border-slate-300 mt-2"/>
 

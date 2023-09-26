@@ -61,7 +61,7 @@ const Header = () => {
                 >
                   Raising money is Easy Now
                 </motion.h1>
-                <motion.h1 className="title-left-margin first-slide-title text-7xl mb-3 opacity-90  font-sans tracking-[0.09em] drop-shadow-2xl font-[700]"
+                <motion.h1 className="title-left-margin first-slide-title text-7xl md:text-6xl mb-3 opacity-90  font-sans tracking-[0.09em] drop-shadow-2xl font-[700] lg:mr-0 mr-0 md:mr-44"
                   variants={{
                     hidden: { opacity: 0, y: 75 },
                     visible: { opacity: 1, y: 0 }
@@ -76,7 +76,7 @@ const Header = () => {
                   <Link to="/project">
                     <motion.button 
                       type="button"
-                      className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600"
+                      className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-gradient-to-br from-blue-600 to-purple-600 border-tl-15 border-tr-15 rounded-3xl px-4 py-1 hover:from-purple-600 hover:to-blue-600 lg:mr-0 md:mr-0 mr-6"
 
                       variants={{
                         hidden: { opacity: 0, y: 75 },

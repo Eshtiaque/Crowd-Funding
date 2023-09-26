@@ -37,7 +37,7 @@ const Comments = () => {
 
    
     return (
-        <div className="border rounded-lg">
+        <div className="border rounded-lg lg:ms-0 md:ms-0 md:m-2 ms-12">
             
             <div className="">
                 <form className="md:grid md:grid-cols-1 lg:grid lg:grid-cols-1  p-5 gap-3  justify-end " onSubmit={handleSubmit(onSubmit)}>

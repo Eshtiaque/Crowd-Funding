@@ -108,15 +108,12 @@ const Navbar = () => {
                     <img src={user.photoURL} alt="" />
                   </div>
                 </div>
-                {/* <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-4  hover:bg-black hover:text-[#F99F24]' onClick={handleLogOut}>LogOut</button></Link> */}
+               
                 <Link><button className='text-base text-white border-none me-3 bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 border-tl-15 border-tr-15 rounded-3xl' onClick={handleLogOut}>LogOut</button></Link>
               </span>
               :
               <Link to="/login">
-                {/* <button
-                  type="button" onClick={handleClose}
-                  className="btn bg-[#F99F24] text-white border-none me-3 px-6 hover:bg-black hover:text-[#F99F24]"
-                > */}
+                
                 <button
                   type="button" onClick={handleClose}
                   className="text-base text-white border-none me-3 bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 border-tl-15 border-tr-15 rounded-3xl"
@@ -232,7 +229,7 @@ const Navbar = () => {
               <Link to="/login">
                 <button
                   type="button" onClick={handleClose}
-                  className="text-[#F99F24] border border-[#F99F24] bg-inherit hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 mt-6"
+                  className="text-base text-white border-none me-3 bg-gradient-to-br from-blue-600 to-purple-600 px-4 py-1 hover:from-purple-600 hover:to-blue-600 border-tl-15 border-tr-15 rounded-3xl mt-3"
                 >
                   Login
                 </button>

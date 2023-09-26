@@ -29,9 +29,7 @@ const AddBlog = () => {
 
     }
 
-    useEffect ( () => {
-        document.title = "Add a Project";
-    },[])
+   
     return (
         <div className="bg-black text-black">
             <div className="bg-gradient-to-r from-[#F99F24] to-[#3c3b3b] rounded p-2" >

@@ -29,13 +29,10 @@ const AddBlog = () => {
 
     // };
 
-    // useEffect(() => {
-    //     document.title = "Add a Blog";
-    // }, []);
 
     return (
         <div>
-            <h1 className="mt-12 text-[#130F49] font-black text-4xl uppercase italic">Start your project with submit proper information</h1>
+            <h1 className="lg:mt-12 md:mt-12 mt-24 lg:p-0 md:p-0 p-2 text-[#130F49] font-black text-4xl uppercase italic">Start your project with submit proper information</h1>
             <hr  className="border-slate-400 border-2 mt-3"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mt-16 text-black">
             {/* //two big card */}

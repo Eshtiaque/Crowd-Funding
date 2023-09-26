@@ -71,7 +71,7 @@ const Campaigns = () => {
                         </>
                     }
                 ></SharedBanner>
-                <motion.div className="text-center mt-8"
+                <motion.div className="text-center mt-8 p-1"
                     variants={{
                         hidden: { opacity: 0, y: 75 },
                         visible: { opacity: 1, y: 0 }
@@ -105,7 +105,7 @@ const Campaigns = () => {
                             .filter(campaign => campaign.status === 'approved') // Filter by status
                             .map(({ _id, img, location, itemHeader, desc, date, progress }) => {
                                 return (
-                                    <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-[#0a102b] shadow-xl group">
+                                    <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-[#0a102b] shadow-xl group ">
                                         <figure>
                                             <img src={img} alt="image" className="w-full h-60 group-hover:scale-105 duration-500 hover:duration-500" />
                                             <span className="absolute text-white left-2 bottom-[58%] md:bottom-[52%] text-sm bg-black bg-opacity-50 rounded font-semibold flex items-center gap-2 px-1"><FaLocationDot /> {location}</span>

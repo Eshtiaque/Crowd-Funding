@@ -39,7 +39,7 @@ const SocialHeader = () => {
             }}
             
             className="rounded-full w-16 h-16 p-5 block md:hidden lg:hidden   "
-            ><BsPlus className="text-5xl rounded-full text-white bg-[#5c771e]  "/> </Link>
+            ><BsPlus className="text-5xl rounded-full text-white bg-gradient-to-br from-blue-600 to-purple-600  "/> </Link>
            
         </div>
     );

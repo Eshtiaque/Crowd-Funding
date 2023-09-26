@@ -44,7 +44,7 @@ const AllProject = () => {
   return (
     <div className="px-10 w-full h-full mt-28 mb-8 text-black">
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
-        <h1 className="text-xl lg:text-4xl md:text-3xl font-black text-[#130F49]">
+        <h1 className="text-3xl lg:text-4xl md:text-3xl font-black text-[#130F49]">
           Project Requests: ({data?.data?.length})
           <hr className="border-2 border-slate-300 mt-2"/>
 
@@ -89,7 +89,7 @@ const AllProject = () => {
 
       <div className="overflow-x-auto mt-12">
         {isLoading ? (
-          <div className="text-center text-gray-500 text-lg my-8">
+          <div className="md:text-center text-left lg:text-center   text-gray-500 text-lg my-8">
             Refreshing...
           </div>
         ) : (

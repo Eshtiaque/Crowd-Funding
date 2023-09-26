@@ -7,7 +7,7 @@ const ACampaign = () => {
     return (
         <div className="px-10 mt w-full h-full mt-28 mb-8 text-black ">
             <div className="text-center mt-5">
-                <h1 className="md:text-3xl lg:text-4xl text-xl font-black text-[#130F49]">
+                <h1 className="md:text-3xl lg:text-4xl text-3xl font-black text-[#130F49]">
                     All Campaigns ({campaigns.length})
                     <hr className="border-2 border-slate-300 mt-2"/>
 

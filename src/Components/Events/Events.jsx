@@ -90,7 +90,7 @@ const handleSearch = () => {
             </div>
                 </motion.div>
             </div>
-            <div className="card-72 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-2  gap-2" >
+            <div className="card-72 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:p-2 md:p-2  gap-2 p-5" >
                 {
                     items?.map(item => <Card
                         key={item._id}

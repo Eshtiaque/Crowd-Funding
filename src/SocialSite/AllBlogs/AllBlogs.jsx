@@ -25,7 +25,7 @@ const AllBlogs = () => {
 
     return (
         <div className="">
-            <div className="search-box  text-center">
+            <div className="search-box  text-center ps-2">
                 <input
                     onChange={(e) => setSearchText(e.target.value)}
                     type="text"

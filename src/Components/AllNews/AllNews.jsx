@@ -180,16 +180,16 @@ const AllNews = () => {
 
                     </div>
                     {/* user comments */}
-                    <div className=" mt-5 mb-5 lg:text-left text-center ">
+                    <div className=" mt-5 mb-5 lg:text-left text-center  ">
                         {user &&
                             comment?.slice(0,4).map(com =>
                                 <div key={com} >
                                     <div className="grid grid-cols-2 ">
                                         <div className="flex items-center gap-3">
                                             
-                                               <BiSolidMessageEdit className="text-4xl text-cyan-300"/>
+                                               <BiSolidMessageEdit className="text-4xl text-cyan-300 lg:block md:block hidden "/>
                                             
-                                            <p className="my-2 pb-2 text-white text-sm">{com.email}</p>
+                                            <p className="my-2 lg:pb-2 lg:p-0 md:p-0 px-5 text-md text-white ">{com.email}</p>
                                         </div>
                                         <div className="flex gap-3 my-2 justify-end pb-2">
 
